@@ -1,0 +1,132 @@
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction; 
+    justify-content: $justify; 
+    align-items: $align;
+}
+
+@mixin heading1_name($col) {
+    font-family: $cormorantGaramondBoldItalic;
+    font-size: 28px;
+    color: $col;
+}
+
+@mixin heading1($col) {
+    font-family: $cormorantGaramondMedium;
+    font-size: 140px;
+    line-height: 140px;
+    color: $col;
+}
+
+@mixin heading1_italic($col) {
+    font-family: $cormorantGaramondItalic;
+    font-size: 140px;
+    line-height: 140px;
+    color: $col;
+}
+
+@mixin heading2($col) {
+    font-family: $cormorantGaramondMedium;
+    font-size: 80px;
+    line-height: 88px;
+    color: $col;
+}
+
+@mixin heading2_italic($col) {
+    font-family: $cormorantGaramondMediumItalic;
+    font-size: 80px;
+    line-height: 88px;
+    color: $col;
+}
+
+@mixin heading3($col) {
+    font-family: $cormorantGaramondSemiBold;
+    font-size: 64px;
+    line-height: 72px;
+    color: $col;
+}
+
+@mixin heading3_italic($col) {
+    font-family: $cormorantGaramondMediumItalic;
+    font-size: 64px;
+    line-height: 72px;
+    color: $col;
+}
+
+@mixin heading4($col) {
+    font-family: $cormorantGaramondSemiBold;
+    font-size: 40px;
+    line-height: 48px;
+    color: $col;
+}
+
+@mixin heading5($col) {
+    font-family: $cormorantGaramondMedium;
+    font-size: 36px;
+    line-height: 42px;
+    color: $col;
+}
+
+@mixin heading6($col) {
+    font-family: $cormorantGaramondBold;
+    font-size: 26px;
+    line-height: 32px;
+    color: $col;
+}
+
+@mixin body1($col) {
+    font-family: $interRegular;
+    font-size: 20px;
+    line-height: 30px;
+    color: $col;
+}
+
+@mixin body1_bold($col) {
+    font-family: $interSemiBold;
+    font-size: 20px;
+    line-height: 30px;
+    color: $col;
+}
+
+@mixin body2($col) {
+    font-family: $interRegular;
+    font-size: 16px;
+    line-height: 24px;
+    color: $col;
+}
+
+@mixin body2_bold($col) {
+    font-family: $interSemiBold;
+    font-size: 16px;
+    line-height: 24px;
+    color: $col;
+}
+
+@mixin body2_spacing($col) {
+    font-family: $interRegular;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 5px;
+    color: $col;
+}
+
+@mixin button($w, $h, $br-r, $br, $bg-col){
+    width: $w;
+    height: $h;
+    border-radius: $br-r;
+    border: $br;
+    background-color: $bg-col;
+    cursor: pointer;
+    &:active {
+        background-color: darken($bg-col, 10%); 
+    }
+}
+
+@mixin input($w, $h, $br-r, $br, $bg-col){
+    width: $w;
+    height: $h;
+    border-radius: $br-r;
+    border: $br;
+    background-color: $bg-col;
+    cursor: pointer;
+}

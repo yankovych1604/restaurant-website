@@ -1,0 +1,1107 @@
+@import "src/styles/base";
+@import "src/styles/font";
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+body {
+    background-color: $primary;
+}
+
+.header {
+    width: 100%;
+    height: 64px;
+    position: absolute;
+
+    &__links {
+        max-width: 1280px;
+        height: 100%;
+        margin: 0 auto;
+        @include flex(row, space-between, flex-start);
+
+        &-area1 {
+            width: 544px;
+            height: 34px;
+            margin: 27px 0 3px 0;
+            @include flex(row, space-between, center);
+        }
+
+        &-area1 li {
+            list-style-type: none;
+            @include body2($primary);
+        }
+
+        &-area1 li:nth-child(1) {
+            @include heading1_name($brown1);
+        }
+
+        &-area2 {
+            width: 341px;
+            height: 40px;
+            margin-top: 24px;
+            @include flex(row, space-between, center);
+        }
+
+        &-area2 li {
+            list-style-type: none;
+            @include body2_bold($primary);
+        }
+
+        &-area2 li:nth-child(1) {
+            width: 167px;
+            height: 100%;
+            @include body2($primary);
+            @include flex(row, space-between, center);
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    @include flex(row, flex-start, flex-start);
+}
+
+#homepage {
+    width: 1440px;
+    margin: 0 auto;
+    border: 1px solid $secondary;
+    @include flex(column, flex-start, flex-start);
+}
+
+.homepage-section1 {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./src/images/homepage-section1-image.png');
+
+    &__content {
+        width: 979px;
+        height: 438px;
+        gap: 32px 0;
+        margin: 174px auto 188px;
+        @include flex(column, flex-start, center);
+    }
+
+    &__text-content {
+        width: 100%;
+        gap: 10px 0;
+        @include flex(column, flex-start, center);
+    }
+
+    &__title {
+        width: 100%;
+        height: 280px;
+        @include flex(column, flex-start, flex-start);
+
+        &-first-line {
+            width: 100%;
+            @include flex(row, flex-start, flex-start);
+        }
+
+        &-text {
+            width: 100%;
+            text-align: center;
+            filter: contrast(0.6);
+            @include heading1($primary);
+        }
+
+        &-highlight {
+            filter: contrast(0.6);
+            @include heading1_italic($primary);
+        }
+    }
+
+    &__description {
+        width: 660px;
+        text-align: center;
+        filter: brightness(0.6);
+        @include body1($primary);
+    }
+
+    &__button {
+        filter: opacity(0.7);
+        @include heading6($dark_brown);
+        @include flex(row, center, center);
+        @include button(297px, 56px, 30px, 1px solid $primary, $primary);
+    }
+}
+
+.homepage-section2 {
+    width: 100%;
+    margin-top: 120px;
+
+    &__contents {
+        width: 1200px;
+        margin: 0 auto;
+        @include flex(row, space-between, flex-start);
+    }
+
+    &__content1 {
+        width: 311px;
+        @include flex(column, flex-start, flex-start);
+    }
+
+    &__text-content {
+        @include flex(column, flex-start, flex-start);
+    }
+
+    &__title {
+        width: 100%;
+        @include body2_spacing($brown2);
+    }
+
+    &__description {
+        width: 100%;
+        height: 378px;
+        margin-top: 16px;
+        gap: 30px 0;
+        @include flex(column, flex-start, flex-start);
+
+        &-item {
+            width: 100%;
+            @include heading3($dark_brown);
+        }
+    }
+
+    &__line {
+        display: inline-block;
+        width: 88px;
+        height: 1px;
+        background-color: $dark_brown;
+
+        &-with-text {
+            width: 100%;
+            @include flex(row, space-between, center);
+        }
+
+        &-with-text p {
+            width: 184px;
+            @include heading3_italic($dark_brown);
+        }
+    }
+
+    &__button {
+        margin-top: 120px;
+        @include body2($dark_brown);
+        @include flex(row, center, center);
+        @include button(163px, 40px, 100px, 1px solid $dark_brown, $primary);
+    }
+
+    &__content2 {
+        width: 723px;
+        @include flex(column, flex-start, flex-start);
+    }
+
+    &__image {
+        width: 100%;
+        height: 418px;
+    }
+
+    &__figcaption {
+        width: 100%;
+        margin-top: 70px;
+        text-align: center;
+        filter: opacity(0.7);
+        @include body1($dark_brown);
+    }
+}
+
+.homepage-section3 {
+    width: 100%;
+    margin-top: 120px;
+
+    &__content {
+        width: 1280px;
+        margin: 0 auto;
+        padding: 432px 40px 32px 48px;
+        background-size: cover;
+        background-position: center;
+        background-image: url('./src/images/homepage-section3-image.png');
+    }
+
+    &__text-content {
+        width: 1192px;
+        @include flex(row, space-between, flex-end);
+    }
+
+    &__title {
+        width: 528px;
+        @include flex(column, flex-start, flex-start);
+
+        &-text {
+            @include heading2($primary);
+        }
+
+        &-second-line {
+            width: 100%;
+            @include flex(row, space-between, flex-start);
+        }
+
+        &-highlight {
+            @include heading2_italic($primary);
+        }
+    }
+
+    &__description {
+        width: 580px;
+        filter: opacity(0.7);
+        @include body1($primary);
+    }
+}
+
+.homepage-section4 {
+    width: 100%;;
+    margin-top: 120px;
+
+    &__content {
+        width: 1280px;
+        margin: 0 auto;
+        @include flex(column, flex-start, center);
+    }
+
+    &__title1 {
+        @include body2_spacing($brown2);
+    }
+
+    &__title2 {
+        margin-top: 16px;
+        @include heading2($dark_brown);
+    }
+
+    &__popular-delights {
+        width: 100%;
+        margin-top: 64px;
+        @include flex(row, space-between, flex-start);
+    }
+
+    &__item {
+        width: 305px;
+        height: 400px;
+        @include flex(column, space-between, flex-start);
+
+        &-image {
+            width: 100%;
+            height: 316px;
+        }
+
+        &-text {
+            width: 100%;
+            height: 64px;
+            @include flex(row, space-between, flex-start);
+        }
+
+        &-title {
+            @include heading6($dark_brown);
+        }
+
+        &--title-truffle-ribeye {
+            width: 149px;
+        }
+
+        &--title-chocolate-sundae {
+            width: 187px;
+        }
+
+        &--title-symphony-risotto {
+            width: 192px;
+        }
+
+        &--title-elysium-bisque {
+            width: 156px;
+        }
+
+        &-price {
+            filter: opacity(0.7);
+            @include body1($dark_brown);
+        }
+    }
+}
+
+.homepage-section5 {
+    width: 100%;
+    margin-top: 120px;
+    padding: 120px 80px 120px 100px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./src/images/homepage-section5-image.png');
+    @include flex(row, space-between, flex-end);
+
+    &__text {
+        @include body2_spacing($primary);
+    }
+
+    &__text-content {
+        width: 585px;
+        height: 388px;
+        background-color: $primary;
+        padding: 48px 48px 60px 48px;
+    }
+
+    &__title {
+        @include heading3($dark_brown);
+    }
+
+    &__description {
+        margin-top: 8px;
+        filter: opacity(0.7);
+        @include body1($dark_brown);
+
+        &-list {
+            width: 402px;
+            height: 108px;
+            margin-top: 32px;
+            padding-left: 8px;
+            @include flex(column, space-between, flex-start);
+        }
+
+        &-item {
+            gap: 14px;
+            @include flex(row, flex-start, flex-start);
+
+            &-image {
+                width: 28px;
+                height: 100%;
+            }
+
+            &-text {
+                @include body2_bold($dark_brown);
+            }
+        }
+    }
+}
+
+.homepage-section6 {
+    width: 100%;
+    margin-top: 120px;
+
+    &__content {
+        width: 1280px;
+        margin: 0 auto;
+        @include flex(column, flex-start, center);
+    }
+
+    &__title1 {
+        @include body2_spacing($brown2);
+    }
+
+    &__title2 {
+        margin-top: 16px;
+        @include heading3($dark_brown);
+    }
+
+    &__text-content {
+        width: 100%;
+        margin-top: 64px;
+        padding: 0 20px;
+        @include flex(row, space-between, center);
+    }
+
+    &__descriptions1 {
+        width: 320px;
+        height: 385px;
+        @include flex(column, space-between, flex-start);
+
+        &-item {
+            width: 320px;
+            height: 110px;
+            @include flex(column, space-between, flex-start);
+
+            &-title {
+                @include body1_bold($dark_brown);
+            }
+    
+            &-description {
+                filter: opacity(0.7);
+                @include body2($dark_brown);
+            }
+        }
+
+        &-line {
+            display: inline-block;
+            width: 72px;
+            height: 1px;
+            background-color: $dark_brown;
+        }
+    }
+
+    &__image {
+        width: 512px;
+        height: 512px;
+    }
+
+    &__descriptions2 {
+        width: 320px;
+        height: 385px;
+        @include flex(column, space-between, flex-end);
+
+        &-item {
+            width: 320px;
+            height: 110px;
+            @include flex(column, space-between, flex-end);
+
+            &-title {
+                @include body1_bold($dark_brown);
+            }
+    
+            &-description {
+                text-align: end;
+                filter: opacity(0.7);
+                @include body2($dark_brown);
+            }
+        }
+
+        &-line {
+            display: inline-block;
+            width: 72px;
+            height: 1px;
+            background-color: $dark_brown;
+        }
+    }
+}
+
+.homepage-section7 {
+    width: 100%;
+    margin-top: 120px;
+
+    &__content {
+        width: 1280px;
+        margin: 0 auto;
+        padding: 120px 194px;
+        background-size: cover;
+        background-position: center;
+        background-image: url('./src/images/homepage-section7-image.png');
+    }
+
+    &__title {
+        width: 892px;
+        @include flex(column, center, center);
+
+        &-first-line {
+            width: 747px;
+            @include flex(row, space-between, flex-start);
+        }
+
+        &-second-line {
+            width: 892px;
+            @include flex(row, space-between, flex-start);
+        }
+
+        &-normal {
+            @include heading2($primary);
+        }
+
+        &-italic {
+            @include heading2_italic($primary);
+        }
+    }
+
+    &__buttons {
+        width: 516px;
+        margin: 32px auto 0;
+        @include flex(row, space-between, flex-start);
+    }
+
+    &__button-reservation {
+        @include heading6($dark_brown);
+        @include flex(row, center, center);
+        @include button(322px, 56px, 30px, 1px solid $primary, $primary);
+    }
+
+    &__button-location {
+        @include body2($primary);
+        @include flex(row, center, center);
+        @include button(182px, 56px, 30px, 1px solid $primary, transparent);
+    }
+}
+
+.homepage-section8 {
+    width: 100%;
+    margin-top: 120px;
+
+    &__contents {
+        width: 1280px;
+        margin: 0 auto;
+        @include flex(row, space-between, center);
+    }
+
+    &__content1 {
+        width: 380px;
+        height: 216px;
+        @include flex(column, space-between, flex-start);
+    }
+
+    &__faq {
+        @include body2_spacing($brown2);
+    }
+
+    &__title {
+        @include heading2($dark_brown);
+    }
+
+    &__content2 {
+        width: 700px;
+        @include flex(column, flex-start, flex-start);
+    }
+
+    &__question {
+        width: 100%;
+        height: 42px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: height 0.5s ease-out;
+        @include flex(column, flex-start, flex-start);
+
+        &-area {
+            width: 100%;
+            @include flex(row, space-between, center);
+        }
+
+        &-text {
+            @include heading5($dark_brown);
+        }
+
+        &-icon {
+            width: 32px;
+            height: 10px;
+            transition: filter 0.5s ease-out;
+        }
+
+        &-answer {
+            margin-top: 12px;
+            filter: opacity(0.7);
+            @include body1($dark_brown);
+        }
+
+        &-line {
+            width: 100%;
+            height: 1px;
+            margin: 32px 0;
+            filter: opacity(0.7);
+            display: inline-block;
+            background-color: $dark_brown;
+            transition: height 0.5s ease-out, filter 0.5s ease-out;
+        }
+    }
+}
+
+.homepage-section9 {
+    width: 100%;
+    margin-top: 120px;
+    padding: 100px 80px 120px;
+    background-color: $green;
+
+    &__content {
+        width: 1280px;
+        @include flex(column, flex-start, flex-start);
+    }
+
+    &__titles {
+        width: 100%;
+        height: 112px;
+        @include flex(column, space-between, center);
+    }
+
+    &__title1 {
+        @include body2_spacing($brown1);
+    }
+
+    &__title2 {
+        @include heading3($primary);
+    }
+
+    &__review {
+        width: 100%;
+        margin-top: 56px;
+        @include flex(row, space-between, center);
+    }
+
+    &__arrow-button {
+        @include flex(row, center, center);
+        @include button(64px, 64px, 50%, 1px solid $primary, transparent);
+    }
+
+    &__arrow-icon {
+        width: 24px;
+        height: 10px;
+    }
+
+    &__review-info-container {
+        width: 1064px;
+        height: 402px;
+    }
+
+    &__review-info {
+        width: 1064px;
+        height: 100%;
+        @include flex(row, flex-start, flex-start);
+
+        &-text {
+            width: 700px;
+            height: 100%;
+            filter: contrast(0.6);
+            padding: 64px 56px 46px;
+            background-color: $primary;
+            @include flex(column, space-between, flex-start);
+        }
+
+        &-description {
+            @include body1($dark_brown);
+        }
+
+        &-writer {
+            width: 100%;
+            height: 56px;
+            @include flex(column, space-between, flex-start);
+        }
+
+        &-line {
+            width: 32px;
+            height: 2px;
+            display: inline-block;
+            background-color: $dark_brown;
+        }
+
+        &-title {
+            @include body1_bold($dark_brown);
+        }
+
+        &-image {
+            width: 364px;
+            height: 100%;
+        }
+    }
+
+    &__review-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__review-delete {
+        display: none;
+    }
+}
+
+.homepage-section10 {
+    width: 100%;
+    margin-top: 120px;
+
+    &__contents {
+        width: 1280px;
+        margin: 0 auto;
+        @include flex(column, flex-start, flex-start);
+    }
+
+    &__content1 {
+        width: 100%;
+        height: 112px;
+        @include flex(row, space-between, flex-end);
+    }
+
+    &__text-content {
+        width: 435px;
+        height: 100%;
+        @include flex(column, space-between, flex-start);
+    }
+
+    &__title1 {
+        @include body2_spacing($brown2);
+    }
+
+    &__title2 {
+        @include heading3($dark_brown);
+    }
+
+    &__radios {
+        width: 100px;
+        height: 28px;
+        @include flex(row, space-between, flex-start);
+    }
+
+    &__radio-area {
+        width: 12px;
+        height: 12px;
+        position: relative;
+    }
+
+    &__radio {
+        display: none;
+    }
+
+    &__radio + label::before {
+        content: "";
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        filter: opacity(0.2);
+        background: $dark_brown;
+    }
+
+    &__radio:checked + label::before {
+        filter: opacity(1);
+    }
+
+    &__content2 {
+        width: 100%;
+        height: 654px;
+        margin-top: 48px;
+    }
+
+    &__insights {
+        width: 100%;
+        height: 100%;
+        @include flex(row, space-between, flex-start);
+
+        &-block {
+            width: 620px;
+            height: 100%;
+            @include flex(column, flex-start, flex-start);
+        }
+
+        &-image-area {
+            width: 100%;
+            height: 480px;
+            position: relative;
+        }
+
+        &-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        &-date {
+            width: 138px;
+            height: 48px;
+            background-color: $primary;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            @include flex(row, center, center);
+
+            &-text {
+                @include body2($dark_brown);
+            }
+        }
+
+        &-description {
+            margin-top: 20px;
+            @include heading5($dark_brown);
+        }
+
+        &-author {
+            width: 144px;
+            height: 46px;
+            margin-top: 24px;
+            @include flex(column, space-between, flex-start);
+
+            &-text {
+                @include body2_bold($dark_brown);
+            }
+        }
+
+        &-line {
+            display: inline-block;
+            width: 32px;
+            height: 2px;
+            background-color: $dark_brown;
+        }
+
+        &-delete {
+            display: none;
+        }
+    }
+}
+
+.homepage-section11 {
+    width: 100%;
+    margin: 120px 0;
+
+    &__content {
+        width: 1280px;
+        margin: 0 auto;
+        @include flex(column, space-between, flex-start);
+    }
+
+    &__first-line {
+        width: 100%;
+        height: 600px;
+        background-size: cover;
+        background-position: center;
+        background-image: url('./src/images/homepage-section11-image1-light.png');
+    }
+
+    &__second-line {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        @include flex(row, space-between, flex-start);
+    }
+
+    &__image {
+        width: 196.75px;
+        height: 100%;
+        background-size: 100% 100%;
+    }
+
+    &__image-checked {
+        width: 413px;
+        height: 100%;
+        outline: 2px solid $green;
+    }
+
+    &__image:nth-child(1) {
+        background-image: url('./src/images/homepage-section11-image1-dark.png');
+    }
+
+    &__image:nth-child(2) {
+        background-image: url('./src/images/homepage-section11-image2-dark.png');
+    }
+
+    &__image:nth-child(3) {
+        background-image: url('./src/images/homepage-section11-image3-dark.png');
+    }
+
+    &__image:nth-child(4) {
+        background-image: url('./src/images/homepage-section11-image4-dark.png');
+    }
+
+    &__image:nth-child(5) {
+        background-image: url('./src/images/homepage-section11-image5-dark.png');
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 749px;
+
+    &__area {
+        max-width: 1440px;
+        height: 100%;
+        margin: 0 auto;;
+        padding: 72px 0 40px;
+        background-color: $secondary;
+    }
+
+    &__contents {
+        max-width: 1280px;
+        height: 100%;
+        margin: 0 auto;
+        @include flex(column, space-between, flex-start);
+    }
+
+    &__content1 {
+        width: 100%;
+        height: 493px;
+        @include flex(column, space-between, flex-start);
+    }
+
+    &__input-content {
+        width: 100%;
+        height: 96px;
+        @include flex(row, space-between, flex-start);
+    }
+
+    &__input-title {
+        width: 261px;
+        height: 100%;
+        @include heading4($primary);
+    }
+
+    &__input-title span {
+        @include heading4($brown1);
+    }
+
+    &__inputs {
+        width: 939px;
+        height: 100%;
+        @include flex(row, space-between, center);
+    }
+
+    &__input-email {
+        padding: 20px 0 20px 24px;
+        @include body2($dark_brown);
+        @include flex(row, center, center);
+        @include input(784px, 64px, 0px, 1px solid $primary, $primary);
+    }
+
+    &__input-email::placeholder {
+        @include body2($dark_brown);
+    }
+
+    &__input-btn {
+        @include body2_bold($primary);
+        @include flex(row, center, center);
+        @include button(143px, 64px, 0px, 1px solid $brown1, $brown1);
+    }
+
+    &__line {
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        background-color: $primary;
+    }
+
+    &__all-links {
+        width: 100%;
+        height: 252px;
+        @include flex(row, space-between, flex-start);
+    }
+
+    &__links {
+        width: 107px;
+        height: 100%;
+        @include flex(column, flex-start, flex-start);
+
+        &-title {
+            @include heading6($primary);
+        }
+
+        &-items {
+            width: 107px;
+            height: 204px;
+            margin-top: 16px;
+            @include flex(column, space-between, flex-start);
+        }
+
+        &-item {
+            cursor: pointer;
+            list-style-type: none;
+            filter: brightness(0.6);
+            @include body2($primary);
+        }
+    }
+
+    &__menu {
+        width: 106px;
+        height: 100%;
+        @include flex(column, flex-start, flex-start);
+
+        &-title {
+            @include heading6($primary);
+        }
+
+        &-items {
+            width: 106px;
+            height: 204px;
+            margin-top: 16px;
+            @include flex(column, space-between, flex-start);
+        }
+
+        &-item {
+            cursor: pointer;
+            list-style-type: none;
+            filter: brightness(0.6);
+            @include body2($primary);
+        }
+    }
+
+    &__address {
+        width: 252px;
+        height: 100%;
+        @include flex(column, flex-start, flex-start);
+
+        &-title {
+            @include heading6($primary);
+        }
+
+        &-info {
+            width: 100%;
+            height: 204px;
+            margin-top: 16px;
+            @include flex(column, space-between, flex-start);
+        }
+
+        &-items {
+            width: 100%;
+            height: 108px;
+            @include flex(column, space-between, flex-start);
+        }
+
+        &-item {
+            list-style-type: none;
+            filter: brightness(0.6);
+            @include body2($primary);
+        }
+
+        &-text {
+            cursor: pointer;
+            filter: brightness(0.6);
+            @include body2_bold($primary);
+            border-bottom: 2px solid $primary;
+        }
+    }
+
+    &__info {
+        width: 413px;
+        height: 100%;
+        @include flex(column, space-between, flex-start);
+
+        &-text {
+            width: 100%;
+            height: 119px;
+            @include flex(column, space-between, flex-start);
+        }
+
+        &-title {
+            width: 216px;
+            height: 51px;
+        }
+
+        &-description {
+            width: 100%;
+            height: 48px;
+            filter: brightness(0.6);
+            @include body2($primary);
+        }
+    }
+
+    &__work-time {
+        width: 200px;
+        height: 92px;
+        @include flex(column, space-between, flex-start);
+
+        &-title {
+            @include heading6($primary);
+        }
+
+        &-description {
+            filter: brightness(0.6);
+            @include body2($primary);
+        }
+    }
+
+    &__content2 {
+        width: 100%;
+        height: 24px;
+        @include flex(row, space-between, flex-start);
+
+        &-text {
+            width: 362px;
+            height: 100%;
+            filter: brightness(0.6);
+            @include body2($primary);
+        }
+    }
+
+    &__privacy-and-terms {
+        width: 292px;
+        height: 100%;
+        @include flex(row, space-between, flex-start);
+    }
+
+    &__privacy {
+        width: 105px;
+        height: 100%;
+        filter: brightness(0.6);
+        @include body2($primary);
+    }
+
+    &__terms {
+        width: 147px;
+        height: 100%;
+        filter: brightness(0.6);
+        @include body2($primary);
+    }
+}
