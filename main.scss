@@ -602,18 +602,19 @@ body {
 }
 
 .homepage-section9 {
-    max-width: 100%;
+    max-width: 1440px;
+    width: 100%;
     margin: 120px auto 0;
     padding: 100px 0 120px;
     background-color: $green;
 
     &__area {
-        max-width: 1440px;
+        width: 100%;
         @include flex(column, space-between, flex-start);
     }
 
     &__titles {
-        width: 1440px;
+        width: 100%;
         height: 112px;
         @include flex(column, space-between, center);
     }
