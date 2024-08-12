@@ -55,15 +55,8 @@ body {
     }
 }
 
-.main {
-    width: 100%;
-    @include flex(row, flex-start, flex-start);
-}
-
 #homepage {
-    width: 1440px;
-    margin: 0 auto;
-    border: 1px solid $secondary;
+    width: 100%;
     @include flex(column, flex-start, flex-start);
 }
 
@@ -126,8 +119,8 @@ body {
 }
 
 .homepage-section2 {
-    width: 100%;
-    margin-top: 120px;
+    max-width: 1440px;
+    margin: 120px auto 0;
 
     &__contents {
         width: 1200px;
@@ -206,8 +199,8 @@ body {
 }
 
 .homepage-section3 {
-    width: 100%;
-    margin-top: 120px;
+    max-width: 1440px;
+    margin: 120px auto 0;
 
     &__content {
         width: 1280px;
@@ -249,8 +242,8 @@ body {
 }
 
 .homepage-section4 {
-    width: 100%;;
-    margin-top: 120px;
+    max-width: 1440px;
+    margin: 120px auto 0;
 
     &__content {
         width: 1280px;
@@ -317,13 +310,18 @@ body {
 }
 
 .homepage-section5 {
-    width: 100%;
-    margin-top: 120px;
+    max-width: 100%;
+    margin: 120px auto 0;
     padding: 120px 80px 120px 100px;
     background-size: cover;
     background-position: center;
     background-image: url('./src/images/homepage-section5-image.png');
     @include flex(row, space-between, flex-end);
+
+    &__area {
+        width: 1260px;
+        @include flex(row, space-between, flex-end);
+    }
 
     &__text {
         @include body2_spacing($primary);
@@ -370,8 +368,8 @@ body {
 }
 
 .homepage-section6 {
-    width: 100%;
-    margin-top: 120px;
+    max-width: 1440px;
+    margin: 120px auto 0;
 
     &__content {
         width: 1280px;
@@ -459,8 +457,8 @@ body {
 }
 
 .homepage-section7 {
-    width: 100%;
-    margin-top: 120px;
+    max-width: 1440px;
+    margin: 120px auto 0;
 
     &__content {
         width: 1280px;
@@ -514,8 +512,8 @@ body {
 }
 
 .homepage-section8 {
-    width: 100%;
-    margin-top: 120px;
+    max-width: 1440px;
+    margin: 120px auto 0;
 
     &__contents {
         width: 1280px;
@@ -562,7 +560,12 @@ body {
         &-icon {
             width: 32px;
             height: 10px;
+            filter: opacity(1);
             transition: filter 0.5s ease-out;
+        }
+
+        &-icon--active {
+            filter: opacity(0.5);
         }
 
         &-answer {
@@ -580,22 +583,37 @@ body {
             background-color: $dark_brown;
             transition: height 0.5s ease-out, filter 0.5s ease-out;
         }
+
+        &-line--active {
+            height: 2px;
+            filter: opacity(1);
+        }
+    }
+
+    &__question--active {
+        height: 174px; 
+    }
+    
+    &__question--active:nth-child(3),
+    &__question--active:nth-child(4),
+    &__question--active:nth-child(5) {
+        height: 144px; 
     }
 }
 
 .homepage-section9 {
-    width: 100%;
-    margin-top: 120px;
-    padding: 100px 80px 120px;
+    max-width: 100%;
+    margin: 120px auto 0;
+    padding: 100px 0 120px;
     background-color: $green;
 
-    &__content {
-        width: 1280px;
-        @include flex(column, flex-start, flex-start);
+    &__area {
+        max-width: 1440px;
+        @include flex(column, space-between, flex-start);
     }
 
     &__titles {
-        width: 100%;
+        width: 1440px;
         height: 112px;
         @include flex(column, space-between, center);
     }
@@ -609,14 +627,19 @@ body {
     }
 
     &__review {
-        width: 100%;
-        margin-top: 56px;
-        @include flex(row, space-between, center);
+        gap: 0 44px;
+        max-width: 1440px;
+        margin: 56px auto 0;
+        @include flex(row, flex-start, center);
     }
 
     &__arrow-button {
         @include flex(row, center, center);
         @include button(64px, 64px, 50%, 1px solid $primary, transparent);
+    }
+
+    &__arrow-button-disabled {
+        filter: opacity(0.5);
     }
 
     &__arrow-icon {
@@ -627,11 +650,15 @@ body {
     &__review-info-container {
         width: 1064px;
         height: 402px;
+        overflow: hidden;
+        position: relative;
     }
 
     &__review-info {
+        opacity: 1;
         width: 1064px;
-        height: 100%;
+        height: 402px;
+        position: absolute;
         @include flex(row, flex-start, flex-start);
 
         &-text {
@@ -676,13 +703,39 @@ body {
     }
 
     &__review-delete {
-        display: none;
+        opacity: 0;
+    }
+
+    &__review-fadeIn {
+        animation: fadeInReviews 1s forwards;
+    }
+
+    &__review-fadeOut {
+        animation: fadeOutReviews 1s forwards;
+    }
+}
+
+@keyframes fadeInReviews {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fadeOutReviews {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
     }
 }
 
 .homepage-section10 {
-    width: 100%;
-    margin-top: 120px;
+    max-width: 1440px;
+    margin: 120px auto 0;
 
     &__contents {
         width: 1280px;
@@ -815,8 +868,8 @@ body {
 }
 
 .homepage-section11 {
-    width: 100%;
-    margin: 120px 0;
+    max-width: 1440px;
+    margin: 120px auto 120px;
 
     &__content {
         width: 1280px;
@@ -829,59 +882,62 @@ body {
         height: 600px;
         background-size: cover;
         background-position: center;
-        background-image: url('./src/images/homepage-section11-image1-light.png');
+        background-image: url('./src/images/homepage-section11-image1.png');
     }
 
     &__second-line {
         width: 100%;
         height: 200px;
+        gap: 0 20px;
         margin-top: 20px;
         @include flex(row, space-between, flex-start);
     }
 
     &__image {
-        width: 196.75px;
+        width: 100%;
         height: 100%;
-        background-size: 100% 100%;
+        cursor: pointer;
+        filter: grayscale(1);
+        background-size: cover;
+        background-position: center;
     }
 
     &__image-checked {
-        width: 413px;
-        height: 100%;
+        filter: grayscale(0);
         outline: 2px solid $green;
     }
 
     &__image:nth-child(1) {
-        background-image: url('./src/images/homepage-section11-image1-dark.png');
+        background-image: url('./src/images/homepage-section11-image1.png');
     }
 
     &__image:nth-child(2) {
-        background-image: url('./src/images/homepage-section11-image2-dark.png');
+        background-image: url('./src/images/homepage-section11-image2.png');
     }
 
     &__image:nth-child(3) {
-        background-image: url('./src/images/homepage-section11-image3-dark.png');
+        background-image: url('./src/images/homepage-section11-image3.png');
     }
 
     &__image:nth-child(4) {
-        background-image: url('./src/images/homepage-section11-image4-dark.png');
+        background-image: url('./src/images/homepage-section11-image4.png');
     }
 
     &__image:nth-child(5) {
-        background-image: url('./src/images/homepage-section11-image5-dark.png');
+        background-image: url('./src/images/homepage-section11-image5.png');
     }
 }
 
 .footer {
     width: 100%;
     height: 749px;
+    background-color: $secondary;
 
     &__area {
         max-width: 1440px;
         height: 100%;
         margin: 0 auto;;
         padding: 72px 0 40px;
-        background-color: $secondary;
     }
 
     &__contents {
