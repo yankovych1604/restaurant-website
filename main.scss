@@ -27,11 +27,11 @@ body {
 
         &-area1 li {
             list-style-type: none;
-            @include body2($primary);
+            @include body2($interRegular, 16px, 24px, $primary);
         }
 
         &-area1 li:nth-child(1) {
-            @include heading1_name($brown1);
+            @include heading1_name($cormorantGaramondBoldItalic, 28px, $brown1);
         }
 
         &-area2 {
@@ -43,21 +43,21 @@ body {
 
         &-area2 li {
             list-style-type: none;
-            @include body2_bold($primary);
+            @include body2_bold($interSemiBold, 16px, 24px, $primary);
         }
 
         &-area2 li:nth-child(1) {
             width: 167px;
             height: 100%;
-            @include body2($primary);
             @include flex(row, space-between, center);
+            @include body2($interRegular, 16px, 24px, $primary);
         }
     }
 }
 
 #homepage {
     width: 100%;
-    @include flex(column, flex-start, flex-start);
+    @include flex(column, flex-start, center);
 }
 
 .homepage-section1 {
@@ -65,12 +65,13 @@ body {
     background-size: cover;
     background-position: center;
     background-image: url('./src/images/homepage-section1-image.png');
+    @include flex(row, center, flex-start);
 
     &__content {
         width: 979px;
         height: 438px;
         gap: 32px 0;
-        margin: 174px auto 188px;
+        margin: 174px 0 188px;
         @include flex(column, flex-start, center);
     }
 
@@ -87,19 +88,26 @@ body {
 
         &-first-line {
             width: 100%;
-            @include flex(row, flex-start, flex-start);
+            @include flex(row, space-between, flex-start);
         }
 
-        &-text {
-            width: 100%;
-            text-align: center;
+        &-text1 {
+            width: 516px;
             filter: contrast(0.6);
-            @include heading1($primary);
+            @include heading1($cormorantGaramondMedium, 140px, 140px, $primary);
         }
 
         &-highlight {
+            width: 436px;
             filter: contrast(0.6);
-            @include heading1_italic($primary);
+            @include heading1_italic($cormorantGaramondItalic, 140px, 140px, $primary);
+        }
+
+        &-text2 {
+            width: 100%;
+            text-align: center;
+            filter: contrast(0.6);
+            @include heading1($cormorantGaramondMedium, 140px, 140px, $primary);
         }
     }
 
@@ -107,24 +115,27 @@ body {
         width: 660px;
         text-align: center;
         filter: brightness(0.6);
-        @include body1($primary);
+        @include body1($interRegular, 20px, 30px, $primary);
     }
 
     &__button {
         filter: opacity(0.7);
-        @include heading6($dark_brown);
         @include flex(row, center, center);
         @include button(297px, 56px, 30px, 1px solid $primary, $primary);
+        @include heading6($cormorantGaramondBold, 26px, 32px, $dark_brown);
     }
 }
 
 .homepage-section2 {
     max-width: 1440px;
-    margin: 120px auto 0;
+    width: 100%;
+    margin-top: 120px;
+    @include flex(row, center, flex-start);
 
     &__contents {
-        width: 1200px;
-        margin: 0 auto;
+        max-width: 1280px;
+        width: 100%;
+        gap: 0 70px;
         @include flex(row, space-between, flex-start);
     }
 
@@ -134,12 +145,13 @@ body {
     }
 
     &__text-content {
+        width: 311px;
         @include flex(column, flex-start, flex-start);
     }
 
     &__title {
         width: 100%;
-        @include body2_spacing($brown2);
+        @include body2_spacing($interRegular, 16px, 24px, 5px, $brown2);
     }
 
     &__description {
@@ -149,9 +161,15 @@ body {
         gap: 30px 0;
         @include flex(column, flex-start, flex-start);
 
+        &-items {
+            width: 100%;
+            gap: 30px 0;
+            @include flex(column, flex-start, flex-start);
+        }
+
         &-item {
             width: 100%;
-            @include heading3($dark_brown);
+            @include heading3($cormorantGaramondSemiBold, 64px, 72px, $dark_brown);
         }
     }
 
@@ -163,24 +181,26 @@ body {
 
         &-with-text {
             width: 100%;
-            @include flex(row, space-between, center);
+            gap: 0 24px;
+            @include flex(row, flex-start, center);
         }
 
         &-with-text p {
             width: 184px;
-            @include heading3_italic($dark_brown);
+            @include heading3_italic($cormorantGaramondMediumItalic, 64px, 72px, $dark_brown);
         }
     }
 
     &__button {
         margin-top: 120px;
-        @include body2($dark_brown);
         @include flex(row, center, center);
+        @include body2($interRegular, 16px, 24px, $dark_brown);
         @include button(163px, 40px, 100px, 1px solid $dark_brown, $primary);
     }
 
     &__content2 {
-        width: 723px;
+        max-width: 723px;
+        width: 100%;
         @include flex(column, flex-start, flex-start);
     }
 
@@ -194,82 +214,534 @@ body {
         margin-top: 70px;
         text-align: center;
         filter: opacity(0.7);
-        @include body1($dark_brown);
+        @include body1($interRegular, 20px, 30px, $dark_brown);
+    }
+
+    @media (max-width: $media-xxl) {
+        max-width: 1280px;
+        width: 100%;
+        padding: 0 20px;
+
+        &__contents {
+            max-width: 1240px;
+            width: 100%;
+        }
+
+        &__description-item {
+            @include heading3($cormorantGaramondSemiBold, 60px, 72px, $dark_brown);
+        }
+
+        &__line-with-text p {
+            @include heading3_italic($cormorantGaramondMediumItalic, 60px, 72px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        max-width: 1200px;
+
+        &__contents {
+            max-width: 1160px;
+        }
+
+        &__description-item {
+            @include heading3($cormorantGaramondSemiBold, 56px, 72px, $dark_brown);
+        }
+
+        &__line-with-text p {
+            @include heading3_italic($cormorantGaramondMediumItalic, 56px, 72px, $dark_brown);
+        }
+
+        &__figcaption {
+            @include body1($interRegular, 19px, 30px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-lg) {
+        max-width: 984px;
+
+        &__contents {
+            max-width: 944px;
+            gap: 50px 0;
+            @include flex(column, flex-start, flex-start);
+        }
+
+        &__content1 {
+            width: 100%;
+            @include flex(column, flex-start, center);
+        }
+
+        &__text-content {
+            width: 100%;
+        }
+
+        &__title {
+            text-align: center;
+        }
+
+        &__description {
+            width: 100%;
+            height: 154px;
+
+            &-items {
+                gap: 0 14px;
+                @include flex(row, center, flex-start);
+            }
+
+            &-item {
+                @include heading3($cormorantGaramondSemiBold, 52px, 62px, $dark_brown);
+            }
+
+            &-item1 {
+                max-width: 224px;
+                width: 100%;
+            }
+
+            &-item2 {
+                max-width: 253px;
+                width: 100%;
+            }
+
+            &-item4 {
+                max-width: 200px;
+                width: 100%;
+            }
+        }
+
+        &__line-with-text {
+            max-width: 230px;
+            width: 100%;
+        }
+
+        &__line-with-text p {
+            max-width: 148px;
+            width: 100%;
+            @include heading3_italic($cormorantGaramondMediumItalic, 52px, 62px, $dark_brown);
+        }
+
+        &__button {
+            margin-top: 30px;
+        }
+
+        &__content2 {
+            max-width: 944px;
+            width: 100%;
+            @include flex(column, center, flex-start);
+        }
+
+        &__figcaption {
+            height: 90px;
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width: $media-md) {
+        max-width: 728px;
+
+        &__contents {
+            max-width: 688px;
+        }
+
+        &__description {
+            height: 146px;
+
+            &-item {
+                @include heading3($cormorantGaramondSemiBold, 48px, 58px, $dark_brown);
+            }
+
+            &-item1 {
+                max-width: 205px;
+            }
+
+            &-item2 {
+                max-width: 233px;
+            }
+
+            &-item4 {
+                max-width: 184px;
+            }
+        }
+
+        &__line-with-text {
+            max-width: 220px;
+        }
+
+        &__line-with-text p {
+            max-width: 138px;
+            @include heading3_italic($cormorantGaramondMediumItalic, 48px, 58px, $dark_brown);
+        }
+
+        &__content2 {
+            max-width: 688px;
+        }
+
+        &__image {
+            height: 368px;
+        }
+
+        &__figcaption {
+            height: 120px;
+            margin-top: 30px;
+            @include body1($interRegular, 18px, 30px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        max-width: 536px;
+
+        &__contents {
+            max-width: 496px;
+        }
+
+        &__description {
+            gap: 15px 0;
+            height: 115px;
+
+            &-item {
+                @include heading3($cormorantGaramondSemiBold, 40px, 50px, $dark_brown);
+            }
+
+            &-item1 {
+                max-width: 172px;
+            }
+
+            &-item2 {
+                max-width: 214px;
+            }
+
+            &-item4 {
+                max-width: 154px;
+            }
+        }
+
+        &__line-with-text {
+            max-width: 198px;
+        }
+
+        &__line-with-text p {
+            max-width: 116px;
+            @include heading3_italic($cormorantGaramondMediumItalic, 40px, 50px, $dark_brown);
+        }
+
+        &__content2 {
+            max-width: 496px;
+        }
+
+        &__image {
+            height: 318px;
+        }
+
+        &__figcaption {
+            height: 150px;
+            margin-top: 30px;
+            @include body1($interRegular, 17px, 30px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-xs) {
+        max-width: 385px;
+
+        &__contents {
+            max-width: 345px;
+        }
+
+        &__description {
+            height: 95px;
+
+            &-item {
+                @include heading3($cormorantGaramondSemiBold, 27px, 40px, $dark_brown);
+            }
+
+            &-item1 {
+                max-width: 116px;
+            }
+
+            &-item2 {
+                max-width: 132px;
+            }
+
+            &-item4 {
+                max-width: 102px;
+            }
+        }
+
+        &__line {
+            width: 58px;
+
+            &-with-text {
+                max-width: 160px;
+            }
+
+            &-with-text p {
+                max-width: 78px;
+                @include heading3_italic($cormorantGaramondMediumItalic, 27px, 40px, $dark_brown);
+            }
+        }
+
+        &__button {
+            margin-top: 20px;
+        }
+
+        &__content2 {
+            max-width: 345px;
+        }
+
+        &__image {
+            height: 268px;
+        }
+
+        &__figcaption {
+            height: 180px;
+            margin-top: 20px;
+            @include body1($interRegular, 16px, 30px, $dark_brown);
+        }
     }
 }
 
 .homepage-section3 {
     max-width: 1440px;
-    margin: 120px auto 0;
+    width: 100%;
+    margin-top: 120px;
+    @include flex(row, center, flex-start);
 
     &__content {
-        width: 1280px;
-        margin: 0 auto;
-        padding: 432px 40px 32px 48px;
+        max-width: 1280px;
+        width: 100%;
+        padding: 432px 0 32px;
         background-size: cover;
         background-position: center;
         background-image: url('./src/images/homepage-section3-image.png');
+        @include flex(row, center, flex-start);
     }
 
     &__text-content {
-        width: 1192px;
-        @include flex(row, space-between, flex-end);
+        max-width: 1192px;
+        width: 100%;
+        gap: 0 84px;
+        @include flex(row, flex-start, flex-end);
     }
 
     &__title {
-        width: 528px;
+        max-width: 528px;
+        width: 100%;
         @include flex(column, flex-start, flex-start);
 
         &-text {
-            @include heading2($primary);
+            @include heading2($cormorantGaramondMedium, 80px, 88px, $primary);
         }
 
         &-second-line {
             width: 100%;
-            @include flex(row, space-between, flex-start);
+            gap: 0 20px;
+            @include flex(row, flex-start, flex-start);
         }
 
         &-highlight {
-            @include heading2_italic($primary);
+            @include heading2_italic($cormorantGaramondMediumItalic, 80px, 88px, $primary);
         }
     }
 
     &__description {
-        width: 580px;
+        max-width: 580px;
+        width: 100%;
         filter: opacity(0.7);
-        @include body1($primary);
+        @include body1($interRegular, 20px, 30px, $primary);
+    }
+
+    @media (max-width: $media-xxl) {
+        max-width: 1280px;
+        width: 100%;
+        padding: 0 20px;
+
+        &__content {
+            max-width: 1240px;
+            width: 100%;
+            padding: 432px 0 32px;
+        }
+
+        &__text-content {
+            max-width: 1152px;
+            width: 100%;
+            gap: 0 84px;
+        }
+
+        &__title-text {
+            @include heading2($cormorantGaramondMedium, 75px, 88px, $primary);
+        }
+
+        &__title-highlight {
+            @include heading2_italic($cormorantGaramondMediumItalic, 75px, 88px, $primary);
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        max-width: 1200px;
+
+        &__content {
+            max-width: 1160px;
+        }
+
+        &__text-content {
+            max-width: 1072px;
+            padding: 0 20px;
+        }
+
+        &__title-text {
+            @include heading2($cormorantGaramondMedium, 70px, 88px, $primary);
+        }
+
+        &__title-highlight {
+            @include heading2_italic($cormorantGaramondMediumItalic, 70px, 88px, $primary);
+        }
+    }
+
+    @media (max-width: $media-lg) {
+        max-width: 984px;
+
+        &__content {
+            max-width: 944px;
+            padding: 298px 0 32px;
+        }
+
+        &__text-content {
+            max-width: 856px;
+            gap: 34px 0;
+            @include flex(column, flex-start, flex-start);
+        }
+
+        &__title-text {
+            @include heading2($cormorantGaramondMedium, 65px, 80px, $primary);
+        }
+
+        &__title-highlight {
+            @include heading2_italic($cormorantGaramondMediumItalic, 65px, 80px, $primary);
+        }
+    }
+
+    @media (max-width: $media-md) {
+        max-width: 728px;
+
+        &__content {
+            max-width: 728px;
+            padding: 258px 0 32px;
+        }
+
+        &__text-content {
+            max-width: 640px;
+            gap: 24px 0;
+        }
+
+        &__title-text {
+            @include heading2($cormorantGaramondMedium, 60px, 70px, $primary);
+        }
+
+        &__title-highlight {
+            @include heading2_italic($cormorantGaramondMediumItalic, 60px, 70px, $primary);
+        }
+
+        &__description {
+            max-width: 580px;
+            width: 100%;
+            height: 90px;
+            @include body1($interRegular, 18px, 30px, $primary);
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        max-width: 536px;
+
+        &__content {
+            max-width: 496px;
+            padding: 238px 0 32px;
+        }
+
+        &__text-content {
+            max-width: 496px;
+        }
+
+        &__title-text {
+            @include heading2($cormorantGaramondMedium, 50px, 60px, $primary);
+        }
+
+        &__title-highlight {
+            @include heading2_italic($cormorantGaramondMediumItalic, 50px, 60px, $primary);
+        }
+
+        &__description {
+            max-width: 456px;
+            height: 84px;
+            @include body1($interRegular, 16px, 28px, $primary);
+        }
+    }
+
+    @media (max-width: $media-xs) {
+        max-width: 385px;
+
+        &__content {
+            max-width: 345px;
+            padding: 230px 0 32px;
+        }
+
+        &__text-content {
+            max-width: 345px;
+        }
+
+        &__title-text {
+            @include heading2($cormorantGaramondMedium, 35px, 45px, $primary);
+        }
+
+        &__title-highlight {
+            @include heading2_italic($cormorantGaramondMediumItalic, 35px, 45px, $primary);
+        }
+
+        &__description {
+            max-width: 305px;
+            height: 104px;
+            @include body1($interRegular, 14px, 26px, $primary);
+        }
     }
 }
 
 .homepage-section4 {
     max-width: 1440px;
-    margin: 120px auto 0;
+    width: 100%;
+    margin-top: 120px;
+    @include flex(row, center, flex-start);
 
     &__content {
-        width: 1280px;
-        margin: 0 auto;
+        max-width: 1280px;
+        width: 100%;
         @include flex(column, flex-start, center);
     }
 
     &__title1 {
-        @include body2_spacing($brown2);
+        @include body2_spacing($interRegular, 16px, 24px, 5px, $brown2);
     }
 
     &__title2 {
         margin-top: 16px;
-        @include heading2($dark_brown);
+        @include heading2($cormorantGaramondMedium, 80px, 88px, $dark_brown);
     }
 
     &__popular-delights {
+        max-width: 1280px;
         width: 100%;
         margin-top: 64px;
-        @include flex(row, space-between, flex-start);
+        gap: 0 20px;
+        @include flex(row, flex-start, flex-start);
+    }
+
+    &__items {
+        max-width: 630px;
+        width: 100%;
+        gap: 0 20px;
+        @include flex(row, flex-start, flex-start);
     }
 
     &__item {
-        width: 305px;
-        height: 400px;
-        @include flex(column, space-between, flex-start);
+        max-width: 305px;
+        width: 100%;
+        gap: 20px 0;
+        @include flex(column, flex-start, flex-start);
 
         &-image {
             width: 100%;
@@ -283,7 +755,7 @@ body {
         }
 
         &-title {
-            @include heading6($dark_brown);
+            @include heading6($cormorantGaramondBold, 26px, 32px, $dark_brown);
         }
 
         &--title-truffle-ribeye {
@@ -304,27 +776,184 @@ body {
 
         &-price {
             filter: opacity(0.7);
-            @include body1($dark_brown);
+            @include body1($interRegular, 20px, 30px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-xxl) {
+        max-width: 1280px;
+        padding: 0 20px;
+
+        &__content {
+            max-width: 1240px;
+        }
+
+        &__popular-delights {
+            max-width: 1240px;
+        }
+
+        &__items {
+            max-width: 610px;
+        }
+
+        &__item {
+            max-width: 295px;
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        max-width: 1200px;
+
+        &__content {
+            max-width: 1160px;
+        }
+
+        &__popular-delights {
+            max-width: 1160px;
+        }
+
+        &__items {
+            max-width: 570px;
+        }
+
+        &__item {
+            max-width: 275px;
+        }
+    }
+
+    @media (max-width: $media-lg) {
+        max-width: 984px;
+
+        &__content {
+            max-width: 944px;
+        }
+
+        &__popular-delights {
+            max-width: 944px;
+            gap: 40px 0;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        &__items {
+            max-width: 944px;
+            gap: 0 40px;
+        }
+
+        &__item {
+            max-width: 452px;
+        }
+    }
+
+    @media (max-width: $media-md) {
+        max-width: 728px;
+
+        &__content {
+            max-width: 688px;
+        }
+
+        &__title2 {
+            @include heading2($cormorantGaramondMedium, 70px, 80px, $dark_brown);
+        }
+
+        &__popular-delights {
+            max-width: 688px;
+        }
+
+        &__items {
+            max-width: 688px;
+        }
+
+        &__item {
+            max-width: 334px;
+
+            &-title {
+                @include heading6($cormorantGaramondBold, 24px, 32px, $dark_brown);
+            }
+
+            &-price {
+                @include body1($interRegular, 18px, 30px, $dark_brown);
+            }
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        max-width: 536px;
+
+        &__content {
+            max-width: 496px;
+        }
+
+        &__title2 {
+            @include heading2($cormorantGaramondMedium, 55px, 65px, $dark_brown);
+        }
+
+        &__popular-delights {
+            max-width: 496px;
+        }
+
+        &__items {
+            max-width: 496px;
+            flex-wrap: wrap;
+            gap: 40px 0;
+        }
+
+        &__item {
+            max-width: 496px;
+        }
+    }
+
+    @media (max-width: $media-xs) {
+        max-width: 385px;
+
+        &__content {
+            max-width: 345px;
+        }
+
+        &__title2 {
+            @include heading2($cormorantGaramondMedium, 40px, 50px, $dark_brown);
+        }
+
+        &__popular-delights {
+            max-width: 345px;
+        }
+
+        &__items {
+            max-width: 345px;
+        }
+
+        &__item {
+            max-width: 345px;
+
+            &-title {
+                @include heading6($cormorantGaramondBold, 22px, 32px, $dark_brown);
+            }
+
+            &-price {
+                @include body1($interRegular, 16px, 30px, $dark_brown);
+            }
         }
     }
 }
 
 .homepage-section5 {
-    max-width: 100%;
-    margin: 120px auto 0;
-    padding: 120px 80px 120px 100px;
-    background-size: cover;
-    background-position: center;
-    background-image: url('./src/images/homepage-section5-image.png');
-    @include flex(row, space-between, flex-end);
+    max-width: 1440px;
+    width: 100%;
+    margin-top: 120px;
+    @include flex(row, center, flex-start);
 
-    &__area {
-        width: 1260px;
+    &__content {
+        max-width: 1280px;
+        width: 100%;
+        padding: 120px 40px;
+        background-size: cover;
+        background-position: center;
+        background-image: url('./src/images/homepage-section5-image.png');
         @include flex(row, space-between, flex-end);
     }
 
     &__text {
-        @include body2_spacing($primary);
+        @include body2_spacing($interRegular, 16px, 24px, 5px, $primary);
     }
 
     &__text-content {
@@ -335,13 +964,13 @@ body {
     }
 
     &__title {
-        @include heading3($dark_brown);
+        @include heading3($cormorantGaramondSemiBold, 64px, 72px, $dark_brown);
     }
 
     &__description {
         margin-top: 8px;
         filter: opacity(0.7);
-        @include body1($dark_brown);
+        @include body1($interRegular, 20px, 30px, $dark_brown);
 
         &-list {
             width: 402px;
@@ -361,7 +990,104 @@ body {
             }
 
             &-text {
-                @include body2_bold($dark_brown);
+                @include body2_bold($interSemiBold, 16px, 24px, $dark_brown);
+            }
+        }
+
+    }
+
+    @media (max-width: $media-xxl) {
+        max-width: 1280px;
+        width: 100%;
+        padding: 0 20px;
+
+        &__content {
+            max-width: 1240px;
+            width: 100%;
+        }
+
+        &__title {
+            @include heading3($cormorantGaramondSemiBold, 60px, 70px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        max-width: 1200px;
+
+        &__content {
+            max-width: 1160px;
+        }
+
+        &__title {
+            @include heading3($cormorantGaramondSemiBold, 55px, 65px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-lg) {
+        max-width: 984px;
+
+        &__content {
+            max-width: 944px;
+            padding: 80px 40px;
+            gap: 56px 0;
+            @include flex(column, flex-start, flex-start);
+        }
+
+        &__title {
+            @include heading3($cormorantGaramondSemiBold, 50px, 60px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-md) {
+        max-width: 728px;
+
+        &__content {
+            max-width: 688px;
+        }
+
+        &__text-content {
+            width: 457px;
+            padding: 30px 30px;
+        }
+
+        &__title {
+            @include heading3($cormorantGaramondSemiBold, 45px, 55px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        max-width: 536px;
+
+        &__content {
+            max-width: 496px;
+            padding: 80px 20px;
+        }
+
+        &__text-content {
+            width: 346px;
+            padding: 30px 20px;
+        }
+
+        &__title {
+            @include heading3($cormorantGaramondSemiBold, 40px, 50px, $dark_brown);
+        }
+
+        &__description {
+            @include body1($interRegular, 18px, 30px, $dark_brown);
+
+            &-list {
+                width: 100%;
+                padding-left: 0;
+            }
+
+            &-item {
+                &-image {
+                    display: none;
+                }
+
+                &-text {
+                    @include body2_bold($interSemiBold, 14px, 24px, $dark_brown);
+                }
             }
         }
     }
@@ -369,24 +1095,27 @@ body {
 
 .homepage-section6 {
     max-width: 1440px;
-    margin: 120px auto 0;
+    width: 100%;
+    margin-top: 120px;
 
     &__content {
-        width: 1280px;
+        max-width: 1280px;
+        width: 100%;
         margin: 0 auto;
         @include flex(column, flex-start, center);
     }
 
     &__title1 {
-        @include body2_spacing($brown2);
+        @include body2_spacing($interRegular, 16px, 24px, 5px, $brown2);
     }
 
     &__title2 {
         margin-top: 16px;
-        @include heading3($dark_brown);
+        @include heading3($cormorantGaramondSemiBold, 64px, 72px, $dark_brown);
     }
 
     &__text-content {
+        max-width: 1280px;
         width: 100%;
         margin-top: 64px;
         padding: 0 20px;
@@ -404,12 +1133,12 @@ body {
             @include flex(column, space-between, flex-start);
 
             &-title {
-                @include body1_bold($dark_brown);
+                @include body1_bold($interSemiBold, 20px, 30px, $dark_brown);
             }
     
             &-description {
                 filter: opacity(0.7);
-                @include body2($dark_brown);
+                @include body2($interRegular, 16px, 24px, $dark_brown);
             }
         }
 
@@ -437,13 +1166,13 @@ body {
             @include flex(column, space-between, flex-end);
 
             &-title {
-                @include body1_bold($dark_brown);
+                @include body1_bold($interSemiBold, 20px, 30px, $dark_brown);
             }
     
             &-description {
                 text-align: end;
                 filter: opacity(0.7);
-                @include body2($dark_brown);
+                @include body2($interRegular, 16px, 24px, $dark_brown);
             }
         }
 
@@ -458,15 +1187,18 @@ body {
 
 .homepage-section7 {
     max-width: 1440px;
-    margin: 120px auto 0;
+    width: 100%;
+    margin-top: 120px;
 
     &__content {
-        width: 1280px;
+        max-width: 1280px;
+        width: 100%;
         margin: 0 auto;
-        padding: 120px 194px;
+        padding: 120px 0;
         background-size: cover;
         background-position: center;
         background-image: url('./src/images/homepage-section7-image.png');
+        @include flex(column, center, center);
     }
 
     &__title {
@@ -484,39 +1216,41 @@ body {
         }
 
         &-normal {
-            @include heading2($primary);
+            @include heading2($cormorantGaramondMedium, 80px, 88px, $primary);
         }
 
         &-italic {
-            @include heading2_italic($primary);
+            @include heading2_italic($cormorantGaramondMediumItalic, 80px, 88px, $primary);
         }
     }
 
     &__buttons {
         width: 516px;
-        margin: 32px auto 0;
+        margin: 32px 0 0;
         @include flex(row, space-between, flex-start);
     }
 
     &__button-reservation {
-        @include heading6($dark_brown);
         @include flex(row, center, center);
         @include button(322px, 56px, 30px, 1px solid $primary, $primary);
+        @include heading6($cormorantGaramondBold, 26px, 32px, $dark_brown);
     }
 
     &__button-location {
-        @include body2($primary);
         @include flex(row, center, center);
+        @include body2($interRegular, 16px, 24px, $primary);
         @include button(182px, 56px, 30px, 1px solid $primary, transparent);
     }
 }
 
 .homepage-section8 {
     max-width: 1440px;
-    margin: 120px auto 0;
+    width: 100%;
+    margin-top: 120px;
 
     &__contents {
-        width: 1280px;
+        max-width: 1280px;
+        width: 100%;
         margin: 0 auto;
         @include flex(row, space-between, center);
     }
@@ -528,11 +1262,12 @@ body {
     }
 
     &__faq {
-        @include body2_spacing($brown2);
+        @include body2_spacing($interRegular, 16px, 24px, 5px, $brown2);
     }
 
     &__title {
-        @include heading2($dark_brown);
+        width: 380px;
+        @include heading2($cormorantGaramondMedium, 80px, 88px, $dark_brown);
     }
 
     &__content2 {
@@ -554,7 +1289,7 @@ body {
         }
 
         &-text {
-            @include heading5($dark_brown);
+            @include heading5($cormorantGaramondMedium, 36px, 42px, $dark_brown);
         }
 
         &-icon {
@@ -571,7 +1306,7 @@ body {
         &-answer {
             margin-top: 12px;
             filter: opacity(0.7);
-            @include body1($dark_brown);
+            @include body1($interRegular, 20px, 30px, $dark_brown);
         }
 
         &-line {
@@ -602,35 +1337,39 @@ body {
 }
 
 .homepage-section9 {
-    max-width: 1440px;
+    max-width: 1280px;
     width: 100%;
-    margin: 120px auto 0;
+    margin-top: 120px;
     padding: 100px 0 120px;
     background-color: $green;
+    @include flex(column, flex-start, center);
 
-    &__area {
+    &__content {
+        max-width: 1240px;
         width: 100%;
-        @include flex(column, space-between, flex-start);
+        @include flex(column, flex-start, flex-start);
     }
 
     &__titles {
+        max-width: 1240px;
         width: 100%;
         height: 112px;
         @include flex(column, space-between, center);
     }
 
     &__title1 {
-        @include body2_spacing($brown1);
+        @include body2_spacing($interRegular, 16px, 24px, 5px, $brown1);
     }
 
     &__title2 {
-        @include heading3($primary);
+        @include heading3($cormorantGaramondSemiBold, 64px, 72px, $primary);
     }
 
     &__review {
-        gap: 0 44px;
-        max-width: 1440px;
-        margin: 56px auto 0;
+        max-width: 1240px;
+        width: 100%;
+        gap: 0 24px;
+        margin-top: 56px;
         @include flex(row, flex-start, center);
     }
 
@@ -672,7 +1411,7 @@ body {
         }
 
         &-description {
-            @include body1($dark_brown);
+            @include body1($interRegular, 20px, 30px, $dark_brown);
         }
 
         &-writer {
@@ -689,7 +1428,7 @@ body {
         }
 
         &-title {
-            @include body1_bold($dark_brown);
+            @include body1_bold($interSemiBold, 20px, 30px, $dark_brown);
         }
 
         &-image {
@@ -736,10 +1475,12 @@ body {
 
 .homepage-section10 {
     max-width: 1440px;
-    margin: 120px auto 0;
+    width: 100%;
+    margin-top: 120px;
 
     &__contents {
-        width: 1280px;
+        max-width: 1280px;
+        width: 100%;
         margin: 0 auto;
         @include flex(column, flex-start, flex-start);
     }
@@ -757,11 +1498,11 @@ body {
     }
 
     &__title1 {
-        @include body2_spacing($brown2);
+        @include body2_spacing($interRegular, 16px, 24px, 5px, $brown2);
     }
 
     &__title2 {
-        @include heading3($dark_brown);
+        @include heading3($cormorantGaramondSemiBold, 64px, 72px, $dark_brown);
     }
 
     &__radios {
@@ -835,13 +1576,13 @@ body {
             @include flex(row, center, center);
 
             &-text {
-                @include body2($dark_brown);
+                @include body2($interRegular, 16px, 24px, $dark_brown);
             }
         }
 
         &-description {
             margin-top: 20px;
-            @include heading5($dark_brown);
+            @include heading5($cormorantGaramondMedium, 36px, 42px, $dark_brown);
         }
 
         &-author {
@@ -851,7 +1592,7 @@ body {
             @include flex(column, space-between, flex-start);
 
             &-text {
-                @include body2_bold($dark_brown);
+                @include body2_bold($interSemiBold, 16px, 24px, $dark_brown);
             }
         }
 
@@ -870,10 +1611,12 @@ body {
 
 .homepage-section11 {
     max-width: 1440px;
-    margin: 120px auto 120px;
+    width: 100%;
+    margin: 120px 0;
 
     &__content {
-        width: 1280px;
+        max-width: 1280px;
+        width: 100%;
         margin: 0 auto;
         @include flex(column, space-between, flex-start);
     }
@@ -963,11 +1706,11 @@ body {
     &__input-title {
         width: 261px;
         height: 100%;
-        @include heading4($primary);
+        @include heading4($cormorantGaramondSemiBold, 40px, 48px, $primary);
     }
 
     &__input-title span {
-        @include heading4($brown1);
+        @include heading4($cormorantGaramondSemiBold, 40px, 48px, $brown1);
     }
 
     &__inputs {
@@ -978,18 +1721,18 @@ body {
 
     &__input-email {
         padding: 20px 0 20px 24px;
-        @include body2($dark_brown);
         @include flex(row, center, center);
+        @include body2($interRegular, 16px, 24px, $dark_brown);
         @include input(784px, 64px, 0px, 1px solid $primary, $primary);
     }
 
     &__input-email::placeholder {
-        @include body2($dark_brown);
+        @include body2($interRegular, 16px, 24px, $dark_brown);
     }
 
     &__input-btn {
-        @include body2_bold($primary);
         @include flex(row, center, center);
+        @include body2_bold($interSemiBold, 16px, 24px, $primary);
         @include button(143px, 64px, 0px, 1px solid $brown1, $brown1);
     }
 
@@ -1012,7 +1755,7 @@ body {
         @include flex(column, flex-start, flex-start);
 
         &-title {
-            @include heading6($primary);
+            @include heading6($cormorantGaramondBold, 26px, 32px, $primary);
         }
 
         &-items {
@@ -1026,7 +1769,7 @@ body {
             cursor: pointer;
             list-style-type: none;
             filter: brightness(0.6);
-            @include body2($primary);
+            @include body2($interRegular, 16px, 24px, $primary);
         }
     }
 
@@ -1036,7 +1779,7 @@ body {
         @include flex(column, flex-start, flex-start);
 
         &-title {
-            @include heading6($primary);
+            @include heading6($cormorantGaramondBold, 26px, 32px, $primary);
         }
 
         &-items {
@@ -1050,7 +1793,7 @@ body {
             cursor: pointer;
             list-style-type: none;
             filter: brightness(0.6);
-            @include body2($primary);
+            @include body2($interRegular, 16px, 24px, $primary);
         }
     }
 
@@ -1060,7 +1803,7 @@ body {
         @include flex(column, flex-start, flex-start);
 
         &-title {
-            @include heading6($primary);
+            @include heading6($cormorantGaramondBold, 26px, 32px, $primary);
         }
 
         &-info {
@@ -1079,14 +1822,14 @@ body {
         &-item {
             list-style-type: none;
             filter: brightness(0.6);
-            @include body2($primary);
+            @include body2($interRegular, 16px, 24px, $primary);
         }
 
         &-text {
             cursor: pointer;
             filter: brightness(0.6);
-            @include body2_bold($primary);
             border-bottom: 2px solid $primary;
+            @include body2_bold($interSemiBold, 16px, 24px, $primary);
         }
     }
 
@@ -1110,7 +1853,7 @@ body {
             width: 100%;
             height: 48px;
             filter: brightness(0.6);
-            @include body2($primary);
+            @include body2($interRegular, 16px, 24px, $primary);
         }
     }
 
@@ -1120,12 +1863,12 @@ body {
         @include flex(column, space-between, flex-start);
 
         &-title {
-            @include heading6($primary);
+            @include heading6($cormorantGaramondBold, 26px, 32px, $primary);
         }
 
         &-description {
             filter: brightness(0.6);
-            @include body2($primary);
+            @include body2($interRegular, 16px, 24px, $primary);
         }
     }
 
@@ -1138,7 +1881,7 @@ body {
             width: 362px;
             height: 100%;
             filter: brightness(0.6);
-            @include body2($primary);
+            @include body2($interRegular, 16px, 24px, $primary);
         }
     }
 
@@ -1152,13 +1895,13 @@ body {
         width: 105px;
         height: 100%;
         filter: brightness(0.6);
-        @include body2($primary);
+        @include body2($interRegular, 16px, 24px, $primary);
     }
 
     &__terms {
         width: 147px;
         height: 100%;
         filter: brightness(0.6);
-        @include body2($primary);
+        @include body2($interRegular, 16px, 24px, $primary);
     }
 }
