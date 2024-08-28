@@ -1,0 +1,3980 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+canvas {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond Medium";
+  src: url("./src/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf");
+}
+@font-face {
+  font-family: "Cormorant Garamond Italic";
+  src: url("./src/fonts/Cormorant_Garamond/CormorantGaramond-Italic.ttf");
+}
+@font-face {
+  font-family: "Cormorant Garamond MediumItalic";
+  src: url("./src/fonts/Cormorant_Garamond/CormorantGaramond-MediumItalic.ttf");
+}
+@font-face {
+  font-family: "Cormorant Garamond SemiBold";
+  src: url("./src/fonts/Cormorant_Garamond/CormorantGaramond-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Cormorant Garamond Bold";
+  src: url("./src/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf");
+}
+@font-face {
+  font-family: "Cormorant Garamond BoldItalic";
+  src: url("./src/fonts/Cormorant_Garamond/CormorantGaramond-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "Inter Regular";
+  src: url("./src/fonts/Inter/static/Inter-Regular.ttf");
+}
+@font-face {
+  font-family: "Inter SemiBold";
+  src: url("./src/fonts/Inter/static/Inter-SemiBold.ttf");
+}
+body {
+  background-color: #FBF8F4;
+}
+
+.header {
+  width: 100%;
+  height: 64px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.header__navigation {
+  max-width: 1280px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header__nav-area {
+  width: 100%;
+  height: 34px;
+  margin-top: 27px;
+  gap: 0 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.header__brand-name {
+  font-family: "Cormorant Garamond BoldItalic";
+  font-size: 28px;
+  color: #D3A574;
+}
+.header__menu {
+  width: 28px;
+  height: 28px;
+  margin: 3px 0;
+  display: none;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-image: url("./src/images/menuOpenIcon.svg");
+}
+.header__menu-active {
+  z-index: 2;
+  display: flex;
+  filter: invert(1);
+  background-image: url("./src/images/menuCloseIcon.svg");
+}
+.header__nav {
+  width: 1146px;
+  height: 24px;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header__nav-item {
+  list-style-type: none;
+}
+.header__nav-list {
+  width: 410px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header__nav-list--item {
+  cursor: pointer;
+  list-style-type: none;
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+.header__contact-list {
+  width: 341px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__contact-list--item {
+  cursor: pointer;
+  list-style-type: none;
+  font-family: "Inter SemiBold";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+.header__contact-list--item:nth-child(1) {
+  width: 167px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+@media (max-width: 1320px) {
+  .header {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .header__navigation {
+    max-width: 1280px;
+    width: 100%;
+  }
+}
+@media (max-width: 1240px) {
+  .header {
+    width: 100%;
+  }
+  .header__navigation {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .header {
+    width: 100%;
+  }
+  .header__navigation {
+    max-width: 952px;
+    width: 100%;
+  }
+  .header__nav-area {
+    width: 100%;
+    padding: 0 15px;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .header__menu {
+    display: flex;
+  }
+  .header__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    margin: 0 0;
+    width: 275px;
+    height: 435px;
+    display: none;
+    padding: 25px 20px;
+    background-color: #FBF8F4;
+  }
+  .header__nav-item {
+    width: 100%;
+  }
+  .header__nav-active {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .header__nav-list {
+    width: 100%;
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .header__nav-list--item {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #222222;
+    font-family: "Inter SemiBold";
+    font-size: 16px;
+    line-height: 24px;
+    color: #222222;
+  }
+  .header__contact-list {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .header__contact-list--item {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #222222;
+    font-family: "Inter SemiBold";
+    font-size: 16px;
+    line-height: 24px;
+    color: #222222;
+  }
+  .header__contact-list--item:nth-child(1) {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: "Inter SemiBold";
+    font-size: 16px;
+    line-height: 24px;
+    color: #222222;
+  }
+  .header__contact-list--icon {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+  }
+  .header__navigation {
+    max-width: 728px;
+    width: 100%;
+  }
+  .header__nav {
+    width: 250px;
+    height: 390px;
+  }
+  .header__nav-list {
+    height: 245px;
+  }
+  .header__nav-list--item {
+    padding: 12px 0;
+  }
+  .header__contact-list {
+    height: 97px;
+  }
+  .header__contact-list--item {
+    padding: 12px 0;
+  }
+  .header__contact-list--item:nth-child(1) {
+    height: 49px;
+  }
+}
+@media (max-width: 576px) {
+  .header {
+    width: 100%;
+  }
+  .header__navigation {
+    max-width: 536px;
+    width: 100%;
+  }
+  .header__menu {
+    width: 24px;
+    height: 24px;
+    margin: 5px 0;
+  }
+  .header__nav {
+    width: 225px;
+    height: 370px;
+  }
+  .header__nav-list {
+    height: 225px;
+  }
+  .header__nav-list--item {
+    padding: 10px 0;
+    font-family: "Inter SemiBold";
+    font-size: 15px;
+    line-height: 24px;
+    color: #222222;
+  }
+  .header__contact-list {
+    height: 90px;
+  }
+  .header__contact-list--item {
+    padding: 10px 0;
+    font-family: "Inter SemiBold";
+    font-size: 15px;
+    line-height: 24px;
+    color: #222222;
+  }
+  .header__contact-list--item:nth-child(1) {
+    height: 45px;
+    font-family: "Inter SemiBold";
+    font-size: 15px;
+    line-height: 24px;
+    color: #222222;
+  }
+}
+@media (max-width: 425px) {
+  .header {
+    width: 100%;
+  }
+  .header__navigation {
+    max-width: 385px;
+    width: 100%;
+  }
+  .header__nav {
+    width: 190px;
+    height: 340px;
+    padding: 25px 15px;
+  }
+  .header__nav-area {
+    padding: 0 10px;
+  }
+  .header__nav-list {
+    height: 205px;
+  }
+  .header__nav-list--item {
+    padding: 8px 0;
+    font-family: "Inter SemiBold";
+    font-size: 14px;
+    line-height: 24px;
+    color: #222222;
+  }
+  .header__contact-list {
+    height: 82px;
+  }
+  .header__contact-list--item {
+    padding: 8px 0;
+    font-family: "Inter SemiBold";
+    font-size: 14px;
+    line-height: 24px;
+    color: #222222;
+  }
+  .header__contact-list--item:nth-child(1) {
+    height: 41px;
+    font-family: "Inter SemiBold";
+    font-size: 14px;
+    line-height: 24px;
+    color: #222222;
+  }
+}
+
+#homepage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.homepage-section1 {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url("./src/images/homepage-section1-image.png");
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section1__content {
+  max-width: 1280px;
+  width: 100%;
+  gap: 32px 0;
+  margin: 174px 0 188px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homepage-section1__text-content {
+  max-width: 979px;
+  width: 100%;
+  gap: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homepage-section1__title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section1__title-first-line {
+  width: 100%;
+  gap: 0 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section1__title-text1 {
+  width: 516px;
+  filter: contrast(0.6);
+  font-family: "Cormorant Garamond Medium";
+  font-size: 140px;
+  line-height: 140px;
+  color: #FBF8F4;
+}
+.homepage-section1__title-highlight {
+  width: 436px;
+  filter: contrast(0.6);
+  font-family: "Cormorant Garamond Italic";
+  font-size: 140px;
+  line-height: 140px;
+  color: #FBF8F4;
+}
+.homepage-section1__title-text2 {
+  width: 100%;
+  text-align: center;
+  filter: contrast(0.6);
+  font-family: "Cormorant Garamond Medium";
+  font-size: 140px;
+  line-height: 140px;
+  color: #FBF8F4;
+}
+.homepage-section1__description {
+  width: 660px;
+  text-align: center;
+  filter: brightness(0.6);
+  font-family: "Inter Regular";
+  font-size: 20px;
+  line-height: 30px;
+  color: #FBF8F4;
+}
+.homepage-section1__button {
+  filter: opacity(0.7);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 297px;
+  height: 56px;
+  border-radius: 30px;
+  border: 1px solid #FBF8F4;
+  background-color: #FBF8F4;
+  cursor: pointer;
+  font-family: "Cormorant Garamond Bold";
+  font-size: 26px;
+  line-height: 32px;
+  color: #321D1D;
+}
+.homepage-section1__button:active {
+  background-color: #ede0cf;
+}
+@media (max-width: 1320px) {
+  .homepage-section1 {
+    width: 100%;
+  }
+  .homepage-section1__content {
+    max-width: 1280px;
+  }
+  .homepage-section1__text-content {
+    max-width: 869px;
+  }
+  .homepage-section1__title {
+    width: 100%;
+  }
+  .homepage-section1__title-text1 {
+    width: 460px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 125px;
+    line-height: 135px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-highlight {
+    width: 385px;
+    font-family: "Cormorant Garamond Italic";
+    font-size: 125px;
+    line-height: 135px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-text2 {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 125px;
+    line-height: 135px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 1240px) {
+  .homepage-section1 {
+    width: 100%;
+  }
+  .homepage-section1__content {
+    max-width: 1200px;
+  }
+  .homepage-section1__text-content {
+    max-width: 770px;
+  }
+  .homepage-section1__title {
+    width: 100%;
+  }
+  .homepage-section1__title-text1 {
+    width: 405px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 110px;
+    line-height: 120px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-highlight {
+    width: 340px;
+    font-family: "Cormorant Garamond Italic";
+    font-size: 110px;
+    line-height: 120px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-text2 {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 110px;
+    line-height: 120px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-section1 {
+    width: 100%;
+  }
+  .homepage-section1__content {
+    max-width: 984px;
+  }
+  .homepage-section1__text-content {
+    max-width: 668px;
+  }
+  .homepage-section1__title {
+    width: 100%;
+  }
+  .homepage-section1__title-text1 {
+    width: 350px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 95px;
+    line-height: 105px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-highlight {
+    width: 294px;
+    font-family: "Cormorant Garamond Italic";
+    font-size: 95px;
+    line-height: 105px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-text2 {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 95px;
+    line-height: 105px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__description {
+    width: 660px;
+    font-family: "Inter Regular";
+    font-size: 19px;
+    line-height: 30px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 768px) {
+  .homepage-section1 {
+    width: 100%;
+  }
+  .homepage-section1__content {
+    max-width: 728px;
+  }
+  .homepage-section1__text-content {
+    max-width: 530px;
+  }
+  .homepage-section1__title {
+    width: 100%;
+  }
+  .homepage-section1__title-text1 {
+    width: 276px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 75px;
+    line-height: 85px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-highlight {
+    width: 230px;
+    font-family: "Cormorant Garamond Italic";
+    font-size: 75px;
+    line-height: 85px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-text2 {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 75px;
+    line-height: 85px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__description {
+    width: 530px;
+    font-family: "Inter Regular";
+    font-size: 18px;
+    line-height: 30px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__button {
+    font-family: "Cormorant Garamond Bold";
+    font-size: 24px;
+    line-height: 32px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 576px) {
+  .homepage-section1 {
+    width: 100%;
+  }
+  .homepage-section1__content {
+    max-width: 536px;
+  }
+  .homepage-section1__text-content {
+    max-width: 386px;
+  }
+  .homepage-section1__title {
+    width: 100%;
+  }
+  .homepage-section1__title-first-line {
+    gap: 0 14px;
+  }
+  .homepage-section1__title-text1 {
+    width: 204px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 55px;
+    line-height: 65px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-highlight {
+    width: 170px;
+    font-family: "Cormorant Garamond Italic";
+    font-size: 55px;
+    line-height: 65px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-text2 {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 55px;
+    line-height: 65px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__description {
+    width: 386px;
+    font-family: "Inter Regular";
+    font-size: 17px;
+    line-height: 30px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__button {
+    font-family: "Cormorant Garamond Bold";
+    font-size: 22px;
+    line-height: 32px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 425px) {
+  .homepage-section1 {
+    width: 100%;
+  }
+  .homepage-section1__content {
+    max-width: 385px;
+  }
+  .homepage-section1__text-content {
+    max-width: 285px;
+  }
+  .homepage-section1__title {
+    width: 100%;
+  }
+  .homepage-section1__title-text1 {
+    width: 148px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 40px;
+    line-height: 50px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-highlight {
+    width: 124px;
+    font-family: "Cormorant Garamond Italic";
+    font-size: 40px;
+    line-height: 50px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__title-text2 {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 40px;
+    line-height: 50px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__description {
+    width: 285px;
+    font-family: "Inter Regular";
+    font-size: 16px;
+    line-height: 30px;
+    color: #FBF8F4;
+  }
+  .homepage-section1__button {
+    width: 250px;
+    height: 56px;
+    border-radius: 30px;
+    border: 1px solid #FBF8F4;
+    background-color: #FBF8F4;
+    cursor: pointer;
+    font-family: "Cormorant Garamond Bold";
+    font-size: 20px;
+    line-height: 32px;
+    color: #321D1D;
+  }
+  .homepage-section1__button:active {
+    background-color: #ede0cf;
+  }
+}
+
+.homepage-section2 {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section2__contents {
+  max-width: 1280px;
+  width: 100%;
+  gap: 0 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.homepage-section2__content1 {
+  width: 311px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section2__text-content {
+  width: 311px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section2__title {
+  width: 100%;
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: #A46C32;
+}
+.homepage-section2__description {
+  width: 100%;
+  height: 378px;
+  margin-top: 16px;
+  gap: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section2__description-items {
+  width: 100%;
+  gap: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section2__description-item {
+  width: 100%;
+  font-family: "Cormorant Garamond SemiBold";
+  font-size: 64px;
+  line-height: 72px;
+  color: #321D1D;
+}
+.homepage-section2__line {
+  display: inline-block;
+  width: 88px;
+  height: 1px;
+  background-color: #321D1D;
+}
+.homepage-section2__line-with-text {
+  width: 100%;
+  gap: 0 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homepage-section2__line-with-text p {
+  width: 184px;
+  font-family: "Cormorant Garamond MediumItalic";
+  font-size: 64px;
+  line-height: 72px;
+  color: #321D1D;
+}
+.homepage-section2__button {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #321D1D;
+  width: 163px;
+  height: 40px;
+  border-radius: 100px;
+  border: 1px solid #321D1D;
+  background-color: #FBF8F4;
+  cursor: pointer;
+}
+.homepage-section2__button:active {
+  background-color: #ede0cf;
+}
+.homepage-section2__content2 {
+  max-width: 723px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section2__image {
+  width: 100%;
+  height: 418px;
+}
+.homepage-section2__figcaption {
+  width: 100%;
+  margin-top: 70px;
+  text-align: center;
+  filter: opacity(0.7);
+  font-family: "Inter Regular";
+  font-size: 20px;
+  line-height: 30px;
+  color: #321D1D;
+}
+@media (max-width: 1320px) {
+  .homepage-section2 {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .homepage-section2__contents {
+    max-width: 1240px;
+    width: 100%;
+  }
+  .homepage-section2__description-item {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 60px;
+    line-height: 72px;
+    color: #321D1D;
+  }
+  .homepage-section2__line-with-text p {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 60px;
+    line-height: 72px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 1240px) {
+  .homepage-section2 {
+    max-width: 1200px;
+  }
+  .homepage-section2__contents {
+    max-width: 1160px;
+  }
+  .homepage-section2__description-item {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 56px;
+    line-height: 72px;
+    color: #321D1D;
+  }
+  .homepage-section2__line-with-text p {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 56px;
+    line-height: 72px;
+    color: #321D1D;
+  }
+  .homepage-section2__figcaption {
+    font-family: "Inter Regular";
+    font-size: 19px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-section2 {
+    max-width: 984px;
+  }
+  .homepage-section2__contents {
+    max-width: 944px;
+    gap: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .homepage-section2__content1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .homepage-section2__text-content {
+    width: 100%;
+  }
+  .homepage-section2__title {
+    text-align: center;
+  }
+  .homepage-section2__description {
+    width: 100%;
+    height: 154px;
+  }
+  .homepage-section2__description-items {
+    gap: 0 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .homepage-section2__description-item {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 52px;
+    line-height: 62px;
+    color: #321D1D;
+  }
+  .homepage-section2__description-item1 {
+    max-width: 224px;
+    width: 100%;
+  }
+  .homepage-section2__description-item2 {
+    max-width: 253px;
+    width: 100%;
+  }
+  .homepage-section2__description-item4 {
+    max-width: 200px;
+    width: 100%;
+  }
+  .homepage-section2__line-with-text {
+    max-width: 230px;
+    width: 100%;
+  }
+  .homepage-section2__line-with-text p {
+    max-width: 148px;
+    width: 100%;
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 52px;
+    line-height: 62px;
+    color: #321D1D;
+  }
+  .homepage-section2__button {
+    margin-top: 30px;
+  }
+  .homepage-section2__content2 {
+    max-width: 944px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .homepage-section2__image {
+    height: 420px;
+  }
+  .homepage-section2__figcaption {
+    height: 90px;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .homepage-section2 {
+    max-width: 728px;
+  }
+  .homepage-section2__contents {
+    max-width: 688px;
+  }
+  .homepage-section2__description {
+    height: 146px;
+  }
+  .homepage-section2__description-item {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 48px;
+    line-height: 58px;
+    color: #321D1D;
+  }
+  .homepage-section2__description-item1 {
+    max-width: 205px;
+  }
+  .homepage-section2__description-item2 {
+    max-width: 233px;
+  }
+  .homepage-section2__description-item4 {
+    max-width: 184px;
+  }
+  .homepage-section2__line-with-text {
+    max-width: 220px;
+  }
+  .homepage-section2__line-with-text p {
+    max-width: 138px;
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 48px;
+    line-height: 58px;
+    color: #321D1D;
+  }
+  .homepage-section2__content2 {
+    max-width: 688px;
+  }
+  .homepage-section2__image {
+    height: 340px;
+  }
+  .homepage-section2__figcaption {
+    height: 120px;
+    margin-top: 30px;
+    font-family: "Inter Regular";
+    font-size: 18px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 576px) {
+  .homepage-section2 {
+    max-width: 536px;
+  }
+  .homepage-section2__contents {
+    max-width: 496px;
+  }
+  .homepage-section2__description {
+    gap: 15px 0;
+    height: 115px;
+  }
+  .homepage-section2__description-item {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 40px;
+    line-height: 50px;
+    color: #321D1D;
+  }
+  .homepage-section2__description-item1 {
+    max-width: 172px;
+  }
+  .homepage-section2__description-item2 {
+    max-width: 214px;
+  }
+  .homepage-section2__description-item4 {
+    max-width: 154px;
+  }
+  .homepage-section2__line-with-text {
+    max-width: 198px;
+  }
+  .homepage-section2__line-with-text p {
+    max-width: 116px;
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 40px;
+    line-height: 50px;
+    color: #321D1D;
+  }
+  .homepage-section2__content2 {
+    max-width: 496px;
+  }
+  .homepage-section2__image {
+    height: 280px;
+  }
+  .homepage-section2__figcaption {
+    height: 150px;
+    margin-top: 30px;
+    font-family: "Inter Regular";
+    font-size: 17px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 425px) {
+  .homepage-section2 {
+    max-width: 385px;
+  }
+  .homepage-section2__contents {
+    max-width: 345px;
+  }
+  .homepage-section2__description {
+    height: 95px;
+  }
+  .homepage-section2__description-item {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 27px;
+    line-height: 40px;
+    color: #321D1D;
+  }
+  .homepage-section2__description-item1 {
+    max-width: 116px;
+  }
+  .homepage-section2__description-item2 {
+    max-width: 132px;
+  }
+  .homepage-section2__description-item4 {
+    max-width: 102px;
+  }
+  .homepage-section2__line {
+    width: 58px;
+  }
+  .homepage-section2__line-with-text {
+    max-width: 160px;
+  }
+  .homepage-section2__line-with-text p {
+    max-width: 78px;
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 27px;
+    line-height: 40px;
+    color: #321D1D;
+  }
+  .homepage-section2__button {
+    margin-top: 20px;
+  }
+  .homepage-section2__content2 {
+    max-width: 345px;
+  }
+  .homepage-section2__image {
+    height: 230px;
+  }
+  .homepage-section2__figcaption {
+    height: 180px;
+    margin-top: 20px;
+    font-family: "Inter Regular";
+    font-size: 16px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 315px) {
+  .homepage-section2 {
+    max-width: 320px;
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+.homepage-section3 {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section3__content {
+  max-width: 1280px;
+  width: 100%;
+  padding: 432px 0 32px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("./src/images/homepage-section3-image.png");
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section3__text-content {
+  max-width: 1192px;
+  width: 100%;
+  gap: 0 84px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.homepage-section3__title {
+  max-width: 528px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section3__title-text {
+  font-family: "Cormorant Garamond Medium";
+  font-size: 80px;
+  line-height: 88px;
+  color: #FBF8F4;
+}
+.homepage-section3__title-second-line {
+  width: 100%;
+  gap: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section3__title-highlight {
+  font-family: "Cormorant Garamond MediumItalic";
+  font-size: 80px;
+  line-height: 88px;
+  color: #FBF8F4;
+}
+.homepage-section3__description {
+  max-width: 580px;
+  width: 100%;
+  filter: opacity(0.7);
+  font-family: "Inter Regular";
+  font-size: 20px;
+  line-height: 30px;
+  color: #FBF8F4;
+}
+@media (max-width: 1320px) {
+  .homepage-section3 {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .homepage-section3__content {
+    max-width: 1240px;
+    width: 100%;
+    padding: 432px 0 32px;
+  }
+  .homepage-section3__text-content {
+    max-width: 1152px;
+    width: 100%;
+    gap: 0 84px;
+  }
+  .homepage-section3__title-text {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 75px;
+    line-height: 88px;
+    color: #FBF8F4;
+  }
+  .homepage-section3__title-highlight {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 75px;
+    line-height: 88px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 1240px) {
+  .homepage-section3 {
+    max-width: 1200px;
+  }
+  .homepage-section3__content {
+    max-width: 1160px;
+  }
+  .homepage-section3__text-content {
+    max-width: 1072px;
+    padding: 0 20px;
+  }
+  .homepage-section3__title-text {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 70px;
+    line-height: 88px;
+    color: #FBF8F4;
+  }
+  .homepage-section3__title-highlight {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 70px;
+    line-height: 88px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-section3 {
+    max-width: 984px;
+  }
+  .homepage-section3__content {
+    max-width: 944px;
+    padding: 298px 0 32px;
+  }
+  .homepage-section3__text-content {
+    max-width: 856px;
+    gap: 34px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .homepage-section3__title-text {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 65px;
+    line-height: 80px;
+    color: #FBF8F4;
+  }
+  .homepage-section3__title-highlight {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 65px;
+    line-height: 80px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 768px) {
+  .homepage-section3 {
+    max-width: 728px;
+  }
+  .homepage-section3__content {
+    max-width: 728px;
+    padding: 258px 0 32px;
+  }
+  .homepage-section3__text-content {
+    max-width: 640px;
+    gap: 24px 0;
+  }
+  .homepage-section3__title-text {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 60px;
+    line-height: 70px;
+    color: #FBF8F4;
+  }
+  .homepage-section3__title-highlight {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 60px;
+    line-height: 70px;
+    color: #FBF8F4;
+  }
+  .homepage-section3__description {
+    max-width: 580px;
+    width: 100%;
+    height: 90px;
+    font-family: "Inter Regular";
+    font-size: 18px;
+    line-height: 30px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 576px) {
+  .homepage-section3 {
+    max-width: 536px;
+  }
+  .homepage-section3__content {
+    max-width: 496px;
+    padding: 238px 0 32px;
+  }
+  .homepage-section3__text-content {
+    max-width: 496px;
+  }
+  .homepage-section3__title-text {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 50px;
+    line-height: 60px;
+    color: #FBF8F4;
+  }
+  .homepage-section3__title-highlight {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 50px;
+    line-height: 60px;
+    color: #FBF8F4;
+  }
+  .homepage-section3__description {
+    max-width: 456px;
+    height: 84px;
+    font-family: "Inter Regular";
+    font-size: 16px;
+    line-height: 28px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 425px) {
+  .homepage-section3 {
+    max-width: 385px;
+  }
+  .homepage-section3__content {
+    max-width: 345px;
+    padding: 230px 0 32px;
+  }
+  .homepage-section3__text-content {
+    max-width: 345px;
+  }
+  .homepage-section3__title-text {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 35px;
+    line-height: 45px;
+    color: #FBF8F4;
+  }
+  .homepage-section3__title-highlight {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 35px;
+    line-height: 45px;
+    color: #FBF8F4;
+  }
+  .homepage-section3__description {
+    max-width: 305px;
+    height: 104px;
+    font-family: "Inter Regular";
+    font-size: 14px;
+    line-height: 26px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 315px) {
+  .homepage-section3 {
+    max-width: 320px;
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+.homepage-section4 {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section4__content {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homepage-section4__title1 {
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: #A46C32;
+}
+.homepage-section4__title2 {
+  margin-top: 16px;
+  font-family: "Cormorant Garamond Medium";
+  font-size: 80px;
+  line-height: 88px;
+  color: #321D1D;
+}
+.homepage-section4__popular-delights {
+  max-width: 1280px;
+  width: 100%;
+  margin-top: 64px;
+  gap: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section4__items {
+  max-width: 630px;
+  width: 100%;
+  gap: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section4__item {
+  max-width: 305px;
+  width: 100%;
+  gap: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section4__item-image {
+  width: 100%;
+  height: 316px;
+}
+.homepage-section4__item-text {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.homepage-section4__item-title {
+  font-family: "Cormorant Garamond Bold";
+  font-size: 26px;
+  line-height: 32px;
+  color: #321D1D;
+}
+.homepage-section4__item--title-truffle-ribeye {
+  width: 149px;
+}
+.homepage-section4__item--title-chocolate-sundae {
+  width: 187px;
+}
+.homepage-section4__item--title-symphony-risotto {
+  width: 192px;
+}
+.homepage-section4__item--title-elysium-bisque {
+  width: 156px;
+}
+.homepage-section4__item-price {
+  filter: opacity(0.7);
+  font-family: "Inter Regular";
+  font-size: 20px;
+  line-height: 30px;
+  color: #321D1D;
+}
+@media (max-width: 1320px) {
+  .homepage-section4 {
+    max-width: 1280px;
+    padding: 0 20px;
+  }
+  .homepage-section4__content {
+    max-width: 1240px;
+  }
+  .homepage-section4__popular-delights {
+    max-width: 1240px;
+  }
+  .homepage-section4__items {
+    max-width: 610px;
+  }
+  .homepage-section4__item {
+    max-width: 295px;
+  }
+}
+@media (max-width: 1240px) {
+  .homepage-section4 {
+    max-width: 1200px;
+  }
+  .homepage-section4__content {
+    max-width: 1160px;
+  }
+  .homepage-section4__popular-delights {
+    max-width: 1160px;
+  }
+  .homepage-section4__items {
+    max-width: 570px;
+  }
+  .homepage-section4__item {
+    max-width: 275px;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-section4 {
+    max-width: 984px;
+  }
+  .homepage-section4__content {
+    max-width: 944px;
+  }
+  .homepage-section4__popular-delights {
+    max-width: 944px;
+    gap: 40px 0;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .homepage-section4__items {
+    max-width: 944px;
+    gap: 0 40px;
+  }
+  .homepage-section4__item {
+    max-width: 452px;
+  }
+}
+@media (max-width: 768px) {
+  .homepage-section4 {
+    max-width: 728px;
+  }
+  .homepage-section4__content {
+    max-width: 688px;
+  }
+  .homepage-section4__title2 {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 70px;
+    line-height: 80px;
+    color: #321D1D;
+  }
+  .homepage-section4__popular-delights {
+    max-width: 688px;
+  }
+  .homepage-section4__items {
+    max-width: 688px;
+  }
+  .homepage-section4__item {
+    max-width: 334px;
+  }
+  .homepage-section4__item-title {
+    font-family: "Cormorant Garamond Bold";
+    font-size: 24px;
+    line-height: 32px;
+    color: #321D1D;
+  }
+  .homepage-section4__item-price {
+    font-family: "Inter Regular";
+    font-size: 18px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 576px) {
+  .homepage-section4 {
+    max-width: 536px;
+  }
+  .homepage-section4__content {
+    max-width: 496px;
+  }
+  .homepage-section4__title2 {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 55px;
+    line-height: 65px;
+    color: #321D1D;
+  }
+  .homepage-section4__popular-delights {
+    max-width: 496px;
+  }
+  .homepage-section4__items {
+    max-width: 496px;
+    flex-wrap: wrap;
+    gap: 40px 0;
+  }
+  .homepage-section4__item {
+    max-width: 496px;
+  }
+}
+@media (max-width: 425px) {
+  .homepage-section4 {
+    max-width: 385px;
+  }
+  .homepage-section4__content {
+    max-width: 345px;
+  }
+  .homepage-section4__title2 {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 40px;
+    line-height: 50px;
+    color: #321D1D;
+  }
+  .homepage-section4__popular-delights {
+    max-width: 345px;
+  }
+  .homepage-section4__items {
+    max-width: 345px;
+  }
+  .homepage-section4__item {
+    max-width: 345px;
+  }
+  .homepage-section4__item-title {
+    font-family: "Cormorant Garamond Bold";
+    font-size: 22px;
+    line-height: 32px;
+    color: #321D1D;
+  }
+  .homepage-section4__item-price {
+    font-family: "Inter Regular";
+    font-size: 16px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 315px) {
+  .homepage-section4 {
+    max-width: 320px;
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+.homepage-section5 {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section5__content {
+  max-width: 1280px;
+  width: 100%;
+  padding: 120px 40px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("./src/images/homepage-section5-image.png");
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.homepage-section5__text {
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: #FBF8F4;
+}
+.homepage-section5__text-content {
+  width: 585px;
+  min-height: 388px;
+  background-color: #FBF8F4;
+  padding: 48px 48px 60px 48px;
+}
+.homepage-section5__title {
+  font-family: "Cormorant Garamond SemiBold";
+  font-size: 64px;
+  line-height: 72px;
+  color: #321D1D;
+}
+.homepage-section5__description {
+  margin-top: 8px;
+  filter: opacity(0.7);
+  font-family: "Inter Regular";
+  font-size: 20px;
+  line-height: 30px;
+  color: #321D1D;
+}
+.homepage-section5__description-list {
+  width: 100%;
+  margin-top: 32px;
+  gap: 12px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section5__description-item {
+  gap: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section5__description-item-image {
+  width: 28px;
+  height: 100%;
+}
+.homepage-section5__description-item-text {
+  font-family: "Inter SemiBold";
+  font-size: 16px;
+  line-height: 24px;
+  color: #321D1D;
+}
+@media (max-width: 1320px) {
+  .homepage-section5 {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .homepage-section5__content {
+    max-width: 1240px;
+    width: 100%;
+  }
+  .homepage-section5__title {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 60px;
+    line-height: 70px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 1240px) {
+  .homepage-section5 {
+    max-width: 1200px;
+  }
+  .homepage-section5__content {
+    max-width: 1160px;
+  }
+  .homepage-section5__title {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 55px;
+    line-height: 65px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-section5 {
+    max-width: 984px;
+  }
+  .homepage-section5__content {
+    max-width: 944px;
+    padding: 80px 40px;
+    gap: 56px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .homepage-section5__title {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 50px;
+    line-height: 60px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 768px) {
+  .homepage-section5 {
+    max-width: 728px;
+  }
+  .homepage-section5__content {
+    max-width: 688px;
+  }
+  .homepage-section5__text-content {
+    width: 457px;
+    padding: 30px 30px;
+  }
+  .homepage-section5__title {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 45px;
+    line-height: 55px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 576px) {
+  .homepage-section5 {
+    max-width: 536px;
+  }
+  .homepage-section5__content {
+    max-width: 496px;
+    padding: 80px 20px;
+  }
+  .homepage-section5__text-content {
+    width: 346px;
+    padding: 30px 20px;
+  }
+  .homepage-section5__title {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 40px;
+    line-height: 50px;
+    color: #321D1D;
+  }
+  .homepage-section5__description {
+    font-family: "Inter Regular";
+    font-size: 18px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+  .homepage-section5__description-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+@media (max-width: 425px) {
+  .homepage-section5 {
+    max-width: 385px;
+  }
+  .homepage-section5__content {
+    max-width: 345px;
+  }
+  .homepage-section5__text-content {
+    width: 240px;
+    padding: 30px 20px;
+  }
+  .homepage-section5__title {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 35px;
+    line-height: 45px;
+    color: #321D1D;
+  }
+  .homepage-section5__description {
+    font-family: "Inter Regular";
+    font-size: 16px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+  .homepage-section5__description-item-text {
+    font-family: "Inter SemiBold";
+    font-size: 14px;
+    line-height: 24px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 315px) {
+  .homepage-section5 {
+    max-width: 320px;
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+.homepage-section6 {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section6__content {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homepage-section6__title1 {
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: #A46C32;
+}
+.homepage-section6__title2 {
+  margin-top: 16px;
+  font-family: "Cormorant Garamond SemiBold";
+  font-size: 64px;
+  line-height: 72px;
+  color: #321D1D;
+}
+.homepage-section6__text-content {
+  max-width: 1280px;
+  width: 100%;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homepage-section6__descriptions1 {
+  width: 320px;
+  height: 385px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.homepage-section6__descriptions1-item {
+  width: 320px;
+  height: 110px;
+  gap: 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section6__descriptions1-item-title {
+  font-family: "Inter SemiBold";
+  font-size: 20px;
+  line-height: 30px;
+  color: #321D1D;
+}
+.homepage-section6__descriptions1-item-description {
+  filter: opacity(0.7);
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #321D1D;
+}
+.homepage-section6__descriptions1-line {
+  display: inline-block;
+  width: 72px;
+  height: 1px;
+  background-color: #321D1D;
+}
+.homepage-section6__image {
+  width: 512px;
+  height: 512px;
+}
+.homepage-section6__descriptions2 {
+  width: 320px;
+  height: 385px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.homepage-section6__descriptions2-item {
+  width: 320px;
+  height: 110px;
+  gap: 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.homepage-section6__descriptions2-item-title {
+  font-family: "Inter SemiBold";
+  font-size: 20px;
+  line-height: 30px;
+  color: #321D1D;
+}
+.homepage-section6__descriptions2-item-description {
+  text-align: end;
+  filter: opacity(0.7);
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #321D1D;
+}
+.homepage-section6__descriptions2-line {
+  display: inline-block;
+  width: 72px;
+  height: 1px;
+  background-color: #321D1D;
+}
+@media (max-width: 1320px) {
+  .homepage-section6 {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .homepage-section6__content {
+    max-width: 1240px;
+    width: 100%;
+  }
+  .homepage-section6__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 58px;
+    line-height: 68px;
+    color: #321D1D;
+  }
+  .homepage-section6__text-content {
+    max-width: 1240px;
+  }
+  .homepage-section6__image {
+    width: 466px;
+    height: 466px;
+  }
+}
+@media (max-width: 1240px) {
+  .homepage-section6 {
+    max-width: 1200px;
+  }
+  .homepage-section6__content {
+    max-width: 1160px;
+  }
+  .homepage-section6__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 52px;
+    line-height: 62px;
+    color: #321D1D;
+  }
+  .homepage-section6__text-content {
+    max-width: 1160px;
+  }
+  .homepage-section6__descriptions1 {
+    width: 270px;
+    height: 385px;
+  }
+  .homepage-section6__descriptions1-item {
+    width: 270px;
+    height: 134px;
+  }
+  .homepage-section6__image {
+    width: 420px;
+    height: 420px;
+  }
+  .homepage-section6__descriptions2 {
+    width: 270px;
+    height: 385px;
+  }
+  .homepage-section6__descriptions2-item {
+    width: 270px;
+    height: 134px;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-section6 {
+    max-width: 984px;
+  }
+  .homepage-section6__content {
+    max-width: 944px;
+  }
+  .homepage-section6__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 48px;
+    line-height: 58px;
+    color: #321D1D;
+  }
+  .homepage-section6__text-content {
+    max-width: 944px;
+    gap: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .homepage-section6__descriptions1 {
+    width: 100%;
+    height: 134px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .homepage-section6__descriptions1-item {
+    width: 270px;
+    height: 134px;
+  }
+  .homepage-section6__descriptions1-item-description1 {
+    text-align: start;
+  }
+  .homepage-section6__descriptions1-item-description2 {
+    text-align: end;
+  }
+  .homepage-section6__descriptions1-item:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .homepage-section6__descriptions1-item:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  .homepage-section6__image {
+    width: 420px;
+    height: 420px;
+  }
+  .homepage-section6__descriptions2 {
+    width: 100%;
+    height: 134px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .homepage-section6__descriptions2-item {
+    width: 270px;
+    height: 134px;
+  }
+  .homepage-section6__descriptions2-item-description1 {
+    text-align: start;
+  }
+  .homepage-section6__descriptions2-item-description2 {
+    text-align: end;
+  }
+  .homepage-section6__descriptions2-item:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .homepage-section6__descriptions2-item:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+}
+@media (max-width: 768px) {
+  .homepage-section6 {
+    max-width: 728px;
+  }
+  .homepage-section6__content {
+    max-width: 688px;
+  }
+  .homepage-section6__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 42px;
+    line-height: 52px;
+    color: #321D1D;
+  }
+  .homepage-section6__text-content {
+    max-width: 688px;
+  }
+  .homepage-section6__descriptions1 {
+    width: 100%;
+    height: 158px;
+  }
+  .homepage-section6__descriptions1-item {
+    width: 210px;
+    height: 158px;
+  }
+  .homepage-section6__image {
+    width: 380px;
+    height: 380px;
+  }
+  .homepage-section6__descriptions2 {
+    width: 100%;
+    height: 158px;
+  }
+  .homepage-section6__descriptions2-item {
+    width: 210px;
+    height: 158px;
+  }
+}
+@media (max-width: 576px) {
+  .homepage-section6 {
+    max-width: 536px;
+  }
+  .homepage-section6__content {
+    max-width: 496px;
+  }
+  .homepage-section6__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 38px;
+    line-height: 48px;
+    color: #321D1D;
+  }
+  .homepage-section6__text-content {
+    gap: 40px 0;
+    max-width: 496px;
+  }
+  .homepage-section6__descriptions1 {
+    width: 100%;
+    height: 256px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .homepage-section6__descriptions1-item {
+    width: 100%;
+    height: 85px;
+  }
+  .homepage-section6__descriptions1-item-description1 {
+    text-align: justify;
+  }
+  .homepage-section6__descriptions1-item-description2 {
+    text-align: justify;
+  }
+  .homepage-section6__descriptions1-item:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .homepage-section6__descriptions1-item:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .homepage-section6__image {
+    width: 380px;
+    height: 380px;
+  }
+  .homepage-section6__descriptions2 {
+    width: 100%;
+    height: 256px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .homepage-section6__descriptions2-item {
+    width: 100%;
+    height: 85px;
+  }
+  .homepage-section6__descriptions2-item-description1 {
+    text-align: justify;
+  }
+  .homepage-section6__descriptions2-item-description2 {
+    text-align: justify;
+  }
+  .homepage-section6__descriptions2-item:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .homepage-section6__descriptions2-item:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.homepage-section7 {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section7__content {
+  max-width: 1280px;
+  width: 100%;
+  padding: 120px 0;
+  background-size: cover;
+  background-position: center;
+  background-image: url("./src/images/homepage-section7-image.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.homepage-section7__title {
+  width: 892px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.homepage-section7__title-first-line {
+  width: 747px;
+  gap: 0 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section7__title-second-line {
+  width: 892px;
+  gap: 0 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section7__title-normal {
+  font-family: "Cormorant Garamond Medium";
+  font-size: 80px;
+  line-height: 88px;
+  color: #FBF8F4;
+}
+.homepage-section7__title-italic {
+  font-family: "Cormorant Garamond MediumItalic";
+  font-size: 80px;
+  line-height: 88px;
+  color: #FBF8F4;
+}
+.homepage-section7__buttons {
+  width: 516px;
+  margin: 32px 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.homepage-section7__button-reservation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 322px;
+  height: 56px;
+  border-radius: 30px;
+  border: 1px solid #FBF8F4;
+  background-color: #FBF8F4;
+  cursor: pointer;
+  font-family: "Cormorant Garamond Bold";
+  font-size: 26px;
+  line-height: 32px;
+  color: #321D1D;
+}
+.homepage-section7__button-reservation:active {
+  background-color: #ede0cf;
+}
+.homepage-section7__button-location {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+  width: 182px;
+  height: 56px;
+  border-radius: 30px;
+  border: 1px solid #FBF8F4;
+  background-color: transparent;
+  cursor: pointer;
+}
+.homepage-section7__button-location:active {
+  background-color: rgba(0, 0, 0, 0);
+}
+@media (max-width: 1320px) {
+  .homepage-section7 {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .homepage-section7__content {
+    max-width: 1240px;
+    width: 100%;
+  }
+  .homepage-section7__title {
+    width: 838px;
+  }
+  .homepage-section7__title-first-line {
+    width: 702px;
+  }
+  .homepage-section7__title-second-line {
+    width: 838px;
+  }
+  .homepage-section7__title-normal {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 75px;
+    line-height: 85px;
+    color: #FBF8F4;
+  }
+  .homepage-section7__title-italic {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 75px;
+    line-height: 85px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 1240px) {
+  .homepage-section7 {
+    max-width: 1200px;
+  }
+  .homepage-section7__content {
+    max-width: 1160px;
+  }
+  .homepage-section7__title {
+    width: 731px;
+  }
+  .homepage-section7__title-first-line {
+    width: 613px;
+  }
+  .homepage-section7__title-second-line {
+    width: 731px;
+  }
+  .homepage-section7__title-normal {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 65px;
+    line-height: 75px;
+    color: #FBF8F4;
+  }
+  .homepage-section7__title-italic {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 65px;
+    line-height: 75px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-section7 {
+    max-width: 984px;
+  }
+  .homepage-section7__content {
+    max-width: 944px;
+  }
+  .homepage-section7__title {
+    width: 623px;
+  }
+  .homepage-section7__title-first-line {
+    width: 523px;
+  }
+  .homepage-section7__title-second-line {
+    width: 623px;
+  }
+  .homepage-section7__title-normal {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 55px;
+    line-height: 65px;
+    color: #FBF8F4;
+  }
+  .homepage-section7__title-italic {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 55px;
+    line-height: 65px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 768px) {
+  .homepage-section7 {
+    max-width: 728px;
+  }
+  .homepage-section7__content {
+    max-width: 688px;
+  }
+  .homepage-section7__title {
+    width: 516px;
+  }
+  .homepage-section7__title-first-line {
+    width: 434px;
+  }
+  .homepage-section7__title-second-line {
+    width: 516px;
+  }
+  .homepage-section7__title-normal {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 45px;
+    line-height: 55px;
+    color: #FBF8F4;
+  }
+  .homepage-section7__title-italic {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 45px;
+    line-height: 55px;
+    color: #FBF8F4;
+  }
+}
+@media (max-width: 576px) {
+  .homepage-section7 {
+    max-width: 536px;
+  }
+  .homepage-section7__content {
+    max-width: 496px;
+  }
+  .homepage-section7__title {
+    width: 300px;
+  }
+  .homepage-section7__title-first-line {
+    width: 270px;
+    gap: 10px 16px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .homepage-section7__title-second-line {
+    width: 300px;
+    gap: 10px 16px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .homepage-section7__title-normal {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 45px;
+    line-height: 55px;
+    color: #FBF8F4;
+  }
+  .homepage-section7__title-italic {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 45px;
+    line-height: 55px;
+    color: #FBF8F4;
+  }
+  .homepage-section7__buttons {
+    width: 300px;
+    gap: 20px 0;
+    margin: 48px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .homepage-section7__button-reservation {
+    width: 280px;
+    height: 56px;
+    border-radius: 30px;
+    border: 1px solid #FBF8F4;
+    background-color: #FBF8F4;
+    cursor: pointer;
+    font-family: "Cormorant Garamond Bold";
+    font-size: 18px;
+    line-height: 24px;
+    color: #321D1D;
+  }
+  .homepage-section7__button-reservation:active {
+    background-color: #ede0cf;
+  }
+  .homepage-section7__button-location {
+    width: 280px;
+    height: 56px;
+    border-radius: 30px;
+    border: 1px solid #FBF8F4;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .homepage-section7__button-location:active {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+@media (max-width: 425px) {
+  .homepage-section7 {
+    max-width: 385px;
+  }
+  .homepage-section7__content {
+    max-width: 345px;
+  }
+  .homepage-section7__title {
+    width: 260px;
+  }
+  .homepage-section7__title-first-line {
+    width: 250px;
+  }
+  .homepage-section7__title-second-line {
+    width: 255px;
+  }
+  .homepage-section7__title-normal {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 40px;
+    line-height: 50px;
+    color: #FBF8F4;
+  }
+  .homepage-section7__title-italic {
+    font-family: "Cormorant Garamond MediumItalic";
+    font-size: 40px;
+    line-height: 50px;
+    color: #FBF8F4;
+  }
+  .homepage-section7__buttons {
+    width: 260px;
+  }
+  .homepage-section7__button-reservation {
+    width: 250px;
+    height: 56px;
+    border-radius: 30px;
+    border: 1px solid #FBF8F4;
+    background-color: #FBF8F4;
+    cursor: pointer;
+  }
+  .homepage-section7__button-reservation:active {
+    background-color: #ede0cf;
+  }
+  .homepage-section7__button-location {
+    width: 250px;
+    height: 56px;
+    border-radius: 30px;
+    border: 1px solid #FBF8F4;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .homepage-section7__button-location:active {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+@media (max-width: 315px) {
+  .homepage-section7 {
+    max-width: 320px;
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+.homepage-section8 {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section8__contents {
+  max-width: 1280px;
+  width: 100%;
+  gap: 0 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homepage-section8__content1 {
+  width: 380px;
+  gap: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section8__faq {
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: #A46C32;
+}
+.homepage-section8__title {
+  width: 380px;
+  font-family: "Cormorant Garamond Medium";
+  font-size: 80px;
+  line-height: 88px;
+  color: #321D1D;
+}
+.homepage-section8__content2 {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section8__question {
+  width: 100%;
+  height: 42px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: height 0.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section8__question-area {
+  width: 100%;
+  gap: 0 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homepage-section8__question-text {
+  font-family: "Cormorant Garamond Medium";
+  font-size: 36px;
+  line-height: 42px;
+  color: #321D1D;
+}
+.homepage-section8__question-icon {
+  width: 32px;
+  height: 10px;
+  filter: opacity(1);
+  transition: filter 0.5s ease-out;
+}
+.homepage-section8__question-icon--active {
+  filter: opacity(0.5);
+}
+.homepage-section8__question-answer {
+  text-align: justify;
+  margin-top: 12px;
+  filter: opacity(0.7);
+  font-family: "Inter Regular";
+  font-size: 20px;
+  line-height: 30px;
+  color: #321D1D;
+}
+.homepage-section8__question-line {
+  width: 100%;
+  height: 1px;
+  margin: 32px 0;
+  filter: opacity(0.7);
+  display: inline-block;
+  background-color: #321D1D;
+  transition: height 0.5s ease-out, filter 0.5s ease-out;
+}
+.homepage-section8__question-line--active {
+  height: 2px;
+  filter: opacity(1);
+}
+.homepage-section8__question--active {
+  height: 174px;
+}
+@media (max-width: 1320px) {
+  .homepage-section8 {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .homepage-section8__contents {
+    max-width: 1240px;
+    width: 100%;
+  }
+  .homepage-section8__content1 {
+    width: 335px;
+  }
+  .homepage-section8__title {
+    width: 335px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 70px;
+    line-height: 80px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 1240px) {
+  .homepage-section8 {
+    max-width: 1200px;
+  }
+  .homepage-section8__contents {
+    max-width: 1160px;
+  }
+  .homepage-section8__content1 {
+    width: 285px;
+  }
+  .homepage-section8__title {
+    width: 285px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 60px;
+    line-height: 70px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-section8 {
+    max-width: 984px;
+  }
+  .homepage-section8__contents {
+    max-width: 944px;
+    gap: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .homepage-section8__content1 {
+    width: 262px;
+  }
+  .homepage-section8__title {
+    width: 262px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 55px;
+    line-height: 65px;
+    color: #321D1D;
+  }
+  .homepage-section8__content2 {
+    width: 100%;
+  }
+  .homepage-section8__question {
+    width: 100%;
+  }
+  .homepage-section8__question-text {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 32px;
+    line-height: 42px;
+    color: #321D1D;
+  }
+  .homepage-section8__question-answer {
+    font-family: "Inter Regular";
+    font-size: 19px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+  .homepage-section8__question--active {
+    height: 144px;
+  }
+}
+@media (max-width: 768px) {
+  .homepage-section8 {
+    max-width: 728px;
+  }
+  .homepage-section8__contents {
+    max-width: 688px;
+  }
+  .homepage-section8__content1 {
+    width: 238px;
+  }
+  .homepage-section8__title {
+    width: 238px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 50px;
+    line-height: 60px;
+    color: #321D1D;
+  }
+  .homepage-section8__content2 {
+    width: 100%;
+  }
+  .homepage-section8__question {
+    width: 100%;
+  }
+  .homepage-section8__question-text {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 28px;
+    line-height: 42px;
+    color: #321D1D;
+  }
+  .homepage-section8__question-answer {
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter Regular";
+    font-size: 18px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+  .homepage-section8__question--active {
+    height: 174px;
+  }
+}
+@media (max-width: 576px) {
+  .homepage-section8 {
+    max-width: 536px;
+  }
+  .homepage-section8__contents {
+    max-width: 496px;
+  }
+  .homepage-section8__content1 {
+    width: 214px;
+  }
+  .homepage-section8__title {
+    width: 214px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 45px;
+    line-height: 55px;
+    color: #321D1D;
+  }
+  .homepage-section8__content2 {
+    width: 100%;
+  }
+  .homepage-section8__question {
+    width: 100%;
+    height: 84px;
+  }
+  .homepage-section8__question-text {
+    width: 320px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 26px;
+    line-height: 42px;
+    color: #321D1D;
+  }
+  .homepage-section8__question-answer {
+    height: 150px;
+    font-family: "Inter Regular";
+    font-size: 17px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+  .homepage-section8__question--active {
+    height: 247px;
+  }
+}
+@media (max-width: 425px) {
+  .homepage-section8 {
+    max-width: 385px;
+  }
+  .homepage-section8__contents {
+    max-width: 345px;
+  }
+  .homepage-section8__content1 {
+    width: 190px;
+  }
+  .homepage-section8__title {
+    width: 190px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 40px;
+    line-height: 50px;
+    color: #321D1D;
+  }
+  .homepage-section8__content2 {
+    width: 100%;
+  }
+  .homepage-section8__question {
+    width: 100%;
+    height: 84px;
+  }
+  .homepage-section8__question-text {
+    width: 200px;
+    font-family: "Cormorant Garamond Medium";
+    font-size: 22px;
+    line-height: 42px;
+    color: #321D1D;
+  }
+  .homepage-section8__question-answer {
+    height: 211px;
+    font-family: "Inter Regular";
+    font-size: 16px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+  .homepage-section8__question--active {
+    height: 307px;
+  }
+}
+@media (max-width: 315px) {
+  .homepage-section8 {
+    max-width: 320px;
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+.homepage-section9 {
+  max-width: 1280px;
+  width: 100%;
+  margin-top: 120px;
+  padding: 100px 0 120px;
+  background-color: #183534;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homepage-section9__content {
+  max-width: 1240px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section9__titles {
+  max-width: 1240px;
+  width: 100%;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.homepage-section9__title1 {
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: #D3A574;
+}
+.homepage-section9__title2 {
+  font-family: "Cormorant Garamond SemiBold";
+  font-size: 64px;
+  line-height: 72px;
+  color: #FBF8F4;
+}
+.homepage-section9__review {
+  max-width: 1240px;
+  width: 100%;
+  gap: 0 24px;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.homepage-section9__arrow-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #FBF8F4;
+  background-color: transparent;
+  cursor: pointer;
+}
+.homepage-section9__arrow-button:active {
+  background-color: rgba(0, 0, 0, 0);
+}
+.homepage-section9__arrow-button-disabled {
+  filter: opacity(0.5);
+}
+.homepage-section9__arrow-icon {
+  width: 24px;
+  height: 10px;
+}
+.homepage-section9__review-info-container {
+  width: 1064px;
+  height: 402px;
+  overflow: hidden;
+  position: relative;
+}
+.homepage-section9__review-info {
+  opacity: 1;
+  width: 1064px;
+  height: 402px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section9__review-info-text {
+  width: 700px;
+  height: 100%;
+  filter: contrast(0.6);
+  padding: 64px 56px 46px;
+  background-color: #FBF8F4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.homepage-section9__review-info-description {
+  font-family: "Inter Regular";
+  font-size: 20px;
+  line-height: 30px;
+  color: #321D1D;
+}
+.homepage-section9__review-info-writer {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.homepage-section9__review-info-line {
+  width: 32px;
+  height: 2px;
+  display: inline-block;
+  background-color: #321D1D;
+}
+.homepage-section9__review-info-title {
+  font-family: "Inter SemiBold";
+  font-size: 20px;
+  line-height: 30px;
+  color: #321D1D;
+}
+.homepage-section9__review-info-image {
+  width: 364px;
+  height: 100%;
+}
+.homepage-section9__review-image {
+  width: 100%;
+  height: 100%;
+}
+.homepage-section9__review-delete {
+  opacity: 0;
+}
+.homepage-section9__review-fadeIn {
+  animation: fadeInReviews 1s forwards;
+}
+.homepage-section9__review-fadeOut {
+  animation: fadeOutReviews 1s forwards;
+}
+
+@keyframes fadeInReviews {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes fadeOutReviews {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+.homepage-section10 {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section10__contents {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section10__content1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.homepage-section10__text-content {
+  width: 435px;
+  gap: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section10__title1 {
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: #A46C32;
+}
+.homepage-section10__title2 {
+  font-family: "Cormorant Garamond SemiBold";
+  font-size: 64px;
+  line-height: 72px;
+  color: #321D1D;
+}
+.homepage-section10__radios {
+  width: 100px;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.homepage-section10__radio-area {
+  width: 12px;
+  height: 12px;
+  position: relative;
+}
+.homepage-section10__radio {
+  display: none;
+}
+.homepage-section10__radio + label::before {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  filter: opacity(0.2);
+  background: #321D1D;
+}
+.homepage-section10__radio:checked + label::before {
+  filter: opacity(1);
+}
+.homepage-section10__content2 {
+  width: 100%;
+  margin-top: 48px;
+}
+.homepage-section10__insights {
+  width: 100%;
+  gap: 0 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section10__insights-block {
+  max-width: 620px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section10__insights-image-area {
+  width: 100%;
+  height: 480px;
+  position: relative;
+}
+.homepage-section10__insights-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.homepage-section10__insights-date {
+  width: 138px;
+  height: 48px;
+  background-color: #FBF8F4;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.homepage-section10__insights-date-text {
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #321D1D;
+}
+.homepage-section10__insights-description {
+  margin-top: 20px;
+  text-align: justify;
+  font-family: "Cormorant Garamond Medium";
+  font-size: 36px;
+  line-height: 42px;
+  color: #321D1D;
+}
+.homepage-section10__insights-author {
+  width: 144px;
+  height: 46px;
+  margin-top: 24px;
+  gap: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section10__insights-author-text {
+  font-family: "Inter SemiBold";
+  font-size: 16px;
+  line-height: 24px;
+  color: #321D1D;
+}
+.homepage-section10__insights-line {
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background-color: #321D1D;
+}
+.homepage-section10__insights-delete {
+  display: none;
+}
+@media (max-width: 1320px) {
+  .homepage-section10 {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .homepage-section10__contents {
+    max-width: 1240px;
+    width: 100%;
+  }
+  .homepage-section10__text-content {
+    width: 395px;
+  }
+  .homepage-section10__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 58px;
+    line-height: 68px;
+    color: #321D1D;
+  }
+  .homepage-section10__insights {
+    width: 100%;
+  }
+  .homepage-section10__insights-block {
+    max-width: 600px;
+    width: 100%;
+  }
+  .homepage-section10__insights-image-area {
+    height: 450px;
+  }
+  .homepage-section10__insights-description {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 33px;
+    line-height: 42px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 1240px) {
+  .homepage-section10 {
+    max-width: 1200px;
+  }
+  .homepage-section10__contents {
+    max-width: 1160px;
+  }
+  .homepage-section10__text-content {
+    width: 355px;
+  }
+  .homepage-section10__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 52px;
+    line-height: 62px;
+    color: #321D1D;
+  }
+  .homepage-section10__insights {
+    width: 100%;
+  }
+  .homepage-section10__insights-block {
+    max-width: 560px;
+  }
+  .homepage-section10__insights-image-area {
+    height: 420px;
+  }
+  .homepage-section10__insights-description {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 30px;
+    line-height: 40px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-section10 {
+    max-width: 984px;
+  }
+  .homepage-section10__contents {
+    max-width: 944px;
+  }
+  .homepage-section10__text-content {
+    width: 315px;
+  }
+  .homepage-section10__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 46px;
+    line-height: 56px;
+    color: #321D1D;
+  }
+  .homepage-section10__insights {
+    width: 100%;
+  }
+  .homepage-section10__insights-block {
+    max-width: 452px;
+  }
+  .homepage-section10__insights-image-area {
+    height: 380px;
+  }
+  .homepage-section10__insights-description {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 26px;
+    line-height: 37px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 768px) {
+  .homepage-section10 {
+    max-width: 728px;
+  }
+  .homepage-section10__contents {
+    max-width: 688px;
+  }
+  .homepage-section10__text-content {
+    width: 275px;
+  }
+  .homepage-section10__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 40px;
+    line-height: 50px;
+    color: #321D1D;
+  }
+  .homepage-section10__insights {
+    width: 100%;
+    gap: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .homepage-section10__insights-block {
+    max-width: 688px;
+  }
+  .homepage-section10__insights-image-area {
+    height: 480px;
+  }
+  .homepage-section10__insights-delete {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .homepage-section10 {
+    max-width: 536px;
+  }
+  .homepage-section10__contents {
+    max-width: 496px;
+  }
+  .homepage-section10__text-content {
+    width: 235px;
+  }
+  .homepage-section10__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 34px;
+    line-height: 44px;
+    color: #321D1D;
+  }
+  .homepage-section10__radios {
+    width: 76px;
+  }
+  .homepage-section10__insights {
+    width: 100%;
+  }
+  .homepage-section10__insights-block {
+    max-width: 496px;
+  }
+  .homepage-section10__insights-image-area {
+    height: 430px;
+  }
+  .homepage-section10__insights-description {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 24px;
+    line-height: 37px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 425px) {
+  .homepage-section10 {
+    max-width: 385px;
+  }
+  .homepage-section10__contents {
+    max-width: 345px;
+  }
+  .homepage-section10__text-content {
+    width: 195px;
+  }
+  .homepage-section10__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 28px;
+    line-height: 38px;
+    color: #321D1D;
+  }
+  .homepage-section10__radios {
+    width: 76px;
+  }
+  .homepage-section10__insights {
+    width: 100%;
+  }
+  .homepage-section10__insights-block {
+    max-width: 345px;
+  }
+  .homepage-section10__insights-image-area {
+    height: 380px;
+  }
+  .homepage-section10__insights-description {
+    font-family: "Cormorant Garamond Medium";
+    font-size: 22px;
+    line-height: 37px;
+    color: #321D1D;
+  }
+}
+@media (max-width: 315px) {
+  .homepage-section10 {
+    max-width: 320px;
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+.homepage-section11 {
+  max-width: 1440px;
+  width: 100%;
+  margin: 120px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.homepage-section11__content {
+  max-width: 1280px;
+  width: 100%;
+  gap: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section11__first-line {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("./src/images/homepage-section11-image1.png");
+}
+.homepage-section11__second-line {
+  width: 100%;
+  gap: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.homepage-section11__image {
+  width: calc((100% - 100px) / 6);
+  height: 200px;
+  cursor: pointer;
+  filter: grayscale(1);
+  background-size: cover;
+  background-position: center;
+}
+.homepage-section11__image-checked {
+  filter: grayscale(0);
+  outline: 2px solid #183534;
+}
+.homepage-section11__image:nth-child(1) {
+  background-image: url("./src/images/homepage-section11-image1.png");
+}
+.homepage-section11__image:nth-child(2) {
+  background-image: url("./src/images/homepage-section11-image2.png");
+}
+.homepage-section11__image:nth-child(3) {
+  background-image: url("./src/images/homepage-section11-image3.png");
+}
+.homepage-section11__image:nth-child(4) {
+  background-image: url("./src/images/homepage-section11-image4.png");
+}
+.homepage-section11__image:nth-child(5) {
+  background-image: url("./src/images/homepage-section11-image5.png");
+}
+.homepage-section11__image:nth-child(6) {
+  background-image: url("./src/images/homepage-section11-image6.png");
+}
+@media (max-width: 1320px) {
+  .homepage-section11 {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .homepage-section11__content {
+    max-width: 1240px;
+    width: 100%;
+  }
+}
+@media (max-width: 1240px) {
+  .homepage-section11 {
+    max-width: 1200px;
+  }
+  .homepage-section11__content {
+    max-width: 1160px;
+  }
+  .homepage-section11__second-line {
+    gap: 20px 20px;
+    flex-wrap: wrap;
+  }
+  .homepage-section11__image {
+    width: calc((100% - 40px) / 3);
+  }
+}
+@media (max-width: 1024px) {
+  .homepage-section11 {
+    max-width: 984px;
+  }
+  .homepage-section11__content {
+    max-width: 944px;
+  }
+}
+@media (max-width: 768px) {
+  .homepage-section11 {
+    max-width: 728px;
+  }
+  .homepage-section11__content {
+    max-width: 688px;
+  }
+  .homepage-section11__first-line {
+    height: 500px;
+  }
+  .homepage-section11__image {
+    width: calc((100% - 20px) / 2);
+  }
+}
+@media (max-width: 576px) {
+  .homepage-section11 {
+    max-width: 536px;
+  }
+  .homepage-section11__content {
+    max-width: 496px;
+  }
+  .homepage-section11__first-line {
+    height: 400px;
+  }
+  .homepage-section11__image {
+    height: 180px;
+  }
+}
+@media (max-width: 425px) {
+  .homepage-section11 {
+    max-width: 385px;
+  }
+  .homepage-section11__content {
+    max-width: 345px;
+  }
+  .homepage-section11__first-line {
+    height: 300px;
+  }
+  .homepage-section11__image {
+    height: 130px;
+  }
+}
+@media (max-width: 315px) {
+  .homepage-section11 {
+    max-width: 320px;
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 749px;
+  background-color: #222222;
+}
+.footer__area {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 72px 0 40px;
+}
+.footer__contents {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__content1 {
+  width: 100%;
+  height: 493px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__input-content {
+  width: 100%;
+  height: 96px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__input-title {
+  width: 261px;
+  height: 100%;
+  font-family: "Cormorant Garamond SemiBold";
+  font-size: 40px;
+  line-height: 48px;
+  color: #FBF8F4;
+}
+.footer__input-title span {
+  font-family: "Cormorant Garamond SemiBold";
+  font-size: 40px;
+  line-height: 48px;
+  color: #D3A574;
+}
+.footer__inputs {
+  width: 939px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__input-email {
+  padding: 20px 0 20px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #321D1D;
+  width: 784px;
+  height: 64px;
+  border-radius: 0px;
+  border: 1px solid #FBF8F4;
+  background-color: #FBF8F4;
+  cursor: pointer;
+}
+.footer__input-email::placeholder {
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #321D1D;
+}
+.footer__input-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter SemiBold";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+  width: 143px;
+  height: 64px;
+  border-radius: 0px;
+  border: 1px solid #D3A574;
+  background-color: #D3A574;
+  cursor: pointer;
+}
+.footer__input-btn:active {
+  background-color: #c78c4d;
+}
+.footer__line {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: #FBF8F4;
+}
+.footer__all-links {
+  width: 100%;
+  height: 252px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__links {
+  width: 107px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.footer__links-title {
+  font-family: "Cormorant Garamond Bold";
+  font-size: 26px;
+  line-height: 32px;
+  color: #FBF8F4;
+}
+.footer__links-items {
+  width: 107px;
+  height: 204px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__links-item {
+  cursor: pointer;
+  list-style-type: none;
+  filter: brightness(0.6);
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+.footer__menu {
+  width: 106px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.footer__menu-title {
+  font-family: "Cormorant Garamond Bold";
+  font-size: 26px;
+  line-height: 32px;
+  color: #FBF8F4;
+}
+.footer__menu-items {
+  width: 106px;
+  height: 204px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__menu-item {
+  cursor: pointer;
+  list-style-type: none;
+  filter: brightness(0.6);
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+.footer__address {
+  width: 252px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.footer__address-title {
+  font-family: "Cormorant Garamond Bold";
+  font-size: 26px;
+  line-height: 32px;
+  color: #FBF8F4;
+}
+.footer__address-info {
+  width: 100%;
+  height: 204px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__address-items {
+  width: 100%;
+  height: 108px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__address-item {
+  list-style-type: none;
+  filter: brightness(0.6);
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+.footer__address-text {
+  cursor: pointer;
+  filter: brightness(0.6);
+  border-bottom: 2px solid #FBF8F4;
+  font-family: "Inter SemiBold";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+.footer__info {
+  width: 413px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__info-text {
+  width: 100%;
+  height: 119px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__info-title {
+  width: 216px;
+  height: 51px;
+}
+.footer__info-description {
+  width: 100%;
+  height: 48px;
+  filter: brightness(0.6);
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+.footer__work-time {
+  width: 200px;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__work-time-title {
+  font-family: "Cormorant Garamond Bold";
+  font-size: 26px;
+  line-height: 32px;
+  color: #FBF8F4;
+}
+.footer__work-time-description {
+  filter: brightness(0.6);
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+.footer__content2 {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__content2-text {
+  width: 362px;
+  height: 100%;
+  filter: brightness(0.6);
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+.footer__privacy-and-terms {
+  width: 292px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__privacy {
+  width: 105px;
+  height: 100%;
+  filter: brightness(0.6);
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+.footer__terms {
+  width: 147px;
+  height: 100%;
+  filter: brightness(0.6);
+  font-family: "Inter Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #FBF8F4;
+}
+
+/*# sourceMappingURL=main.css.map */
