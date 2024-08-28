@@ -11,22 +11,34 @@
 <body>
 
     <header class="header">
-        <div class="header__links">
-            <ul class="header__links-area1">
-                <li>LuxDin</li>
-                <li>About</li>
-                <li>Menu</li>
-                <li>Services</li>
-                <li>Blog</li>
-                <li>Contact</li>
-            </ul>
-            <ul class="header__links-area2">
-                <li>
-                    <img src="./src/images/phoneIcon.png" alt="phone">
-                    +1 (415) 226-0104
-                </li>
-                <li>Book Table</li>
-            </ul>
+        <div class="header__navigation">
+            <div class="header__nav-area">
+                <p class="header__brand-name">LuxDin</p>
+
+                <div id="header__menu" class="header__menu"></div>
+
+                <ul id="header__nav" class="header__nav">
+                    <li class="header__nav-item">
+                        <ul class="header__nav-list">
+                            <li class="header__nav-list--item">About</li>
+                            <li class="header__nav-list--item">Menu</li>
+                            <li class="header__nav-list--item">Services</li>
+                            <li class="header__nav-list--item">Blog</li>
+                            <li class="header__nav-list--item">Contact</li>
+                        </ul>
+                    </li>
+
+                    <li class="header__nav-item">
+                        <ul class="header__contact-list">
+                            <li class="header__contact-list--item">
+                                <img class="header__contact-list--icon" src="./src/images/phoneIcon.png" alt="phone">
+                                +1 (415) 226-0104
+                            </li>
+                            <li class="header__contact-list--item">Book Table</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -182,15 +194,14 @@
                     <div class="homepage-section6__descriptions1">
                         <div class="homepage-section6__descriptions1-item">
                             <p class="homepage-section6__descriptions1-item-title">Salmon</p>
-                            <p class="homepage-section6__descriptions1-item-description">Known for its mild, buttery flavor and tender texture, sourced from sustainable fisheries, cooked with extra crisps.
-                            </p>
+                            <p class="homepage-section6__descriptions1-item-description homepage-section6__descriptions1-item-description1">Known for its mild, buttery flavor and tender texture, sourced from sustainable fisheries, cooked with extra crisps.</p>
                         </div>
 
                         <div class="homepage-section6__descriptions1-line"></div>
 
                         <div class="homepage-section6__descriptions1-item">
                             <p class="homepage-section6__descriptions1-item-title">Prawn</p>
-                            <p class="homepage-section6__descriptions1-item-description">Tender yet bouncy red prawns that complement the richness of salmon for a culinary masterpiece.</p>
+                            <p class="homepage-section6__descriptions1-item-description homepage-section6__descriptions1-item-description2">Tender yet bouncy red prawns that complement the richness of salmon, creating a true culinary masterpiece.</p>
                         </div>
                     </div>
 
@@ -200,14 +211,14 @@
                     <div class="homepage-section6__descriptions2">
                         <div class="homepage-section6__descriptions2-item">
                             <p class="homepage-section6__descriptions2-item-title">Seasonings</p>
-                            <p class="homepage-section6__descriptions2-item-description">A carefully selected blend of herbs and spices to enhance the salmon and prawn natural taste, completed with olive oil.</p>
+                            <p class="homepage-section6__descriptions2-item-description homepage-section6__descriptions2-item-description1">A carefully selected blend of herbs and spices to enhance the salmon and prawn natural taste, completed with olive oil.</p>
                         </div>
 
                         <div class="homepage-section6__descriptions2-line"></div>
 
                         <div class="homepage-section6__descriptions2-item">
                             <p class="homepage-section6__descriptions2-item-title">Vegetables</p>
-                            <p class="homepage-section6__descriptions2-item-description">The vibrant carbohydrates and seasonal vegetables add a refreshing burst of color and flavor, organically and locally sourced.</p>
+                            <p class="homepage-section6__descriptions2-item-description homepage-section6__descriptions2-item-description2">The vibrant carbohydrates and seasonal vegetables add a refreshing burst of color and flavor, organically and locally sourced.</p>
                         </div>
                     </div>
                 </div>
@@ -247,7 +258,7 @@
                 <div class="homepage-section8__content2">
                     <div class="homepage-section8__question">
                         <div class="homepage-section8__question-area">
-                            <p class="homepage-section8__question-text">How can I make a reservation?</p>
+                            <p class="homepage-section8__question-text">What should I do to book a reservation?</p>
                             <img class="homepage-section8__question-icon"
                                 src="./src/images/homepage-section8-question-icon-right.png" alt="arrow icon">
                         </div>
@@ -262,7 +273,7 @@
                             <img class="homepage-section8__question-icon"
                                 src="./src/images/homepage-section8-question-icon-right.png" alt="arrow icon">
                         </div>
-                        <p class="homepage-section8__question-answer">Yes, LuxDin is committed to accommodating various dietary restrictions. Please inform us of any specific needs when making your reservation or speak to your server upon arrival. We offer vegetarian, vegan, gluten-free, and other special dietary options.</p>
+                        <p class="homepage-section8__question-answer">Certainly, LuxDin can accommodate various dietary restrictions. Please inform us when reserving or notify your server upon arrival. We offer vegetarian, vegan, gluten-free, and other special dietary options to meet your needs.</p>
                     </div>
 
                     <div class="homepage-section8__question-line"></div>
@@ -273,7 +284,7 @@
                             <img class="homepage-section8__question-icon"
                                 src="./src/images/homepage-section8-question-icon-right.png" alt="arrow icon">
                         </div>
-                        <p class="homepage-section8__question-answer">LuxDin maintains a smart casual dress code to uphold the elegant ambiance of our restaurant. We recommend business casual attire, but formal wear is also welcome for those seeking a truly luxurious dining.</p>
+                        <p class="homepage-section8__question-answer">LuxDin maintains a smart casual dress code to uphold the elegant ambiance of our restaurant. We recommend business casual attire, but formal wear is also welcome for those seeking a truly luxurious dining experience.</p>
                     </div>
 
                     <div class="homepage-section8__question-line"></div>
@@ -284,7 +295,7 @@
                             <img class="homepage-section8__question-icon"
                                 src="./src/images/homepage-section8-question-icon-right.png" alt="arrow icon">
                         </div>
-                        <p class="homepage-section8__question-answer">Absolutely! Gift cards for LuxDin are available for purchase on our website and at the restaurant. They make a perfect gift for any occasion and can be loaded with any amount.</p>
+                        <p class="homepage-section8__question-answer">Absolutely! LuxDin gift cards are available for purchase both online and at the restaurant. They make an ideal gift for any special occasion, with customizable amounts and can be redeemed for any LuxDin dining experience.</p>
                     </div>
 
                     <div class="homepage-section8__question-line"></div>
@@ -295,7 +306,7 @@
                             <img class="homepage-section8__question-icon"
                                 src="./src/images/homepage-section8-question-icon-right.png" alt="arrow icon">
                         </div>
-                        <p class="homepage-section8__question-answer">LuxDin accepts a variety of payment methods including cash, credit cards (Visa, MasterCard, American Express), and digital payment options such as Apple Pay and Google Wallet.</p>
+                        <p class="homepage-section8__question-answer">LuxDin accepts a variety of payment methods, including cash, credit cards (Visa, MasterCard, American Express), and digital payment options like Apple Pay or Google Wallet, making your payment process convenient.</p>
                     </div>
                 </div>
             </div>
@@ -427,7 +438,7 @@
                                 </div>
                             </div>
 
-                            <p class="homepage-section10__insights-description">Exploring Culinary Delights: A Journey Through Mediterranean Cuisine</p>
+                            <p class="homepage-section10__insights-description">Exploring Culinary Delights: Begin A Quick Journey Through Global Cuisine</p>
 
                             <div class="homepage-section10__insights-author">
                                 <div class="homepage-section10__insights-line"></div>
@@ -448,7 +459,7 @@
                                 </div>
                             </div>
 
-                            <p class="homepage-section10__insights-description">Sustainable Dining: Nurturing the Planet While Savoring Gourmet Flavors</p>
+                            <p class="homepage-section10__insights-description">Sustainable Dining: Nurturing the Planet While Savoring Gourmet Flavors of Today</p>
 
                             <div class="homepage-section10__insights-author">
                                 <div class="homepage-section10__insights-line"></div>
@@ -467,7 +478,7 @@
                                 </div>
                             </div>
 
-                            <p class="homepage-section10__insights-description">Unveiling the Artistry: A Journey Through Our Restaurant Signature Hospitality</p>
+                            <p class="homepage-section10__insights-description">Unveiling the Artistry: A Journey Through Signature Hospitality and Experiences</p>
 
                             <div class="homepage-section10__insights-author">
                                 <div class="homepage-section10__insights-line"></div>
@@ -488,7 +499,7 @@
                                 </div>
                             </div>
 
-                            <p class="homepage-section10__insights-description">Behind the Scenes: Unveiling the Secrets of Our Michelin-Starred Restaurant</p>
+                            <p class="homepage-section10__insights-description">Behind the Scenes: Discovering the Secrets of Our Michelin-Starred Restaurant</p>
 
                             <div class="homepage-section10__insights-author">
                                 <div class="homepage-section10__insights-line"></div>
@@ -507,7 +518,7 @@
                                 </div>
                             </div>
 
-                            <p class="homepage-section10__insights-description">From Farm to Table: The Essence of Seasonal Cuisine in Fine Dining</p>
+                            <p class="homepage-section10__insights-description">From Farm to Table: Uncovering The Essence of Seasonal Cuisine in Fine Dining</p>
 
                             <div class="homepage-section10__insights-author">
                                 <div class="homepage-section10__insights-line"></div>
@@ -526,6 +537,7 @@
                 </div>
                 <div class="homepage-section11__second-line">
                     <div class="homepage-section11__image homepage-section11__image-checked"></div>
+                    <div class="homepage-section11__image"></div>
                     <div class="homepage-section11__image"></div>
                     <div class="homepage-section11__image"></div>
                     <div class="homepage-section11__image"></div>

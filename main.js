@@ -1,3 +1,31 @@
+// header
+let headerMenuClicker = false;
+const headerMenu = document.getElementById('header__menu');
+const headerNav = document.getElementById('header__nav');
+
+headerMenu.addEventListener('click', () => {
+    if (!headerMenuClicker) {
+        headerMenuClicker = true;
+        headerMenu.classList.add('header__menu-active');
+        headerNav.classList.add('header__nav-active');
+    } else {
+        headerMenuClicker = false;
+        headerMenu.classList.remove('header__menu-active');
+        headerNav.classList.remove('header__nav-active');
+    }
+});
+
+window.addEventListener('resize', () => {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth > 992) {
+        headerMenuClicker = false;
+        headerMenu.classList.remove('header__menu-active');
+        headerNav.classList.remove('header__nav-active');
+    }
+})
+// header
+
 // homepage-section8
 const questionOfHomeSec8 = document.querySelectorAll('.homepage-section8__question');
 const questionIconOfHomeSec8 = document.querySelectorAll('.homepage-section8__question-icon');
@@ -22,7 +50,7 @@ questionOfHomeSec8.forEach((area, index) => {
             if (index < questionLineOfHomeSec8.length) {
                 questionLineOfHomeSec8[index].classList.remove('homepage-section8__question-line--active');
             }
-        }        
+        }
     });
 })
 // homepage-section8
@@ -107,13 +135,13 @@ function startTimerIntervalOfHomeSec10() {
     timerIntervalOfHomeSec10 = setInterval(() => {
         insightsOfHomeSec10[selectedRadioOfHomeSec10].classList.add('homepage-section10__insights-delete');
         radioOfHomeSec10[selectedRadioOfHomeSec10].checked = false;
-    
+
         selectedRadioOfHomeSec10++;
-    
+
         if (selectedRadioOfHomeSec10 >= radioOfHomeSec10.length) {
             selectedRadioOfHomeSec10 = 0;
         }
-    
+
         insightsOfHomeSec10[selectedRadioOfHomeSec10].classList.remove('homepage-section10__insights-delete');
         radioOfHomeSec10[selectedRadioOfHomeSec10].checked = true;
     }, 5000);
