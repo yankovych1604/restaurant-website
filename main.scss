@@ -11,46 +11,299 @@ body {
     width: 100%;
     height: 64px;
     position: absolute;
+    @include flex(row, center, flex-start);
 
-    &__links {
+    &__navigation {
         max-width: 1280px;
+        width: 100%;
         height: 100%;
-        margin: 0 auto;
+        @include flex(row, space-between, flex-start);
+    }
+
+    &__nav-area {
+        width: 100%;
+        height: 34px;
+        margin-top: 27px;
+        gap: 0 56px;
+        @include flex(row, flex-start, flex-start);
+    }
+
+    &__brand-name {
+        @include heading1_name($cormorantGaramondBoldItalic, 28px, $brown1);
+    }
+
+    &__menu {
+        width: 28px;
+        height: 28px;
+        margin: 3px 0;
+        display: none;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        background-image: url('./src/images/menuOpenIcon.svg');
+    }
+
+    &__menu-active {
+        z-index: 2;
+        display: flex;
+        filter: invert(1);
+        background-image: url('./src/images/menuCloseIcon.svg');
+    }
+
+    &__nav {
+        width: 1146px;
+        height: 24px;
+        margin: 5px 0;
         @include flex(row, space-between, flex-start);
 
-        &-area1 {
-            width: 544px;
-            height: 34px;
-            margin: 27px 0 3px 0;
-            @include flex(row, space-between, center);
+        &-item {
+            list-style-type: none;
         }
+    }
 
-        &-area1 li {
+    &__nav-list {
+        width: 410px;
+        height: 100%;
+        @include flex(row, space-between, flex-start);
+
+        &--item {
+            cursor: pointer;
             list-style-type: none;
             @include body2($interRegular, 16px, 24px, $primary);
         }
+    }
 
-        &-area1 li:nth-child(1) {
-            @include heading1_name($cormorantGaramondBoldItalic, 28px, $brown1);
-        }
+    &__contact-list {
+        width: 341px;
+        @include flex(row, space-between, center);
 
-        &-area2 {
-            width: 341px;
-            height: 40px;
-            margin-top: 24px;
-            @include flex(row, space-between, center);
-        }
-
-        &-area2 li {
+        &--item {
+            cursor: pointer;
             list-style-type: none;
             @include body2_bold($interSemiBold, 16px, 24px, $primary);
         }
 
-        &-area2 li:nth-child(1) {
+        &--item:nth-child(1) {
             width: 167px;
             height: 100%;
             @include flex(row, space-between, center);
             @include body2($interRegular, 16px, 24px, $primary);
+        }
+    }
+
+    @media (max-width: $media-xxl) {
+        width: 100%;
+        padding: 0 20px;
+
+        &__navigation {
+            max-width: 1280px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        width: 100%;
+
+        &__navigation {
+            max-width: 1200px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: $media-mx) {
+        width: 100%;
+
+        &__navigation {
+            max-width: 952px;
+            width: 100%;
+        }
+
+        &__nav-area {
+            width: 100%;
+            padding: 0 15px;
+            position: relative;
+            @include flex(row-reverse, space-between, flex-start);
+        }
+
+        &__menu {
+            display: flex;
+        }
+
+        &__nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            margin: 0 0;
+            width: 275px;
+            height: 435px;
+            display: none;
+            padding: 25px 20px;
+            background-color: $primary;
+
+            &-item {
+                width: 100%;
+            }
+        }
+
+        &__nav-active {
+            @include flex(column, flex-start, flex-start);
+        }
+
+        &__nav-list {
+            width: 100%;
+            height: 275px;
+            @include flex(column, space-between, flex-start);
+
+            &--item {
+                width: 100%;
+                padding: 15px 0;
+                border-bottom: 1px solid $secondary;
+                @include body2_bold($interSemiBold, 16px, 24px, $secondary);
+            }
+        }
+
+        &__contact-list {
+            width: 100%;
+            height: 110px;
+            @include flex(column, space-between, flex-start);
+
+            &--item {
+                width: 100%;
+                padding: 15px 0;
+                border-bottom: 1px solid $secondary;
+                @include body2_bold($interSemiBold, 16px, 24px, $secondary);
+            }
+
+            &--item:nth-child(1) {
+                width: 100%;
+                height: 55px;
+                @include flex(row, flex-start, flex-start);
+                @include body2_bold($interSemiBold, 16px, 24px, $secondary);
+            }
+
+            &--icon {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: $media-md) {
+        width: 100%;
+
+        &__navigation {
+            max-width: 728px;
+            width: 100%;
+        }
+
+        &__nav {
+            width: 250px;
+            height: 390px;
+        }
+
+        &__nav-list {
+            height: 245px;
+
+            &--item {
+                padding: 12px 0;
+            }
+        }
+
+        &__contact-list {
+            height: 97px;
+
+            &--item {
+                padding: 12px 0;
+            }
+
+            &--item:nth-child(1) {
+                height: 49px;
+            }
+        }
+    }
+
+    @media (max-width: $media-ms) {
+        width: 100%;
+
+        &__navigation {
+            max-width: 536px;
+            width: 100%;
+        }
+
+        &__menu {
+            width: 24px;
+            height: 24px;
+            margin: 5px 0;
+        }
+
+        &__nav {
+            width: 225px;
+            height: 370px;
+        }
+
+        &__nav-list {
+            height: 225px;
+
+            &--item {
+                padding: 10px 0;
+                @include body2_bold($interSemiBold, 15px, 24px, $secondary);
+            }
+        }
+
+        &__contact-list {
+            height: 90px;
+
+            &--item {
+                padding: 10px 0;
+                @include body2_bold($interSemiBold, 15px, 24px, $secondary);
+            }
+
+            &--item:nth-child(1) {
+                height: 45px;
+                @include body2_bold($interSemiBold, 15px, 24px, $secondary);
+            }
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        width: 100%;
+
+        &__navigation {
+            max-width: 385px;
+            width: 100%;
+        }
+
+        &__nav {
+            width: 190px;
+            height: 340px;
+            padding: 25px 15px;
+
+            &-area {
+                padding: 0 10px;
+            }
+        }
+
+        &__nav-list {
+            height: 205px;
+
+            &--item {
+                padding: 8px 0;
+                @include body2_bold($interSemiBold, 14px, 24px, $secondary);
+            }
+        }
+
+        &__contact-list {
+            height: 82px;
+
+            &--item {
+                padding: 8px 0;
+                @include body2_bold($interSemiBold, 14px, 24px, $secondary);
+            }
+
+            &--item:nth-child(1) {
+                height: 41px;
+                @include body2_bold($interSemiBold, 14px, 24px, $secondary);
+            }
         }
     }
 }
@@ -68,14 +321,15 @@ body {
     @include flex(row, center, flex-start);
 
     &__content {
-        width: 979px;
-        height: 438px;
+        max-width: 1280px;
+        width: 100%;
         gap: 32px 0;
         margin: 174px 0 188px;
         @include flex(column, flex-start, center);
     }
 
     &__text-content {
+        max-width: 979px;
         width: 100%;
         gap: 10px 0;
         @include flex(column, flex-start, center);
@@ -83,12 +337,12 @@ body {
 
     &__title {
         width: 100%;
-        height: 280px;
         @include flex(column, flex-start, flex-start);
 
         &-first-line {
             width: 100%;
-            @include flex(row, space-between, flex-start);
+            gap: 0 24px;
+            @include flex(row, flex-start, flex-start);
         }
 
         &-text1 {
@@ -123,6 +377,223 @@ body {
         @include flex(row, center, center);
         @include button(297px, 56px, 30px, 1px solid $primary, $primary);
         @include heading6($cormorantGaramondBold, 26px, 32px, $dark_brown);
+    }
+
+    @media (max-width: $media-xxl) {
+        width: 100%;
+
+        &__content {
+            max-width: 1280px;
+        }
+
+        &__text-content {
+            max-width: 869px;
+        }
+
+        &__title {
+            width: 100%;
+
+            &-text1 {
+                width: 460px;
+                @include heading1($cormorantGaramondMedium, 125px, 135px, $primary);
+            }
+
+            &-highlight {
+                width: 385px;
+                @include heading1_italic($cormorantGaramondItalic, 125px, 135px, $primary);
+            }
+
+            &-text2 {
+                @include heading1($cormorantGaramondMedium, 125px, 135px, $primary);
+            }
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        width: 100%;
+
+        &__content {
+            max-width: 1200px;
+        }
+
+        &__text-content {
+            max-width: 770px;
+        }
+
+        &__title {
+            width: 100%;
+
+            &-text1 {
+                width: 405px;
+                @include heading1($cormorantGaramondMedium, 110px, 120px, $primary);
+            }
+
+            &-highlight {
+                width: 340px;
+                @include heading1_italic($cormorantGaramondItalic, 110px, 120px, $primary);
+            }
+
+            &-text2 {
+                @include heading1($cormorantGaramondMedium, 110px, 120px, $primary);
+            }
+        }
+    }
+
+    @media (max-width: $media-lg) {
+        width: 100%;
+
+        &__content {
+            max-width: 984px;
+        }
+
+        &__text-content {
+            max-width: 668px;
+        }
+
+        &__title {
+            width: 100%;
+
+            &-text1 {
+                width: 350px;
+                @include heading1($cormorantGaramondMedium, 95px, 105px, $primary);
+            }
+
+            &-highlight {
+                width: 294px;
+                @include heading1_italic($cormorantGaramondItalic, 95px, 105px, $primary);
+            }
+
+            &-text2 {
+                @include heading1($cormorantGaramondMedium, 95px, 105px, $primary);
+            }
+        }
+
+        &__description {
+            width: 660px;
+            @include body1($interRegular, 19px, 30px, $primary);
+        }
+    }
+
+    @media (max-width: $media-md) {
+        width: 100%;
+
+        &__content {
+            max-width: 728px;
+        }
+
+        &__text-content {
+            max-width: 530px;
+        }
+
+        &__title {
+            width: 100%;
+
+            &-text1 {
+                width: 276px;
+                @include heading1($cormorantGaramondMedium, 75px, 85px, $primary);
+            }
+
+            &-highlight {
+                width: 230px;
+                @include heading1_italic($cormorantGaramondItalic, 75px, 85px, $primary);
+            }
+
+            &-text2 {
+                @include heading1($cormorantGaramondMedium, 75px, 85px, $primary);
+            }
+        }
+
+        &__description {
+            width: 530px;
+            @include body1($interRegular, 18px, 30px, $primary);
+        }
+
+        &__button {
+            @include heading6($cormorantGaramondBold, 24px, 32px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-ms) {
+        width: 100%;
+
+        &__content {
+            max-width: 536px;
+        }
+
+        &__text-content {
+            max-width: 386px;
+        }
+
+        &__title {
+            width: 100%;
+
+            &-first-line {
+                gap: 0 14px;
+            }
+
+            &-text1 {
+                width: 204px;
+                @include heading1($cormorantGaramondMedium, 55px, 65px, $primary);
+            }
+
+            &-highlight {
+                width: 170px;
+                @include heading1_italic($cormorantGaramondItalic, 55px, 65px, $primary);
+            }
+
+            &-text2 {
+                @include heading1($cormorantGaramondMedium, 55px, 65px, $primary);
+            }
+        }
+
+        &__description {
+            width: 386px;
+            @include body1($interRegular, 17px, 30px, $primary);
+        }
+
+        &__button {
+            @include heading6($cormorantGaramondBold, 22px, 32px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        width: 100%;
+
+        &__content {
+            max-width: 385px;
+        }
+
+        &__text-content {
+            max-width: 285px;
+        }
+
+        &__title {
+            width: 100%;
+
+            &-text1 {
+                width: 148px;
+                @include heading1($cormorantGaramondMedium, 40px, 50px, $primary);
+            }
+
+            &-highlight {
+                width: 124px;
+                @include heading1_italic($cormorantGaramondItalic, 40px, 50px, $primary);
+            }
+
+            &-text2 {
+                @include heading1($cormorantGaramondMedium, 40px, 50px, $primary);
+            }
+        }
+
+        &__description {
+            width: 285px;
+            @include body1($interRegular, 16px, 30px, $primary);
+        }
+
+        &__button {
+            @include button(250px, 56px, 30px, 1px solid $primary, $primary);
+            @include heading6($cormorantGaramondBold, 20px, 32px, $dark_brown);
+        }
     }
 }
 
@@ -328,6 +799,10 @@ body {
             @include flex(column, center, flex-start);
         }
 
+        &__image {
+            height: 420px;
+        }
+
         &__figcaption {
             height: 90px;
             margin-top: 30px;
@@ -375,7 +850,7 @@ body {
         }
 
         &__image {
-            height: 368px;
+            height: 340px;
         }
 
         &__figcaption {
@@ -385,7 +860,7 @@ body {
         }
     }
 
-    @media (max-width: $media-sm) {
+    @media (max-width: $media-ms) {
         max-width: 536px;
 
         &__contents {
@@ -427,7 +902,7 @@ body {
         }
 
         &__image {
-            height: 318px;
+            height: 280px;
         }
 
         &__figcaption {
@@ -437,7 +912,7 @@ body {
         }
     }
 
-    @media (max-width: $media-xs) {
+    @media (max-width: $media-sm) {
         max-width: 385px;
 
         &__contents {
@@ -486,7 +961,7 @@ body {
         }
 
         &__image {
-            height: 268px;
+            height: 230px;
         }
 
         &__figcaption {
@@ -494,6 +969,12 @@ body {
             margin-top: 20px;
             @include body1($interRegular, 16px, 30px, $dark_brown);
         }
+    }
+
+    @media (max-width: $media-xs) {
+        max-width: 320px;
+        width: 100%;
+        padding: 0 5px;
     }
 }
 
@@ -646,7 +1127,7 @@ body {
         }
     }
 
-    @media (max-width: $media-sm) {
+    @media (max-width: $media-ms) {
         max-width: 536px;
 
         &__content {
@@ -673,7 +1154,7 @@ body {
         }
     }
 
-    @media (max-width: $media-xs) {
+    @media (max-width: $media-sm) {
         max-width: 385px;
 
         &__content {
@@ -698,6 +1179,12 @@ body {
             height: 104px;
             @include body1($interRegular, 14px, 26px, $primary);
         }
+    }
+
+    @media (max-width: $media-xs) {
+        max-width: 320px;
+        width: 100%;
+        padding: 0 5px;
     }
 }
 
@@ -877,7 +1364,7 @@ body {
         }
     }
 
-    @media (max-width: $media-sm) {
+    @media (max-width: $media-ms) {
         max-width: 536px;
 
         &__content {
@@ -903,7 +1390,7 @@ body {
         }
     }
 
-    @media (max-width: $media-xs) {
+    @media (max-width: $media-sm) {
         max-width: 385px;
 
         &__content {
@@ -934,6 +1421,12 @@ body {
             }
         }
     }
+
+    @media (max-width: $media-xs) {
+        max-width: 320px;
+        width: 100%;
+        padding: 0 5px;
+    }
 }
 
 .homepage-section5 {
@@ -958,7 +1451,7 @@ body {
 
     &__text-content {
         width: 585px;
-        height: 388px;
+        min-height: 388px;
         background-color: $primary;
         padding: 48px 48px 60px 48px;
     }
@@ -973,11 +1466,10 @@ body {
         @include body1($interRegular, 20px, 30px, $dark_brown);
 
         &-list {
-            width: 402px;
-            height: 108px;
+            width: 100%;
             margin-top: 32px;
-            padding-left: 8px;
-            @include flex(column, space-between, flex-start);
+            gap: 12px 0;
+            @include flex(column, flex-start, flex-start);
         }
 
         &-item {
@@ -1055,7 +1547,7 @@ body {
         }
     }
 
-    @media (max-width: $media-sm) {
+    @media (max-width: $media-ms) {
         max-width: 536px;
 
         &__content {
@@ -1075,21 +1567,41 @@ body {
         &__description {
             @include body1($interRegular, 18px, 30px, $dark_brown);
 
-            &-list {
-                width: 100%;
-                padding-left: 0;
-            }
-
             &-item {
-                &-image {
-                    display: none;
-                }
-
-                &-text {
-                    @include body2_bold($interSemiBold, 14px, 24px, $dark_brown);
-                }
+                @include flex(row, flex-start, center);
             }
         }
+    }
+
+    @media (max-width: $media-sm) {
+        max-width: 385px;
+
+        &__content {
+            max-width: 345px;
+        }
+
+        &__text-content {
+            width: 240px;
+            padding: 30px 20px;
+        }
+
+        &__title {
+            @include heading3($cormorantGaramondSemiBold, 35px, 45px, $dark_brown);
+        }
+
+        &__description {
+            @include body1($interRegular, 16px, 30px, $dark_brown);
+
+            &-item-text {
+                @include body2_bold($interSemiBold, 14px, 24px, $dark_brown);
+            }
+        }
+    }
+
+    @media (max-width: $media-xs) {
+        max-width: 320px;
+        width: 100%;
+        padding: 0 5px;
     }
 }
 
@@ -1097,11 +1609,11 @@ body {
     max-width: 1440px;
     width: 100%;
     margin-top: 120px;
+    @include flex(row, center, flex-start);
 
     &__content {
         max-width: 1280px;
         width: 100%;
-        margin: 0 auto;
         @include flex(column, flex-start, center);
     }
 
@@ -1118,7 +1630,6 @@ body {
         max-width: 1280px;
         width: 100%;
         margin-top: 64px;
-        padding: 0 20px;
         @include flex(row, space-between, center);
     }
 
@@ -1130,7 +1641,8 @@ body {
         &-item {
             width: 320px;
             height: 110px;
-            @include flex(column, space-between, flex-start);
+            gap: 8px 0;
+            @include flex(column, flex-start, flex-start);
 
             &-title {
                 @include body1_bold($interSemiBold, 20px, 30px, $dark_brown);
@@ -1163,7 +1675,8 @@ body {
         &-item {
             width: 320px;
             height: 110px;
-            @include flex(column, space-between, flex-end);
+            gap: 8px 0;
+            @include flex(column, flex-start, flex-end);
 
             &-title {
                 @include body1_bold($interSemiBold, 20px, 30px, $dark_brown);
@@ -1183,17 +1696,276 @@ body {
             background-color: $dark_brown;
         }
     }
+
+    @media (max-width: $media-xxl) {
+        max-width: 1280px;
+        width: 100%;
+        padding: 0 20px;
+
+        &__content {
+            max-width: 1240px;
+            width: 100%;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 58px, 68px, $dark_brown);
+        }
+
+        &__text-content {
+            max-width: 1240px;
+        }
+
+        &__image {
+            width: 466px;
+            height: 466px;
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        max-width: 1200px;
+
+        &__content {
+            max-width: 1160px;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 52px, 62px, $dark_brown);
+        }
+
+        &__text-content {
+            max-width: 1160px;
+        }
+
+        &__descriptions1 {
+            width: 270px;
+            height: 385px;
+
+            &-item {
+                width: 270px;
+                height: 134px;
+            }
+        }
+
+        &__image {
+            width: 420px;
+            height: 420px;
+        }
+
+        &__descriptions2 {
+            width: 270px;
+            height: 385px;
+
+            &-item {
+                width: 270px;
+                height: 134px;
+            }
+        }
+    }
+
+    @media (max-width: $media-lg) {
+        max-width: 984px;
+
+        &__content {
+            max-width: 944px;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 48px, 58px, $dark_brown);
+        }
+
+        &__text-content {
+            max-width: 944px;
+            gap: 20px 0;
+            @include flex(column, flex-start, center);
+        }
+
+        &__descriptions1 {
+            width: 100%;
+            height: 134px;
+            @include flex(row, space-between, flex-start);
+
+            &-item {
+                width: 270px;
+                height: 134px;
+
+                &-description1 {
+                    text-align: start;
+                }
+
+                &-description2 {
+                    text-align: end;
+                }
+            }
+
+            &-item:nth-child(1) {
+                @include flex(column, flex-start, flex-start);
+            }
+
+            &-item:nth-child(3) {
+                @include flex(column, flex-start, flex-end);
+            }
+        }
+
+        &__image {
+            width: 420px;
+            height: 420px;
+        }
+
+        &__descriptions2 {
+            width: 100%;
+            height: 134px;
+            @include flex(row, space-between, flex-end);
+
+            &-item {
+                width: 270px;
+                height: 134px;
+
+                &-description1 {
+                    text-align: start;
+                }
+
+                &-description2 {
+                    text-align: end;
+                }
+            }
+
+            &-item:nth-child(1) {
+                @include flex(column, flex-start, flex-start);
+            }
+
+            &-item:nth-child(3) {
+                @include flex(column, flex-start, flex-end);
+            }
+        }
+    }
+
+    @media (max-width: $media-md) {
+        max-width: 728px;
+
+        &__content {
+            max-width: 688px;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 42px, 52px, $dark_brown);
+        }
+
+        &__text-content {
+            max-width: 688px;
+        }
+
+        &__descriptions1 {
+            width: 100%;
+            height: 158px;
+
+            &-item {
+                width: 210px;
+                height: 158px;
+            }
+        }
+
+        &__image {
+            width: 380px;
+            height: 380px;
+        }
+
+        &__descriptions2 {
+            width: 100%;
+            height: 158px;
+
+            &-item {
+                width: 210px;
+                height: 158px;
+            }
+        }
+    }
+
+    @media (max-width: $media-ms) {
+        max-width: 536px;
+
+        &__content {
+            max-width: 496px;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 38px, 48px, $dark_brown);
+        }
+
+        &__text-content {
+            gap: 40px 0;
+            max-width: 496px;
+        }
+
+        &__descriptions1 {
+            width: 100%;
+            height: 256px;
+            @include flex(column, space-between, center);
+
+            &-item {
+                width: 100%;
+                height: 85px;
+
+                &-description1 {
+                    text-align: justify;
+                }
+
+                &-description2 {
+                    text-align: justify;
+                }
+            }
+
+            &-item:nth-child(1) {
+                @include flex(column, flex-start, center);
+            }
+
+            &-item:nth-child(3) {
+                @include flex(column, flex-start, center);
+            }
+        }
+
+        &__image {
+            width: 380px;
+            height: 380px;
+        }
+
+        &__descriptions2 {
+            width: 100%;
+            height: 256px;
+            @include flex(column, space-between, center);
+
+            &-item {
+                width: 100%;
+                height: 85px;
+
+                &-description1 {
+                    text-align: justify;
+                }
+
+                &-description2 {
+                    text-align: justify;
+                }
+            }
+
+            &-item:nth-child(1) {
+                @include flex(column, flex-start, center);
+            }
+
+            &-item:nth-child(3) {
+                @include flex(column, flex-start, center);
+            }
+        }
+    }
 }
 
 .homepage-section7 {
     max-width: 1440px;
     width: 100%;
     margin-top: 120px;
+    @include flex(row, center, flex-start);
 
     &__content {
         max-width: 1280px;
         width: 100%;
-        margin: 0 auto;
         padding: 120px 0;
         background-size: cover;
         background-position: center;
@@ -1207,12 +1979,14 @@ body {
 
         &-first-line {
             width: 747px;
-            @include flex(row, space-between, flex-start);
+            gap: 0 16px;
+            @include flex(row, flex-start, flex-start);
         }
 
         &-second-line {
             width: 892px;
-            @include flex(row, space-between, flex-start);
+            gap: 0 16px;
+            @include flex(row, flex-start, flex-start);
         }
 
         &-normal {
@@ -1241,24 +2015,236 @@ body {
         @include body2($interRegular, 16px, 24px, $primary);
         @include button(182px, 56px, 30px, 1px solid $primary, transparent);
     }
+
+    @media (max-width: $media-xxl) {
+        max-width: 1280px;
+        width: 100%;
+        padding: 0 20px;
+
+        &__content {
+            max-width: 1240px;
+            width: 100%;
+        }
+
+        &__title {
+            width: 838px;
+
+            &-first-line {
+                width: 702px;
+            }
+
+            &-second-line {
+                width: 838px;
+            }
+
+            &-normal {
+                @include heading2($cormorantGaramondMedium, 75px, 85px, $primary);
+            }
+
+            &-italic {
+                @include heading2_italic($cormorantGaramondMediumItalic, 75px, 85px, $primary);
+            }
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        max-width: 1200px;
+
+        &__content {
+            max-width: 1160px;
+        }
+
+        &__title {
+            width: 731px;
+
+            &-first-line {
+                width: 613px;
+            }
+
+            &-second-line {
+                width: 731px;
+            }
+
+            &-normal {
+                @include heading2($cormorantGaramondMedium, 65px, 75px, $primary);
+            }
+
+            &-italic {
+                @include heading2_italic($cormorantGaramondMediumItalic, 65px, 75px, $primary);
+            }
+        }
+    }
+
+    @media (max-width: $media-lg) {
+        max-width: 984px;
+
+        &__content {
+            max-width: 944px;
+        }
+
+        &__title {
+            width: 623px;
+
+            &-first-line {
+                width: 523px;
+            }
+
+            &-second-line {
+                width: 623px;
+            }
+
+            &-normal {
+                @include heading2($cormorantGaramondMedium, 55px, 65px, $primary);
+            }
+
+            &-italic {
+                @include heading2_italic($cormorantGaramondMediumItalic, 55px, 65px, $primary);
+            }
+        }
+    }
+
+    @media (max-width: $media-md) {
+        max-width: 728px;
+
+        &__content {
+            max-width: 688px;
+        }
+
+        &__title {
+            width: 516px;
+
+            &-first-line {
+                width: 434px;
+            }
+
+            &-second-line {
+                width: 516px;
+            }
+
+            &-normal {
+                @include heading2($cormorantGaramondMedium, 45px, 55px, $primary);
+            }
+
+            &-italic {
+                @include heading2_italic($cormorantGaramondMediumItalic, 45px, 55px, $primary);
+            }
+        }
+    }
+
+    @media (max-width: $media-ms) {
+        max-width: 536px;
+
+        &__content {
+            max-width: 496px;
+        }
+
+        &__title {
+            width: 300px;
+
+            &-first-line {
+                width: 270px;
+                gap: 10px 16px;
+                flex-wrap: wrap;
+                @include flex(row, center, flex-start);
+            }
+
+            &-second-line {
+                width: 300px;
+                gap: 10px 16px;
+                flex-wrap: wrap;
+                @include flex(row, center, flex-start);
+            }
+
+            &-normal {
+                @include heading2($cormorantGaramondMedium, 45px, 55px, $primary);
+            }
+
+            &-italic {
+                @include heading2_italic($cormorantGaramondMediumItalic, 45px, 55px, $primary);
+            }
+        }
+
+        &__buttons {
+            width: 300px;
+            gap: 20px 0;
+            margin: 48px 0 0;
+            @include flex(column, flex-start, center);
+        }
+
+        &__button-reservation {
+            @include button(280px, 56px, 30px, 1px solid $primary, $primary);
+            @include heading6($cormorantGaramondBold, 18px, 24px, $dark_brown);
+        }
+
+        &__button-location {
+            @include button(280px, 56px, 30px, 1px solid $primary, transparent);
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        max-width: 385px;
+
+        &__content {
+            max-width: 345px;
+        }
+
+        &__title {
+            width: 260px;
+
+            &-first-line {
+                width: 250px;
+            }
+
+            &-second-line {
+                width: 255px;
+            }
+
+            &-normal {
+                @include heading2($cormorantGaramondMedium, 40px, 50px, $primary);
+            }
+
+            &-italic {
+                @include heading2_italic($cormorantGaramondMediumItalic, 40px, 50px, $primary);
+            }
+        }
+
+        &__buttons {
+            width: 260px;
+        }
+
+        &__button-reservation {
+            @include button(250px, 56px, 30px, 1px solid $primary, $primary);
+        }
+
+        &__button-location {
+            @include button(250px, 56px, 30px, 1px solid $primary, transparent);
+        }
+    }
+
+    @media (max-width: $media-xs) {
+        max-width: 320px;
+        width: 100%;
+        padding: 0 5px;
+    }
 }
 
 .homepage-section8 {
     max-width: 1440px;
     width: 100%;
     margin-top: 120px;
+    @include flex(row, center, flex-start);
 
     &__contents {
         max-width: 1280px;
         width: 100%;
-        margin: 0 auto;
+        gap: 0 30px;
         @include flex(row, space-between, center);
     }
 
     &__content1 {
         width: 380px;
-        height: 216px;
-        @include flex(column, space-between, flex-start);
+        gap: 16px 0;
+        @include flex(column, flex-start, flex-start);
     }
 
     &__faq {
@@ -1285,6 +2271,7 @@ body {
 
         &-area {
             width: 100%;
+            gap: 0 25px;
             @include flex(row, space-between, center);
         }
 
@@ -1304,6 +2291,7 @@ body {
         }
 
         &-answer {
+            text-align: justify;
             margin-top: 12px;
             filter: opacity(0.7);
             @include body1($interRegular, 20px, 30px, $dark_brown);
@@ -1328,11 +2316,207 @@ body {
     &__question--active {
         height: 174px; 
     }
-    
-    &__question--active:nth-child(3),
-    &__question--active:nth-child(4),
-    &__question--active:nth-child(5) {
-        height: 144px; 
+
+    @media (max-width: $media-xxl) {
+        max-width: 1280px;
+        width: 100%;
+        padding: 0 20px;
+
+        &__contents {
+            max-width: 1240px;
+            width: 100%;
+        }
+
+        &__content1 {
+            width: 335px;
+        }
+
+        &__title {
+            width: 335px;
+            @include heading2($cormorantGaramondMedium, 70px, 80px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        max-width: 1200px;
+
+        &__contents {
+            max-width: 1160px;
+        }
+
+        &__content1 {
+            width: 285px;
+        }
+
+        &__title {
+            width: 285px;
+            @include heading2($cormorantGaramondMedium, 60px, 70px, $dark_brown);
+        }
+    }
+
+    @media (max-width: $media-lg) {
+        max-width: 984px;
+
+        &__contents {
+            max-width: 944px;
+            gap: 50px 0;
+            @include flex(column, flex-start, flex-start);
+        }
+
+        &__content1 {
+            width: 262px;
+        }
+
+        &__title {
+            width: 262px;
+            @include heading2($cormorantGaramondMedium, 55px, 65px, $dark_brown);
+        }
+
+        &__content2 {
+            width: 100%;
+        }
+
+        &__question {
+            width: 100%;
+
+            &-text {
+                @include heading5($cormorantGaramondMedium, 32px, 42px, $dark_brown);
+            }
+
+            &-answer {
+                @include body1($interRegular, 19px, 30px, $dark_brown);
+            }
+        }
+
+        &__question--active {
+            height: 144px;
+        }
+    }
+
+    @media (max-width: $media-md) {
+        max-width: 728px;
+
+        &__contents {
+            max-width: 688px;
+        }
+
+        &__content1 {
+            width: 238px;
+        }
+
+        &__title {
+            width: 238px;
+            @include heading2($cormorantGaramondMedium, 50px, 60px, $dark_brown);
+        }
+
+        &__content2 {
+            width: 100%;
+        }
+
+        &__question {
+            width: 100%;
+
+            &-text {
+                @include heading5($cormorantGaramondMedium, 28px, 42px, $dark_brown);
+            }
+
+            &-answer {
+                height: 120px;
+                @include flex(row, center, center);
+                @include body1($interRegular, 18px, 30px, $dark_brown);
+            }
+        }
+
+        &__question--active {
+            height: 174px;
+        }
+    }
+
+    @media (max-width: $media-ms) {
+        max-width: 536px;
+
+        &__contents {
+            max-width: 496px;
+        }
+
+        &__content1 {
+            width: 214px;
+        }
+
+        &__title {
+            width: 214px;
+            @include heading2($cormorantGaramondMedium, 45px, 55px, $dark_brown);
+        }
+
+        &__content2 {
+            width: 100%;
+        }
+
+        &__question {
+            width: 100%;
+            height: 84px;
+
+            &-text {
+                width: 320px;
+                @include heading5($cormorantGaramondMedium, 26px, 42px, $dark_brown);
+            }
+
+            &-answer {
+                height: 150px;
+                @include body1($interRegular, 17px, 30px, $dark_brown);
+            }
+        }
+
+        &__question--active {
+            height: 247px;
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        max-width: 385px;
+
+        &__contents {
+            max-width: 345px;
+        }
+
+        &__content1 {
+            width: 190px;
+        }
+
+        &__title {
+            width: 190px;
+            @include heading2($cormorantGaramondMedium, 40px, 50px, $dark_brown);
+        }
+
+        &__content2 {
+            width: 100%;
+        }
+
+        &__question {
+            width: 100%;
+            height: 84px;
+
+
+            &-text {
+                width: 200px;
+                @include heading5($cormorantGaramondMedium, 22px, 42px, $dark_brown);
+            }
+
+            &-answer {
+                height: 211px;
+                @include body1($interRegular, 16px, 30px, $dark_brown);
+            }
+        }
+
+        &__question--active {
+            height: 307px;
+        }
+    }
+
+    @media (max-width: $media-xs) {
+        max-width: 320px;
+        width: 100%;
+        padding: 0 5px;
     }
 }
 
@@ -1477,24 +2661,23 @@ body {
     max-width: 1440px;
     width: 100%;
     margin-top: 120px;
+    @include flex(row, center, flex-start);
 
     &__contents {
         max-width: 1280px;
         width: 100%;
-        margin: 0 auto;
         @include flex(column, flex-start, flex-start);
     }
 
     &__content1 {
         width: 100%;
-        height: 112px;
         @include flex(row, space-between, flex-end);
     }
 
     &__text-content {
         width: 435px;
-        height: 100%;
-        @include flex(column, space-between, flex-start);
+        gap: 16px 0;
+        @include flex(column, flex-start, flex-start);
     }
 
     &__title1 {
@@ -1540,18 +2723,17 @@ body {
 
     &__content2 {
         width: 100%;
-        height: 654px;
         margin-top: 48px;
     }
 
     &__insights {
         width: 100%;
-        height: 100%;
-        @include flex(row, space-between, flex-start);
+        gap: 0 40px;
+        @include flex(row, flex-start, flex-start);
 
         &-block {
-            width: 620px;
-            height: 100%;
+            max-width: 620px;
+            width: 100%;
             @include flex(column, flex-start, flex-start);
         }
 
@@ -1564,6 +2746,8 @@ body {
         &-image {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         &-date {
@@ -1582,6 +2766,7 @@ body {
 
         &-description {
             margin-top: 20px;
+            text-align: justify;
             @include heading5($cormorantGaramondMedium, 36px, 42px, $dark_brown);
         }
 
@@ -1589,7 +2774,8 @@ body {
             width: 144px;
             height: 46px;
             margin-top: 24px;
-            @include flex(column, space-between, flex-start);
+            gap: 20px 0;
+            @include flex(column, flex-start, flex-start);
 
             &-text {
                 @include body2_bold($interSemiBold, 16px, 24px, $dark_brown);
@@ -1607,18 +2793,231 @@ body {
             display: none;
         }
     }
+
+    @media (max-width: $media-xxl) {
+        max-width: 1280px;
+        width: 100%;
+        padding: 0 20px;
+
+        &__contents {
+            max-width: 1240px;
+            width: 100%;
+        }
+
+        &__text-content {
+            width: 395px;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 58px, 68px, $dark_brown);
+        }
+
+        &__insights {
+            width: 100%;
+
+            &-block {
+                max-width: 600px;
+                width: 100%;
+            }
+
+            &-image-area {
+                height: 450px;
+            }
+
+            &-description {
+                @include heading5($cormorantGaramondMedium, 33px, 42px, $dark_brown);
+            }
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        max-width: 1200px;
+
+        &__contents {
+            max-width: 1160px;
+        }
+
+        &__text-content {
+            width: 355px;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 52px, 62px, $dark_brown);
+        }
+
+        &__insights {
+            width: 100%;
+
+            &-block {
+                max-width: 560px;
+            }
+
+            &-image-area {
+                height: 420px;
+            }
+
+            &-description {
+                @include heading5($cormorantGaramondMedium, 30px, 40px, $dark_brown);
+            }
+        }
+    }
+
+    @media (max-width: $media-lg) {
+        max-width: 984px;
+
+        &__contents {
+            max-width: 944px;
+        }
+
+        &__text-content {
+            width: 315px;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 46px, 56px, $dark_brown);
+        }
+
+        &__insights {
+            width: 100%;
+
+            &-block {
+                max-width: 452px;
+            }
+
+            &-image-area {
+                height: 380px;
+            }
+
+            &-description {
+                @include heading5($cormorantGaramondMedium, 26px, 37px, $dark_brown);
+            }
+        }
+    }
+
+    @media (max-width: $media-md) {
+        max-width: 728px;
+
+        &__contents {
+            max-width: 688px;
+        }
+
+        &__text-content {
+            width: 275px;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 40px, 50px, $dark_brown);
+        }
+
+        &__insights {
+            width: 100%;
+            gap: 40px 0;
+            @include flex(column, flex-start, flex-start);
+
+            &-block {
+                max-width: 688px;
+            }
+
+            &-image-area {
+                height: 480px;
+            }
+
+            &-delete {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: $media-ms) {
+        max-width: 536px;
+
+        &__contents {
+            max-width: 496px;
+        }
+
+        &__text-content {
+            width: 235px;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 34px, 44px, $dark_brown);
+        }
+
+        &__radios {
+            width: 76px;
+        }
+
+        &__insights {
+            width: 100%;
+
+            &-block {
+                max-width: 496px;
+            }
+
+            &-image-area {
+                height: 430px;
+            }
+
+            &-description {
+                @include heading5($cormorantGaramondMedium, 24px, 37px, $dark_brown);
+            }
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        max-width: 385px;
+
+        &__contents {
+            max-width: 345px;
+        }
+
+        &__text-content {
+            width: 195px;
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 28px, 38px, $dark_brown);
+        }
+
+        &__radios {
+            width: 76px;
+        }
+
+        &__insights {
+            width: 100%;
+
+            &-block {
+                max-width: 345px;
+            }
+
+            &-image-area {
+                height: 380px;
+            }
+
+            &-description {
+                @include heading5($cormorantGaramondMedium, 22px, 37px, $dark_brown);
+            }
+        }
+    }
+
+    @media (max-width: $media-xs) {
+        max-width: 320px;
+        width: 100%;
+        padding: 0 5px;
+    }
 }
 
 .homepage-section11 {
     max-width: 1440px;
     width: 100%;
     margin: 120px 0;
+    @include flex(row, center, flex-start);
 
     &__content {
         max-width: 1280px;
         width: 100%;
-        margin: 0 auto;
-        @include flex(column, space-between, flex-start);
+        gap: 20px 0;
+        @include flex(column, flex-start, flex-start);
     }
 
     &__first-line {
@@ -1631,15 +3030,13 @@ body {
 
     &__second-line {
         width: 100%;
-        height: 200px;
         gap: 0 20px;
-        margin-top: 20px;
-        @include flex(row, space-between, flex-start);
+        @include flex(row, flex-start, flex-start);
     }
 
     &__image {
-        width: 100%;
-        height: 100%;
+        width: calc((100% - 100px) / 6);
+        height: 200px;
         cursor: pointer;
         filter: grayscale(1);
         background-size: cover;
@@ -1669,6 +3066,100 @@ body {
 
     &__image:nth-child(5) {
         background-image: url('./src/images/homepage-section11-image5.png');
+    }
+
+    &__image:nth-child(6) {
+        background-image: url('./src/images/homepage-section11-image6.png');
+    }
+
+    @media (max-width: $media-xxl) {
+        max-width: 1280px;
+        width: 100%;
+        padding: 0 20px;
+
+        &__content {
+            max-width: 1240px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: $media-xl) {
+        max-width: 1200px;
+
+        &__content {
+            max-width: 1160px;
+        }
+
+        &__second-line {
+            gap: 20px 20px;
+            flex-wrap: wrap;
+        }
+
+        &__image {
+            width: calc((100% - 40px) / 3);
+        }
+    }
+
+    @media (max-width: $media-lg) {
+        max-width: 984px;
+
+        &__content {
+            max-width: 944px;
+        }
+    }
+
+    @media (max-width: $media-md) {
+        max-width: 728px;
+
+        &__content {
+            max-width: 688px;
+        }
+
+        &__first-line {
+            height: 500px;
+        }
+
+        &__image {
+            width: calc((100% - 20px) / 2);
+        }
+    }
+
+    @media (max-width: $media-ms) {
+        max-width: 536px;
+
+        &__content {
+            max-width: 496px;
+        }
+
+        &__first-line {
+            height: 400px;
+        }
+
+        &__image {
+            height: 180px;
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        max-width: 385px;
+
+        &__content {
+            max-width: 345px;
+        }
+
+        &__first-line {
+            height: 300px;
+        }
+
+        &__image {
+            height: 130px;
+        }
+    }
+
+    @media (max-width: $media-xs) {
+        max-width: 320px;
+        width: 100%;
+        padding: 0 5px;
     }
 }
 
