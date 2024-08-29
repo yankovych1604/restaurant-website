@@ -224,9 +224,10 @@ body {
 
     @media (max-width: $media-ms) {
         width: 100%;
+        padding: 0 10px;
 
         &__navigation {
-            max-width: 536px;
+            max-width: 516px;
             width: 100%;
         }
 
@@ -269,7 +270,7 @@ body {
         width: 100%;
 
         &__navigation {
-            max-width: 385px;
+            max-width: 365px;
             width: 100%;
         }
 
@@ -517,7 +518,7 @@ body {
         width: 100%;
 
         &__content {
-            max-width: 536px;
+            max-width: 516px;
         }
 
         &__text-content {
@@ -560,7 +561,7 @@ body {
         width: 100%;
 
         &__content {
-            max-width: 385px;
+            max-width: 365px;
         }
 
         &__text-content {
@@ -861,7 +862,8 @@ body {
     }
 
     @media (max-width: $media-ms) {
-        max-width: 536px;
+        max-width: 516px;
+        padding: 0 10px;
 
         &__contents {
             max-width: 496px;
@@ -913,7 +915,7 @@ body {
     }
 
     @media (max-width: $media-sm) {
-        max-width: 385px;
+        max-width: 365px;
 
         &__contents {
             max-width: 345px;
@@ -1128,7 +1130,8 @@ body {
     }
 
     @media (max-width: $media-ms) {
-        max-width: 536px;
+        max-width: 516px;
+        padding: 0 10px;
 
         &__content {
             max-width: 496px;
@@ -1155,7 +1158,7 @@ body {
     }
 
     @media (max-width: $media-sm) {
-        max-width: 385px;
+        max-width: 365px;
 
         &__content {
             max-width: 345px;
@@ -1365,7 +1368,8 @@ body {
     }
 
     @media (max-width: $media-ms) {
-        max-width: 536px;
+        max-width: 516px;
+        padding: 0 10px;
 
         &__content {
             max-width: 496px;
@@ -1391,7 +1395,7 @@ body {
     }
 
     @media (max-width: $media-sm) {
-        max-width: 385px;
+        max-width: 365px;
 
         &__content {
             max-width: 345px;
@@ -1548,7 +1552,8 @@ body {
     }
 
     @media (max-width: $media-ms) {
-        max-width: 536px;
+        max-width: 516px;
+        padding: 0 10px;
 
         &__content {
             max-width: 496px;
@@ -1574,7 +1579,7 @@ body {
     }
 
     @media (max-width: $media-sm) {
-        max-width: 385px;
+        max-width: 365px;
 
         &__content {
             max-width: 345px;
@@ -1881,36 +1886,38 @@ body {
     }
 
     @media (max-width: $media-ms) {
-        max-width: 536px;
+        max-width: 516px;
+        padding: 0 10px;
 
         &__content {
             max-width: 496px;
         }
 
         &__title2 {
-            @include heading3($cormorantGaramondSemiBold, 38px, 48px, $dark_brown);
+            @include heading3($cormorantGaramondSemiBold, 32px, 42px, $dark_brown);
         }
 
         &__text-content {
             gap: 40px 0;
             max-width: 496px;
+            margin-top: 34px;
         }
 
         &__descriptions1 {
             width: 100%;
-            height: 256px;
+            height: 306px;
             @include flex(column, space-between, center);
 
             &-item {
                 width: 100%;
-                height: 85px;
+                height: 110px;
 
                 &-description1 {
-                    text-align: justify;
+                    text-align: center;
                 }
 
                 &-description2 {
-                    text-align: justify;
+                    text-align: center;
                 }
             }
 
@@ -1930,19 +1937,88 @@ body {
 
         &__descriptions2 {
             width: 100%;
-            height: 256px;
+            height: 306px;
             @include flex(column, space-between, center);
 
             &-item {
                 width: 100%;
-                height: 85px;
+                height: 110px;
 
                 &-description1 {
-                    text-align: justify;
+                    text-align: center;
                 }
 
                 &-description2 {
-                    text-align: justify;
+                    text-align: center;
+                }
+            }
+
+            &-item:nth-child(1) {
+                @include flex(column, flex-start, center);
+            }
+
+            &-item:nth-child(3) {
+                @include flex(column, flex-start, center);
+            }
+        }
+    }
+
+    @media (max-width: $media-sm) {
+        max-width: 365px;
+
+        &__content {
+            max-width: 345px;
+        }
+
+        &__title1 {
+            @include body2_spacing($interRegular, 14px, 24px, 5px, $brown2);
+        }
+
+        &__title2 {
+            @include heading3($cormorantGaramondSemiBold, 24px, 40px, $dark_brown);
+        }
+
+        &__text-content {
+            max-width: 345px;
+        }
+
+        &__descriptions1 {
+
+            &-item {
+
+                &-title {
+                    @include body1_bold($interSemiBold, 18px, 30px, $dark_brown);
+                }
+
+                &-description {
+                    @include body2($interRegular, 14px, 24px, $dark_brown);
+                }
+            }
+
+            &-item:nth-child(1) {
+                @include flex(column, flex-start, center);
+            }
+
+            &-item:nth-child(3) {
+                @include flex(column, flex-start, center);
+            }
+        }
+
+        &__image {
+            width: 280px;
+            height: 280px;
+        }
+
+        &__descriptions2 {
+
+            &-item {
+
+                &-title {
+                    @include body1_bold($interSemiBold, 18px, 30px, $dark_brown);
+                }
+
+                &-description {
+                    @include body2($interRegular, 14px, 24px, $dark_brown);
                 }
             }
 
@@ -2132,7 +2208,8 @@ body {
     }
 
     @media (max-width: $media-ms) {
-        max-width: 536px;
+        max-width: 516px;
+        padding: 0 10px;
 
         &__content {
             max-width: 496px;
@@ -2182,7 +2259,7 @@ body {
     }
 
     @media (max-width: $media-sm) {
-        max-width: 385px;
+        max-width: 365px;
 
         &__content {
             max-width: 345px;
@@ -2433,7 +2510,8 @@ body {
     }
 
     @media (max-width: $media-ms) {
-        max-width: 536px;
+        max-width: 516px;
+        padding: 0 10px;
 
         &__contents {
             max-width: 496px;
@@ -2473,7 +2551,7 @@ body {
     }
 
     @media (max-width: $media-sm) {
-        max-width: 385px;
+        max-width: 365px;
 
         &__contents {
             max-width: 345px;
@@ -2919,7 +2997,7 @@ body {
             }
 
             &-image-area {
-                height: 480px;
+                height: 430px;
             }
 
             &-delete {
@@ -2929,7 +3007,8 @@ body {
     }
 
     @media (max-width: $media-ms) {
-        max-width: 536px;
+        max-width: 516px;
+        padding: 0 10px;
 
         &__contents {
             max-width: 496px;
@@ -2955,7 +3034,7 @@ body {
             }
 
             &-image-area {
-                height: 430px;
+                height: 380px;
             }
 
             &-description {
@@ -2965,7 +3044,7 @@ body {
     }
 
     @media (max-width: $media-sm) {
-        max-width: 385px;
+        max-width: 365px;
 
         &__contents {
             max-width: 345px;
@@ -2991,7 +3070,7 @@ body {
             }
 
             &-image-area {
-                height: 380px;
+                height: 320px;
             }
 
             &-description {
@@ -3125,7 +3204,8 @@ body {
     }
 
     @media (max-width: $media-ms) {
-        max-width: 536px;
+        max-width: 516px;
+        padding: 0 10px;
 
         &__content {
             max-width: 496px;
@@ -3141,7 +3221,7 @@ body {
     }
 
     @media (max-width: $media-sm) {
-        max-width: 385px;
+        max-width: 365px;
 
         &__content {
             max-width: 345px;

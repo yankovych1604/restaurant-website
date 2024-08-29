@@ -307,9 +307,10 @@ body {
 @media (max-width: 576px) {
   .header {
     width: 100%;
+    padding: 0 10px;
   }
   .header__navigation {
-    max-width: 536px;
+    max-width: 516px;
     width: 100%;
   }
   .header__menu {
@@ -354,7 +355,7 @@ body {
     width: 100%;
   }
   .header__navigation {
-    max-width: 385px;
+    max-width: 365px;
     width: 100%;
   }
   .header__nav {
@@ -661,7 +662,7 @@ body {
     width: 100%;
   }
   .homepage-section1__content {
-    max-width: 536px;
+    max-width: 516px;
   }
   .homepage-section1__text-content {
     max-width: 386px;
@@ -711,7 +712,7 @@ body {
     width: 100%;
   }
   .homepage-section1__content {
-    max-width: 385px;
+    max-width: 365px;
   }
   .homepage-section1__text-content {
     max-width: 285px;
@@ -1077,7 +1078,8 @@ body {
 }
 @media (max-width: 576px) {
   .homepage-section2 {
-    max-width: 536px;
+    max-width: 516px;
+    padding: 0 10px;
   }
   .homepage-section2__contents {
     max-width: 496px;
@@ -1128,7 +1130,7 @@ body {
 }
 @media (max-width: 425px) {
   .homepage-section2 {
-    max-width: 385px;
+    max-width: 365px;
   }
   .homepage-section2__contents {
     max-width: 345px;
@@ -1375,7 +1377,8 @@ body {
 }
 @media (max-width: 576px) {
   .homepage-section3 {
-    max-width: 536px;
+    max-width: 516px;
+    padding: 0 10px;
   }
   .homepage-section3__content {
     max-width: 496px;
@@ -1407,7 +1410,7 @@ body {
 }
 @media (max-width: 425px) {
   .homepage-section3 {
-    max-width: 385px;
+    max-width: 365px;
   }
   .homepage-section3__content {
     max-width: 345px;
@@ -1634,7 +1637,8 @@ body {
 }
 @media (max-width: 576px) {
   .homepage-section4 {
-    max-width: 536px;
+    max-width: 516px;
+    padding: 0 10px;
   }
   .homepage-section4__content {
     max-width: 496px;
@@ -1659,7 +1663,7 @@ body {
 }
 @media (max-width: 425px) {
   .homepage-section4 {
-    max-width: 385px;
+    max-width: 365px;
   }
   .homepage-section4__content {
     max-width: 345px;
@@ -1845,7 +1849,8 @@ body {
 }
 @media (max-width: 576px) {
   .homepage-section5 {
-    max-width: 536px;
+    max-width: 516px;
+    padding: 0 10px;
   }
   .homepage-section5__content {
     max-width: 496px;
@@ -1876,7 +1881,7 @@ body {
 }
 @media (max-width: 425px) {
   .homepage-section5 {
-    max-width: 385px;
+    max-width: 365px;
   }
   .homepage-section5__content {
     max-width: 345px;
@@ -2215,24 +2220,26 @@ body {
 }
 @media (max-width: 576px) {
   .homepage-section6 {
-    max-width: 536px;
+    max-width: 516px;
+    padding: 0 10px;
   }
   .homepage-section6__content {
     max-width: 496px;
   }
   .homepage-section6__title2 {
     font-family: "Cormorant Garamond SemiBold";
-    font-size: 38px;
-    line-height: 48px;
+    font-size: 32px;
+    line-height: 42px;
     color: #321D1D;
   }
   .homepage-section6__text-content {
     gap: 40px 0;
     max-width: 496px;
+    margin-top: 34px;
   }
   .homepage-section6__descriptions1 {
     width: 100%;
-    height: 256px;
+    height: 306px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -2240,13 +2247,13 @@ body {
   }
   .homepage-section6__descriptions1-item {
     width: 100%;
-    height: 85px;
+    height: 110px;
   }
   .homepage-section6__descriptions1-item-description1 {
-    text-align: justify;
+    text-align: center;
   }
   .homepage-section6__descriptions1-item-description2 {
-    text-align: justify;
+    text-align: center;
   }
   .homepage-section6__descriptions1-item:nth-child(1) {
     display: flex;
@@ -2266,7 +2273,7 @@ body {
   }
   .homepage-section6__descriptions2 {
     width: 100%;
-    height: 256px;
+    height: 306px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -2274,13 +2281,89 @@ body {
   }
   .homepage-section6__descriptions2-item {
     width: 100%;
-    height: 85px;
+    height: 110px;
   }
   .homepage-section6__descriptions2-item-description1 {
-    text-align: justify;
+    text-align: center;
   }
   .homepage-section6__descriptions2-item-description2 {
-    text-align: justify;
+    text-align: center;
+  }
+  .homepage-section6__descriptions2-item:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .homepage-section6__descriptions2-item:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+@media (max-width: 425px) {
+  .homepage-section6 {
+    max-width: 365px;
+  }
+  .homepage-section6__content {
+    max-width: 345px;
+  }
+  .homepage-section6__title1 {
+    font-family: "Inter Regular";
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 5px;
+    color: #A46C32;
+  }
+  .homepage-section6__title2 {
+    font-family: "Cormorant Garamond SemiBold";
+    font-size: 24px;
+    line-height: 40px;
+    color: #321D1D;
+  }
+  .homepage-section6__text-content {
+    max-width: 345px;
+  }
+  .homepage-section6__descriptions1-item-title {
+    font-family: "Inter SemiBold";
+    font-size: 18px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+  .homepage-section6__descriptions1-item-description {
+    font-family: "Inter Regular";
+    font-size: 14px;
+    line-height: 24px;
+    color: #321D1D;
+  }
+  .homepage-section6__descriptions1-item:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .homepage-section6__descriptions1-item:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .homepage-section6__image {
+    width: 280px;
+    height: 280px;
+  }
+  .homepage-section6__descriptions2-item-title {
+    font-family: "Inter SemiBold";
+    font-size: 18px;
+    line-height: 30px;
+    color: #321D1D;
+  }
+  .homepage-section6__descriptions2-item-description {
+    font-family: "Inter Regular";
+    font-size: 14px;
+    line-height: 24px;
+    color: #321D1D;
   }
   .homepage-section6__descriptions2-item:nth-child(1) {
     display: flex;
@@ -2519,7 +2602,8 @@ body {
 }
 @media (max-width: 576px) {
   .homepage-section7 {
-    max-width: 536px;
+    max-width: 516px;
+    padding: 0 10px;
   }
   .homepage-section7__content {
     max-width: 496px;
@@ -2595,7 +2679,7 @@ body {
 }
 @media (max-width: 425px) {
   .homepage-section7 {
-    max-width: 385px;
+    max-width: 365px;
   }
   .homepage-section7__content {
     max-width: 345px;
@@ -2890,7 +2974,8 @@ body {
 }
 @media (max-width: 576px) {
   .homepage-section8 {
-    max-width: 536px;
+    max-width: 516px;
+    padding: 0 10px;
   }
   .homepage-section8__contents {
     max-width: 496px;
@@ -2932,7 +3017,7 @@ body {
 }
 @media (max-width: 425px) {
   .homepage-section8 {
-    max-width: 385px;
+    max-width: 365px;
   }
   .homepage-section8__contents {
     max-width: 345px;
@@ -3426,7 +3511,7 @@ body {
     max-width: 688px;
   }
   .homepage-section10__insights-image-area {
-    height: 480px;
+    height: 430px;
   }
   .homepage-section10__insights-delete {
     display: none;
@@ -3434,7 +3519,8 @@ body {
 }
 @media (max-width: 576px) {
   .homepage-section10 {
-    max-width: 536px;
+    max-width: 516px;
+    padding: 0 10px;
   }
   .homepage-section10__contents {
     max-width: 496px;
@@ -3458,7 +3544,7 @@ body {
     max-width: 496px;
   }
   .homepage-section10__insights-image-area {
-    height: 430px;
+    height: 380px;
   }
   .homepage-section10__insights-description {
     font-family: "Cormorant Garamond Medium";
@@ -3469,7 +3555,7 @@ body {
 }
 @media (max-width: 425px) {
   .homepage-section10 {
-    max-width: 385px;
+    max-width: 365px;
   }
   .homepage-section10__contents {
     max-width: 345px;
@@ -3493,7 +3579,7 @@ body {
     max-width: 345px;
   }
   .homepage-section10__insights-image-area {
-    height: 380px;
+    height: 320px;
   }
   .homepage-section10__insights-description {
     font-family: "Cormorant Garamond Medium";
@@ -3623,7 +3709,8 @@ body {
 }
 @media (max-width: 576px) {
   .homepage-section11 {
-    max-width: 536px;
+    max-width: 516px;
+    padding: 0 10px;
   }
   .homepage-section11__content {
     max-width: 496px;
@@ -3637,7 +3724,7 @@ body {
 }
 @media (max-width: 425px) {
   .homepage-section11 {
-    max-width: 385px;
+    max-width: 365px;
   }
   .homepage-section11__content {
     max-width: 345px;

@@ -164,18 +164,40 @@ radioOfHomeSec10.forEach((radio, index) => {
 // homepage-section10
 
 // homepage-section11
+let timerIntervalOfHomeSec11;
 let selectedImageOfHomeSec11 = 0;
 
 const mainImageOfHomeSec11 = document.getElementById('homepage-section11__image-main');
 const allImagesOfHomeSec11 = document.querySelectorAll('.homepage-section11__image');
 
+function startTimerIntervalOfHomeSec11() {
+    timerIntervalOfHomeSec11 = setInterval(() => {
+        allImagesOfHomeSec11[selectedImageOfHomeSec11].classList.remove('homepage-section11__image-checked');
+
+        selectedImageOfHomeSec11++;
+
+        if (selectedImageOfHomeSec11 >= allImagesOfHomeSec11.length) {
+            selectedImageOfHomeSec11 = 0;
+        }
+
+        allImagesOfHomeSec11[selectedImageOfHomeSec11].classList.add('homepage-section11__image-checked');
+        mainImageOfHomeSec11.style.backgroundImage = `url('./src/images/homepage-section11-image${selectedImageOfHomeSec11 + 1}.png')`;
+    }, 5000);
+}
+
+startTimerIntervalOfHomeSec11();
+
 allImagesOfHomeSec11.forEach((image, index) => {
     image.addEventListener('click', () => {
+        clearInterval(timerIntervalOfHomeSec11);
+
         allImagesOfHomeSec11[selectedImageOfHomeSec11].classList.remove('homepage-section11__image-checked');
         image.classList.add('homepage-section11__image-checked');
 
         selectedImageOfHomeSec11 = index;
         mainImageOfHomeSec11.style.backgroundImage = `url('./src/images/homepage-section11-image${selectedImageOfHomeSec11 + 1}.png')`;
+
+        startTimerIntervalOfHomeSec11();
     });
 })
 // homepage-section11
